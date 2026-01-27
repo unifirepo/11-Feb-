@@ -53,7 +53,7 @@ export default function Resources() {
         }
       />
 
-      <Section backgroundColor="gray">
+      <Section>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-10 items-start">
             <div>
@@ -84,7 +84,7 @@ export default function Resources() {
         </div>
       </Section>
 
-      <Section backgroundColor="white">
+      <Section>
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
             <Text as="h2" variant="h2" className="mb-3">

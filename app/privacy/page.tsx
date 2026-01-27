@@ -5,7 +5,7 @@ export default function Privacy() {
   return (
     <>
       {/* Hero Section */}
-      <Section backgroundColor="white" className="min-h-[70vh] flex items-center">
+      <Section className="min-h-[70vh] flex items-center">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="flex flex-col lg:flex-row gap-10 items-start lg:items-center">
             <div className="flex-1">
@@ -28,7 +28,7 @@ export default function Privacy() {
       </Section>
 
       {/* Privacy Content Section */}
-      <Section backgroundColor="gray">
+      <Section>
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
             Privacy Policy

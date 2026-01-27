@@ -5,7 +5,7 @@ import PlaceholderImage from '@/src/components/PlaceholderImage';
 export default function EnergyContact() {
   return (
     <>
-      <Section backgroundColor="white" className="min-h-[55vh] flex items-center">
+      <Section className="min-h-[55vh] flex items-center">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <h1 className="text-5xl md:text-6xl font-semibold text-gray-900 mb-6 leading-tight">
             Energy Contact

@@ -1,11 +1,12 @@
 import Section from '@/src/components/Section';
 import PlaceholderImage from '@/src/components/PlaceholderImage';
+import Card from '@/src/components/Card';
 
 export default function Solutions() {
   return (
     <>
       {/* Hero Section */}
-      <Section backgroundColor="white" className="min-h-[70vh] flex items-center">
+      <Section className="min-h-[70vh] flex items-center">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="flex flex-col lg:flex-row gap-10 items-start lg:items-center">
             <div className="flex-1">
@@ -30,7 +31,7 @@ export default function Solutions() {
       </Section>
 
       {/* Solutions Grid Section */}
-      <Section backgroundColor="gray">
+      <Section>
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
             Our Solutions
@@ -39,36 +40,30 @@ export default function Solutions() {
             Discover how our solutions can address your specific business needs and challenges.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                Enterprise Solutions
-              </h3>
+            <Card>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Enterprise Solutions</h3>
               <p className="text-base md:text-lg text-gray-700">
                 Comprehensive solutions designed for large-scale organizations
               </p>
-            </div>
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                Custom Solutions
-              </h3>
+            </Card>
+            <Card>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Custom Solutions</h3>
               <p className="text-base md:text-lg text-gray-700">
                 Tailored approaches built specifically for your unique requirements
               </p>
-            </div>
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                Integrated Solutions
-              </h3>
+            </Card>
+            <Card>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Integrated Solutions</h3>
               <p className="text-base md:text-lg text-gray-700">
                 Seamlessly connect and optimize your existing systems
               </p>
-            </div>
+            </Card>
           </div>
         </div>
       </Section>
 
       {/* Solution Details Section */}
-      <Section backgroundColor="white">
+      <Section>
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
             Solution Approach

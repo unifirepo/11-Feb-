@@ -36,7 +36,7 @@ export default function PlatformOverview() {
       />
 
       {/* Definition + Value */}
-      <Section backgroundColor="gray">
+      <Section>
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mb-10">
             <Text as="h2" variant="h2" className="mb-3">
@@ -65,7 +65,7 @@ export default function PlatformOverview() {
       </Section>
 
       {/* What it replaces */}
-      <Section backgroundColor="white">
+      <Section>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-10 items-start mb-10">
             <div className="max-w-3xl">
@@ -95,7 +95,7 @@ export default function PlatformOverview() {
       </Section>
 
       {/* Who it is for + CTA */}
-      <Section backgroundColor="gray">
+      <Section>
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mb-10">
             <Text as="h2" variant="h2" className="mb-3">Who Cortex is for</Text>

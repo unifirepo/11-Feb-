@@ -41,3 +41,13 @@
     transform: none;
   }
 }
+
+/* Auto alternating section backgrounds: white / light grey */
+main > section.section-auto {
+  background-color: white;
+}
+
+main > section.section-auto:nth-of-type(even) {
+  background-color: rgb(249 250 251); /* tailwind bg-gray-50 */
+}
+

@@ -35,7 +35,7 @@ export default function PlatformHub() {
         }
       />
 
-      <Section backgroundColor="gray">
+      <Section>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-10 items-start">
             <div>

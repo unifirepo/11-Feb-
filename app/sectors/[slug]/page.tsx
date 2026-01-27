@@ -23,7 +23,7 @@ export default async function SectorPage({ params }: PageProps) {
   return (
     <>
       {/* Hero */}
-      <Section backgroundColor="white" className="min-h-[55vh] flex items-center">
+      <Section className="min-h-[55vh] flex items-center">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="grid lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-6">
@@ -56,7 +56,7 @@ export default async function SectorPage({ params }: PageProps) {
       </Section>
 
       {/* Outcomes */}
-      <Section backgroundColor="gray">
+      <Section>
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mb-10">
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">
@@ -79,7 +79,7 @@ export default async function SectorPage({ params }: PageProps) {
       </Section>
 
       {/* Recommended routes */}
-      <Section backgroundColor="white">
+      <Section>
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mb-10">
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">
@@ -106,7 +106,7 @@ export default async function SectorPage({ params }: PageProps) {
       </Section>
 
       {/* Next steps */}
-      <Section backgroundColor="gray">
+      <Section>
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">Next steps</h2>

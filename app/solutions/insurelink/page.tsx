@@ -5,7 +5,7 @@ import PlaceholderImage from '@/src/components/PlaceholderImage';
 export default function InsureLink() {
   return (
     <>
-      <Section backgroundColor="white" className="min-h-[55vh] flex items-center">
+      <Section className="min-h-[55vh] flex items-center">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <h1 className="text-5xl md:text-6xl font-semibold text-gray-900 mb-6 leading-tight">
             InsureLink
@@ -28,7 +28,7 @@ export default function InsureLink() {
         </div>
       </Section>
 
-      <Section backgroundColor="gray">
+      <Section>
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">Purpose</h2>

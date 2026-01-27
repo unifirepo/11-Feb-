@@ -5,7 +5,7 @@ export default function Pricing() {
   return (
     <>
       {/* Hero Section */}
-      <Section backgroundColor="white" className="min-h-[70vh] flex items-center">
+      <Section className="min-h-[70vh] flex items-center">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <h1 className="text-5xl md:text-6xl font-semibold text-gray-900 mb-6 leading-tight">
             Pricing
@@ -22,7 +22,7 @@ export default function Pricing() {
       </Section>
 
       {/* Pricing Plans Section */}
-      <Section backgroundColor="gray">
+      <Section>
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
             Pricing Plans
@@ -60,7 +60,7 @@ export default function Pricing() {
       </Section>
 
       {/* Pricing Details Section */}
-      <Section backgroundColor="white">
+      <Section>
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
             Custom Pricing

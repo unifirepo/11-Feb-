@@ -83,7 +83,7 @@ export default function SolutionsHub() {
         }
       />
 
-      <Section backgroundColor="gray">
+      <Section>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-10 items-start">
             <div>
@@ -111,7 +111,7 @@ export default function SolutionsHub() {
         </div>
       </Section>
 
-      <Section backgroundColor="white">
+      <Section>
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mb-10">
             <Text as="h2" variant="h2" className="mb-3">

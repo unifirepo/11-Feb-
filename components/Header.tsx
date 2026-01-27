@@ -99,12 +99,12 @@ export default function Header() {
   };
 
   return (
-    <header className="border-b bg-white">
+    <header className="border-b border-gray-800 bg-gray-950 text-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo placeholder */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-semibold">
+            <Link href="/" className="text-xl font-semibold text-white">
               Logo
             </Link>
           </div>
@@ -117,7 +117,7 @@ export default function Header() {
                 <Link
                   key={route.href}
                   href={route.href}
-                  className="text-gray-700 hover:text-gray-900 transition-colors whitespace-nowrap"
+                  className="text-gray-200 hover:text-white transition-colors whitespace-nowrap"
                 >
                   {route.label}
                 </Link>
@@ -131,7 +131,7 @@ export default function Header() {
             >
               <button
                 type="button"
-                className="inline-flex items-center gap-1 text-gray-700 hover:text-gray-900 transition-colors whitespace-nowrap"
+                className="inline-flex items-center gap-1 text-gray-200 hover:text-white transition-colors whitespace-nowrap"
                 aria-haspopup="menu"
                 aria-expanded={openDropdown === 'solutions'}
                 onClick={() => setOpenDropdown((v) => (v === 'solutions' ? null : 'solutions'))}
@@ -167,7 +167,7 @@ export default function Header() {
             >
               <button
                 type="button"
-                className="inline-flex items-center gap-1 text-gray-700 hover:text-gray-900 transition-colors whitespace-nowrap"
+                className="inline-flex items-center gap-1 text-gray-200 hover:text-white transition-colors whitespace-nowrap"
                 aria-haspopup="menu"
                 aria-expanded={openDropdown === 'roles'}
                 onClick={() => setOpenDropdown((v) => (v === 'roles' ? null : 'roles'))}
@@ -203,7 +203,7 @@ export default function Header() {
             >
               <button
                 type="button"
-                className="inline-flex items-center gap-1 text-gray-700 hover:text-gray-900 transition-colors whitespace-nowrap"
+                className="inline-flex items-center gap-1 text-gray-200 hover:text-white transition-colors whitespace-nowrap"
                 aria-haspopup="menu"
                 aria-expanded={openDropdown === 'energy'}
                 onClick={() => setOpenDropdown((v) => (v === 'energy' ? null : 'energy'))}
@@ -234,7 +234,7 @@ export default function Header() {
             {/* Contact link */}
             <Link
               href="/contact"
-              className="text-gray-700 hover:text-gray-900 transition-colors whitespace-nowrap"
+              className="text-gray-200 hover:text-white transition-colors whitespace-nowrap"
             >
               Contact / Book a Demo
             </Link>
@@ -254,36 +254,36 @@ export default function Header() {
             className="md:hidden flex flex-col space-y-1.5 p-2"
             aria-label="Toggle mobile menu"
           >
-            <span className="w-6 h-0.5 bg-gray-700"></span>
-            <span className="w-6 h-0.5 bg-gray-700"></span>
-            <span className="w-6 h-0.5 bg-gray-700"></span>
+            <span className="w-6 h-0.5 bg-gray-200"></span>
+            <span className="w-6 h-0.5 bg-gray-200"></span>
+            <span className="w-6 h-0.5 bg-gray-200"></span>
           </button>
         </div>
 
         {/* Mobile menu */}
         {isMobileMenuOpen && (
-          <nav className="md:hidden border-t py-4">
+          <nav className="md:hidden border-t border-gray-800 py-4">
             <div className="flex flex-col space-y-4">
               {topLinks.map((route) => (
                 <Link
                   key={route.href}
                   href={route.href}
                   onClick={closeAll}
-                  className="text-gray-700 hover:text-gray-900 transition-colors py-2"
+                  className="text-gray-200 hover:text-white transition-colors py-2"
                 >
                   {route.label}
                 </Link>
               ))}
 
-              <div className="pt-2 border-t">
-                <div className="text-sm font-semibold text-gray-900 mb-2">Solutions</div>
+              <div className="pt-2 border-t border-gray-800">
+                <div className="text-sm font-semibold text-white mb-2">Solutions</div>
                 <div className="flex flex-col">
                   {solutionsGroup.items.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
                       onClick={closeAll}
-                      className="text-gray-700 hover:text-gray-900 transition-colors py-2"
+                      className="text-gray-200 hover:text-white transition-colors py-2"
                     >
                       {item.label}
                     </Link>
@@ -291,15 +291,15 @@ export default function Header() {
                 </div>
               </div>
 
-              <div className="pt-2 border-t">
-                <div className="text-sm font-semibold text-gray-900 mb-2">Roles</div>
+              <div className="pt-2 border-t border-gray-800">
+                <div className="text-sm font-semibold text-white mb-2">Roles</div>
                 <div className="flex flex-col">
                   {rolesGroup.items.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
                       onClick={closeAll}
-                      className="text-gray-700 hover:text-gray-900 transition-colors py-2"
+                      className="text-gray-200 hover:text-white transition-colors py-2"
                     >
                       {item.label}
                     </Link>
@@ -307,15 +307,15 @@ export default function Header() {
                 </div>
               </div>
 
-              <div className="pt-2 border-t">
-                <div className="text-sm font-semibold text-gray-900 mb-2">Decarbonisation Hub</div>
+              <div className="pt-2 border-t border-gray-800">
+                <div className="text-sm font-semibold text-white mb-2">Decarbonisation Hub</div>
                 <div className="flex flex-col">
                   {energyGroup.items.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
                       onClick={closeAll}
-                      className="text-gray-700 hover:text-gray-900 transition-colors py-2"
+                      className="text-gray-200 hover:text-white transition-colors py-2"
                     >
                       {item.label}
                     </Link>
@@ -326,7 +326,7 @@ export default function Header() {
               <Link
                 href="/contact"
                 onClick={closeAll}
-                className="mt-2 inline-block px-5 py-3 rounded-lg bg-gray-900 text-white font-semibold hover:bg-gray-800 transition-colors text-center"
+                className="mt-2 inline-block px-5 py-3 rounded-lg bg-white text-gray-900 font-semibold hover:bg-gray-100 transition-colors text-center"
               >
                 Book a Demo
               </Link>

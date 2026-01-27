@@ -1,11 +1,12 @@
 import Section from '@/src/components/Section';
 import PlaceholderImage from '@/src/components/PlaceholderImage';
+import Card from '@/src/components/Card';
 
 export default function Contact() {
   return (
     <>
       {/* Hero Section */}
-      <Section backgroundColor="white" className="min-h-[70vh] flex items-center">
+      <Section className="min-h-[70vh] flex items-center">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="flex flex-col lg:flex-row gap-10 items-start lg:items-center">
             <div className="flex-1">
@@ -28,7 +29,7 @@ export default function Contact() {
       </Section>
 
       {/* Contact Information Section */}
-      <Section backgroundColor="gray">
+      <Section>
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
             Get In Touch
@@ -37,36 +38,26 @@ export default function Contact() {
             Reach out to us through any of the following channels. We'll respond as soon as possible.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                Email
-              </h3>
+            <Card>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Email</h3>
               <p className="text-base md:text-lg text-gray-700">
                 Send us an email and we'll get back to you
               </p>
-            </div>
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                Phone
-              </h3>
-              <p className="text-base md:text-lg text-gray-700">
-                Call us during business hours
-              </p>
-            </div>
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                Office
-              </h3>
-              <p className="text-base md:text-lg text-gray-700">
-                Visit us at our headquarters
-              </p>
-            </div>
+            </Card>
+            <Card>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Phone</h3>
+              <p className="text-base md:text-lg text-gray-700">Call us during business hours</p>
+            </Card>
+            <Card>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Office</h3>
+              <p className="text-base md:text-lg text-gray-700">Visit us at our headquarters</p>
+            </Card>
           </div>
         </div>
       </Section>
 
       {/* Contact Form Section */}
-      <Section backgroundColor="white">
+      <Section>
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
             Send Us a Message

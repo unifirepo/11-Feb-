@@ -24,7 +24,7 @@ const tech = [
 export default function EnergyTechnology() {
   return (
     <>
-      <Section backgroundColor="white" className="min-h-[55vh] flex items-center">
+      <Section className="min-h-[55vh] flex items-center">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <h1 className="text-5xl md:text-6xl font-semibold text-gray-900 mb-6 leading-tight">
             Our Technology
@@ -46,7 +46,7 @@ export default function EnergyTechnology() {
         </div>
       </Section>
 
-      <Section backgroundColor="gray">
+      <Section>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-6">
             {tech.map((t) => (

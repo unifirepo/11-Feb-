@@ -5,7 +5,7 @@ export default function ModernSlavery() {
   return (
     <>
       {/* Hero Section */}
-      <Section backgroundColor="white" className="min-h-[70vh] flex items-center">
+      <Section className="min-h-[70vh] flex items-center">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <h1 className="text-5xl md:text-6xl font-semibold text-gray-900 mb-6 leading-tight">
             Modern Slavery Agreement
@@ -22,7 +22,7 @@ export default function ModernSlavery() {
       </Section>
 
       {/* Modern Slavery Content Section */}
-      <Section backgroundColor="gray">
+      <Section>
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
             Modern Slavery Statement

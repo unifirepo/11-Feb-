@@ -5,7 +5,7 @@ import PlaceholderImage from '@/src/components/PlaceholderImage';
 export default function RoleCEO() {
   return (
     <>
-      <Section backgroundColor="white" className="min-h-[55vh] flex items-center">
+      <Section className="min-h-[55vh] flex items-center">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="grid lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-6">

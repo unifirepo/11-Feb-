@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Section from '@/src/components/Section';
 import ButtonLink from '@/src/components/ButtonLink';
 import Card from '@/src/components/Card';
+import PlaceholderImage from '@/src/components/PlaceholderImage';
 import { getSectorBySlug, sectors } from '@/src/content/sectors';
 
 type PageProps = {
@@ -24,18 +25,31 @@ export default async function SectorPage({ params }: PageProps) {
       {/* Hero */}
       <Section backgroundColor="white" className="min-h-[55vh] flex items-center">
         <div className="max-w-7xl mx-auto px-6 w-full">
-          <div className="max-w-3xl">
-            <p className="text-sm font-medium text-gray-600 mb-3">Sector</p>
-            <h1 className="text-5xl md:text-6xl font-semibold text-gray-900 mb-6 leading-tight">
-              {sector.title}
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-8">{sector.description}</p>
+          <div className="grid lg:grid-cols-12 gap-10 items-center">
+            <div className="lg:col-span-6">
+              <div className="max-w-3xl">
+                <p className="text-sm font-medium text-gray-600 mb-3">Sector</p>
+                <h1 className="text-5xl md:text-6xl font-semibold text-gray-900 mb-6 leading-tight">
+                  {sector.title}
+                </h1>
+                <p className="text-lg md:text-xl text-gray-600 mb-8">{sector.description}</p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <ButtonLink href="/contact">Talk to us</ButtonLink>
-              <ButtonLink href="/solutions/hub" variant="secondary">
-                Explore solutions
-              </ButtonLink>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <ButtonLink href="/contact">Talk to us</ButtonLink>
+                  <ButtonLink href="/solutions/hub" variant="secondary">
+                    Explore solutions
+                  </ButtonLink>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-6">
+              <PlaceholderImage
+                priority
+                alt=""
+                src="/placeholders/card-abstract.svg"
+                className="aspect-[4/3] lg:aspect-[3/2] shadow-sm"
+              />
             </div>
           </div>
         </div>

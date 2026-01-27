@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Section from '@/src/components/Section';
 import ButtonLink from '@/src/components/ButtonLink';
 import Card from '@/src/components/Card';
+import PlaceholderImage from '@/src/components/PlaceholderImage';
 import { sectors } from '@/src/content/sectors';
 
 export default function Sectors() {
@@ -11,24 +12,36 @@ export default function Sectors() {
       {/* Hero */}
       <Section backgroundColor="white" className="min-h-[70vh] flex items-center">
         <div className="max-w-7xl mx-auto px-6 w-full">
-          <h1 className="text-5xl md:text-6xl font-semibold text-gray-900 mb-6 leading-tight">
-            Sectors
-          </h1>
-          <div className="space-y-4 mb-10 max-w-3xl">
-            <p className="text-lg md:text-xl text-gray-600">
-              Start with your sector, then follow the pathways across platform (Cortex), fire safety
-              (FireGuard), and energy.
-            </p>
-            <p className="text-lg md:text-xl text-gray-600">
-              Each route is designed to relieve budget pressure, strengthen compliance, and reduce
-              disruption.
-            </p>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <ButtonLink href="/solutions/hub">Explore solutions</ButtonLink>
-            <ButtonLink href="/contact" variant="secondary">
-              Contact
-            </ButtonLink>
+          <div className="grid lg:grid-cols-12 gap-10 items-center">
+            <div className="lg:col-span-6">
+              <h1 className="text-5xl md:text-6xl font-semibold text-gray-900 mb-6 leading-tight">
+                Sectors
+              </h1>
+              <div className="space-y-4 mb-10 max-w-3xl">
+                <p className="text-lg md:text-xl text-gray-600">
+                  Start with your sector, then follow the pathways across platform (Cortex), fire
+                  safety (FireGuard), and energy.
+                </p>
+                <p className="text-lg md:text-xl text-gray-600">
+                  Each route is designed to relieve budget pressure, strengthen compliance, and
+                  reduce disruption.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <ButtonLink href="/solutions/hub">Explore solutions</ButtonLink>
+                <ButtonLink href="/contact" variant="secondary">
+                  Contact
+                </ButtonLink>
+              </div>
+            </div>
+
+            <div className="lg:col-span-6">
+              <PlaceholderImage
+                priority
+                alt=""
+                className="aspect-[4/3] lg:aspect-[3/2] shadow-sm"
+              />
+            </div>
           </div>
         </div>
       </Section>

@@ -28,8 +28,15 @@ export const m = motion;
  * Shared Variants for Consistency
  */
 export const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
-  animate: { opacity: 1, y: 0 },
+  initial: { opacity: 1, y: 0 }, // Start visible to prevent content from being hidden
+  animate: { 
+    opacity: 1, 
+    y: 0,
+    transition: {
+      duration: DURATION_STANDARD,
+      ease: COOL_EASE,
+    }
+  },
 };
 
 export const maskReveal = {

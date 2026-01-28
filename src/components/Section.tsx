@@ -7,6 +7,7 @@ import { COOL_EASE, DURATION_STANDARD } from './motion';
 interface SectionProps {
   children: ReactNode;
   backgroundColor?: 'auto' | 'white' | 'gray' | 'blue';
+  variant?: 'dark' | 'light';
   className?: string;
   animate?: boolean;
   stagger?: boolean;
@@ -15,41 +16,64 @@ interface SectionProps {
 export function Section({
   children,
   backgroundColor = 'auto',
+  variant,
   className = '',
   animate = true,
   stagger = true,
 }: SectionProps) {
   const reduce = useReducedMotion();
 
+  // If variant is provided, it takes precedence over backgroundColor
+  // But if className contains background styles, don't override
+  const hasCustomBg = className.includes('bg-') || className.includes('background');
+  const effectiveBg = hasCustomBg
+    ? backgroundColor
+    : variant === 'dark' 
+      ? 'blue' 
+      : variant === 'light'
+        ? 'white'
+        : backgroundColor;
+
   const bgClass =
-    backgroundColor === 'gray'
+    effectiveBg === 'gray'
       ? 'bg-unifi-light'
-      : backgroundColor === 'white'
+      : effectiveBg === 'white'
         ? 'bg-white'
-        : backgroundColor === 'blue'
-          ? 'bg-unifi-blue text-white'
-          : 'section-auto';
+      : effectiveBg === 'blue'
+        ? 'bg-unifi-blue text-white'
+        : 'section-auto';
 
   // If reduced motion or animate is false, we don't use variants
-  const sectionVariants = (reduce || !animate) ? {} : {
-    initial: { opacity: 0 },
+  const shouldAnimate = !reduce && animate;
+  const sectionVariants = shouldAnimate ? {
+    initial: { opacity: 1 },
     animate: { 
       opacity: 1,
       transition: {
-        duration: DURATION_STANDARD,
+        duration: 0,
         ease: COOL_EASE,
-        staggerChildren: stagger ? 0.15 : 0,
-        delayChildren: 0.1
+        staggerChildren: stagger ? 0.1 : 0,
+        delayChildren: 0
       }
     }
-  };
+  } : undefined;
+
+  // Use a regular section if no animation, otherwise use motion.section
+  if (!shouldAnimate) {
+    return (
+      <section className={`${bgClass} py-20 md:py-32 ${className}`.trim()}>
+        {children}
+      </section>
+    );
+  }
 
   return (
     <motion.section
       className={`${bgClass} py-20 md:py-32 ${className}`.trim()}
       initial="initial"
+      animate="animate"
       whileInView="animate"
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: true, amount: 0.05, margin: "-100px" }}
       variants={sectionVariants}
     >
       {children}

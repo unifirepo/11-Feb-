@@ -57,3 +57,34 @@ main > section.section-auto:not(:first-of-type):nth-of-type(even) {
   background-color: rgb(249 250 251); /* tailwind bg-gray-50 */
 }
 
+/* Ensure content is visible even if animations don't trigger */
+@keyframes force-visible {
+  to {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}
+
+/* Immediately make all hidden content visible - animations can enhance but shouldn't block */
+main section [style*="opacity:0"] {
+  animation: force-visible 0.3s ease-out 0.5s forwards;
+}
+
+/* For reduced motion, ensure immediate visibility */
+@media (prefers-reduced-motion: reduce) {
+  main section,
+  main section *,
+  main section [style*="opacity"] {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
+/* Critical: Ensure all direct children of sections are visible */
+main section > div[style*="opacity:0"] {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  animation: force-visible 0.2s ease-out 0.3s forwards;
+}
+

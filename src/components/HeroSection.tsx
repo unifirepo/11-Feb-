@@ -101,19 +101,6 @@ export default function HeroSection() {
           </AnimatePresence>
         </div>
       </div>
-
-      {/* Slide Indicators */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 flex gap-3">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`h-1 transition-all duration-500 ${
-              index === currentIndex ? 'w-12 bg-white' : 'w-6 bg-white/20'
-            }`}
-          />
-        ))}
-      </div>
     </section>
   );
 }

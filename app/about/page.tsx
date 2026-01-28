@@ -23,15 +23,16 @@ export default function AboutPage() {
         <m.div
           variants={staggerContainer}
           initial="initial"
+          animate="animate"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           className="max-w-4xl mx-auto text-center text-white"
         >
-          <m.div variants={fadeInUp}>
+          <m.div variants={fadeInUp} initial="initial" animate="animate">
             <H1 className="mb-8">About Unifi.id</H1>
           </m.div>
           
-          <m.div variants={fadeInUp} className="space-y-6">
+          <m.div variants={fadeInUp} initial="initial" animate="animate" className="space-y-6">
             <Lead className="text-white/90">
               Every building tells a story.
             </Lead>
@@ -56,25 +57,26 @@ export default function AboutPage() {
         <m.div
           variants={staggerContainer}
           initial="initial"
+          animate="animate"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
           className="grid md:grid-cols-3 gap-8"
         >
-          <m.div variants={fadeInUp} className="p-8 border-l-4 border-unifi-blue bg-white rounded-lg shadow-sm">
+          <m.div variants={fadeInUp} initial="initial" animate="animate" className="p-8 border-l-4 border-unifi-blue bg-white rounded-lg shadow-sm">
             <H3 className="mb-4 text-unifi-blue">Our Mission</H3>
             <p className="text-base md:text-lg text-unifi-gray leading-relaxed">
               To revolutionise building management by putting people at the heart of intelligent systems, creating environments that enhance wellbeing, safety, and sustainability whilst delivering measurable business outcomes.
             </p>
           </m.div>
 
-          <m.div variants={fadeInUp} className="p-8 border-l-4 border-unifi-blue bg-white rounded-lg shadow-sm">
+          <m.div variants={fadeInUp} initial="initial" animate="animate" className="p-8 border-l-4 border-unifi-blue bg-white rounded-lg shadow-sm">
             <H3 className="mb-4 text-unifi-blue">Our Approach</H3>
             <p className="text-base md:text-lg text-unifi-gray leading-relaxed">
               We combine cutting-edge technology with deep understanding of human needs, ensuring our solutions enhance rather than complicate the building experience. Every feature is designed with your occupants in mind.
             </p>
           </m.div>
 
-          <m.div variants={fadeInUp} className="p-8 border-l-4 border-unifi-blue bg-white rounded-lg shadow-sm">
+          <m.div variants={fadeInUp} initial="initial" animate="animate" className="p-8 border-l-4 border-unifi-blue bg-white rounded-lg shadow-sm">
             <H3 className="mb-4 text-unifi-blue">Our Commitment</H3>
             <p className="text-base md:text-lg text-unifi-gray leading-relaxed">
               We're committed to delivering outcomes that matter: improved operational efficiency, enhanced safety, reduced environmental impact, and better experiences for everyone who uses your buildings.
@@ -90,11 +92,12 @@ export default function AboutPage() {
         <m.div
           variants={staggerContainer}
           initial="initial"
+          animate="animate"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           className="max-w-4xl mx-auto"
         >
-          <m.div variants={fadeInUp}>
+          <m.div variants={fadeInUp} initial="initial" animate="animate">
             <H2 className="mb-6">Who We Are</H2>
             <p className="text-lg text-unifi-gray leading-relaxed">
               Unifi.id seamlessly identifies and tracks building occupants, zone by zone, using a range of detection solutions — from long-range RFID smart cards to facial recognition and device presence signals. Our primary technology, the proprietary Unifi.id RFID smart card, integrates with existing access systems while providing powerful real-time occupancy data.
@@ -108,11 +111,12 @@ export default function AboutPage() {
         <m.div
           variants={staggerContainer}
           initial="initial"
+          animate="animate"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           className="max-w-4xl mx-auto"
         >
-          <m.div variants={fadeInUp}>
+          <m.div variants={fadeInUp} initial="initial" animate="animate">
             <H2 className="mb-6">What We Do</H2>
             <p className="text-lg mb-8 text-unifi-gray leading-relaxed">
               Unifi.id transforms buildings into intelligent, responsive environments. By turning fragmented occupancy signals into actionable insight, we enable estates to operate smarter, safer, and greener.
@@ -145,11 +149,12 @@ export default function AboutPage() {
         <m.div
           variants={staggerContainer}
           initial="initial"
+          animate="animate"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           className="max-w-4xl mx-auto"
         >
-          <m.div variants={fadeInUp}>
+          <m.div variants={fadeInUp} initial="initial" animate="animate">
             <H2 className="mb-6">Why Unifi.id</H2>
             <div className="space-y-4">
               <p className="text-base md:text-lg text-unifi-gray leading-relaxed">• Rapid ROI on energy efficiency and net-zero initiatives</p>
@@ -168,11 +173,12 @@ export default function AboutPage() {
         <m.div
           variants={staggerContainer}
           initial="initial"
+          animate="animate"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           className="max-w-4xl mx-auto"
         >
-          <m.div variants={fadeInUp}>
+          <m.div variants={fadeInUp} initial="initial" animate="animate">
             <H2 className="mb-6">Our Principle</H2>
             <p className="text-lg mb-4 text-unifi-gray leading-relaxed">
               We've never believed the answer is "there's an app for everything." Not everyone can — or will — engage with apps. Instead, Unifi.id creates invisible intelligence: systems that work for everyone, in the background, automatically.
@@ -191,11 +197,12 @@ export default function AboutPage() {
         <m.div
           variants={staggerContainer}
           initial="initial"
+          animate="animate"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           className="text-center max-w-2xl mx-auto"
         >
-          <m.div variants={fadeInUp}>
+          <m.div variants={fadeInUp} initial="initial" animate="animate">
             <H2 className="mb-6">Ready to discover how we can transform your building management?</H2>
             <ButtonLink href="/contact">Get in Touch</ButtonLink>
           </m.div>

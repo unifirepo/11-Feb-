@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import Section from './Section';
+import { Section } from './Section';
 
 type HeroProps = {
   title: ReactNode;

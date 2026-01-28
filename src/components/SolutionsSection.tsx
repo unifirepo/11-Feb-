@@ -1,6 +1,6 @@
 import { homeContent } from '@/src/content/home';
-import Section from './Section';
-import ButtonLink from './ButtonLink';
+import { Section } from './Section';
+import { ButtonLink } from './ButtonLink';
 import Card from './Card';
 import Text from './Text';
 

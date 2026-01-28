@@ -12,7 +12,7 @@ interface SectionProps {
   stagger?: boolean;
 }
 
-export default function Section({
+export function Section({
   children,
   backgroundColor = 'auto',
   className = '',

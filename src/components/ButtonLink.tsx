@@ -9,7 +9,7 @@ type ButtonLinkProps = LinkProps & {
   variant?: Variant;
 };
 
-export default function ButtonLink({
+export function ButtonLink({
   children,
   className = '',
   variant = 'primary',

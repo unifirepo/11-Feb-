@@ -1,5 +1,5 @@
 import { homeContent } from '@/src/content/home';
-import Section from './Section';
+import { Section } from './Section';
 import Card from './Card';
 import Text from './Text';
 

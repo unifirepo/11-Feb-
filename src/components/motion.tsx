@@ -27,26 +27,36 @@ export const m = motion;
 /**
  * Shared Variants for Consistency
  */
-export const variants = {
-  fadeInUp: {
-    initial: { opacity: 0, y: 30 },
-    animate: { opacity: 1, y: 0 },
-  },
-  maskReveal: {
-    initial: { y: "100%" },
-    animate: { y: 0 },
-  },
-  subtleScale: {
-    initial: { opacity: 0, scale: 1.05 },
-    animate: { opacity: 1, scale: 1 },
-  },
-  staggerContainer: {
-    animate: {
-      transition: {
-        staggerChildren: 0.1,
-      },
+export const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
+};
+
+export const maskReveal = {
+  initial: { y: "100%" },
+  animate: { y: 0 },
+};
+
+export const subtleScale = {
+  initial: { opacity: 0, scale: 1.05 },
+  animate: { opacity: 1, scale: 1 },
+};
+
+export const staggerContainer = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
     },
   },
+};
+
+// Keep variants object for backward compatibility
+export const variants = {
+  fadeInUp,
+  maskReveal,
+  subtleScale,
+  staggerContainer,
 };
 
 export function useEnterVariants(direction: 'right' | 'left' | 'up' = 'up') {

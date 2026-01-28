@@ -31,7 +31,7 @@ export default function Section({
   return (
     <MotionConfig reducedMotion="user" transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}>
       <motion.section
-        className={`${bgClass} py-16 md:py-20 ${className}`.trim()}
+        className={`${bgClass} py-20 md:py-28 ${className}`.trim()}
         initial={initial}
         whileInView={whileInView}
         viewport={{ once: true, amount: 0.2 }}

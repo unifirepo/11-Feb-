@@ -116,7 +116,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="inline-flex items-center">
+            <Link href="/" className="inline-flex items-center" suppressHydrationWarning>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/unifi-assets/logo.png"

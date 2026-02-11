@@ -5,7 +5,7 @@ import { ButtonLink } from "@/src/components/ButtonLink";
 import { ArrowRight } from "lucide-react";
 import { SEO } from '@/src/components/SEO';
 import Image from 'next/image';
-import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
+import { pickUnifiPlaceholder, withBasePath } from '@/src/content/unifiAssets';
 
 const blogPosts = [
   {
@@ -115,7 +115,7 @@ export default function NewsHub() {
               <div key={index} className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex flex-col">
                 <div className="h-56 bg-gray-200 relative">
                   <img
-                    src={post.image}
+                    src={withBasePath(post.image)}
                     alt={post.title}
                     className="w-full h-full object-cover"
                     onError={(e) => {

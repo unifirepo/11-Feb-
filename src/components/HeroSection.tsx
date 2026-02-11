@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { m, COOL_EASE } from './motion';
 import Image from 'next/image';
 import { AnimatePresence } from 'framer-motion';
+import { withBasePath } from '@/src/content/unifiAssets';
 
 const ROTATE_MS = 5000;
 
@@ -45,7 +46,7 @@ export default function HeroSection() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.9, ease: COOL_EASE }}
           >
-            <Image src={slide.image} alt="Hero Background" fill priority className="object-cover" />
+            <Image src={withBasePath(slide.image)} alt="Hero Background" fill priority className="object-cover" />
           </m.div>
         </AnimatePresence>
         <div className="absolute inset-0 bg-black/35" />

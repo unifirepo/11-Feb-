@@ -6,7 +6,8 @@ import { Section } from '@/src/components/Section';
 import { ButtonLink } from '@/src/components/ButtonLink';
 import { SEO } from '@/src/components/SEO';
 import Card from '@/src/components/Card';
-import PlaceholderImage from '@/src/components/PlaceholderImage';
+import Image from 'next/image';
+import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
 import { sectors } from '@/src/content/sectors';
 
 export default function Sectors() {
@@ -17,7 +18,7 @@ export default function Sectors() {
         description="Start with your sector, then follow the pathways across platform (Cortex), fire safety (FireGuard), and energy."
       />
       {/* Hero */}
-      <Section className="min-h-[70vh] flex items-center">
+      <Section className="bg-white min-h-[70vh] flex items-center">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="grid lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-6">
@@ -43,11 +44,15 @@ export default function Sectors() {
             </div>
 
             <div className="lg:col-span-6">
-              <PlaceholderImage
-                priority
-                alt=""
-                className="aspect-[4/3] lg:aspect-[3/2] shadow-sm"
-              />
+              <div className="relative aspect-[4/3] lg:aspect-[3/2] rounded-xl overflow-hidden shadow-sm">
+                <Image
+                  src={pickUnifiPlaceholder('hero', 'sectors-hero')}
+                  alt=""
+                  fill
+                  priority
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -72,6 +77,7 @@ export default function Sectors() {
 
               const content = (
                 <Card
+                  withImage={false}
                   className={`h-full transition-shadow ${
                     href ? 'hover:shadow-md focus-within:shadow-md' : 'opacity-75'
                   }`}

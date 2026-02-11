@@ -2,16 +2,20 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { GraduationCap, Target, Shield, Zap, Building, Heart, CheckCircle, Users, ArrowRight, Globe, Award, Lightbulb } from 'lucide-react';
 import { H1, H2, H3, Body, Lead } from '@/src/components/Typography';
 import { Section } from '@/src/components/Section';
 import { ButtonLink } from '@/src/components/ButtonLink';
 import { SEO } from '@/src/components/SEO';
 import { fadeInUp, staggerContainer } from '@/src/components/motion';
+import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
 
 export default function AboutPage() {
+  const heroImage = pickUnifiPlaceholder('hero', 'about');
+
   return (
-    <main className="pt-20">
+    <main className="pt-0">
       <SEO 
         title="About Unifi.id | Our Mission, Approach & Commitment"
         description="Learn about Unifi.id, a smart building intelligence company based in Canary Wharf. We help organisations optimise estates for safety, efficiency, and net zero."
@@ -22,8 +26,17 @@ export default function AboutPage() {
         backgroundColor="blue"
         className="relative overflow-hidden min-h-[60vh] flex items-center"
       >
-        <div className="absolute inset-0 z-0 opacity-20">
-          <div className="absolute inset-0 bg-gradient-to-br from-unifi-blue via-unifi-blue-dark to-unifi-green" />
+        {/* Background image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={heroImage}
+            alt="About Unifi.id hero image"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/45" />
+          <div className="absolute inset-0 bg-gradient-to-br from-unifi-blue/35 via-transparent to-unifi-green/20" />
         </div>
         
         <div className="container relative z-10 px-6">
@@ -39,7 +52,7 @@ export default function AboutPage() {
             <motion.div variants={fadeInUp}>
               <Lead className="text-white/90 mb-8 text-2xl leading-relaxed">
                 Every building tells a story. How it's used. How it breathes. How it wastes or saves.
-                At Unifi.id, we give buildings the ability to listen, learn, and act — turning static spaces into living, intelligent environments.
+                At Unifi.id, we give buildings the ability to listen, learn, and act - turning static spaces into living, intelligent environments.
               </Lead>
             </motion.div>
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 items-center">
@@ -59,8 +72,8 @@ export default function AboutPage() {
       <Section backgroundColor="white">
         <div className="container px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <Body className="text-xl text-unifi-gray-dark leading-relaxed">
-              Unifi.id is a smart building intelligence company. We help organisations understand and optimise how people actually use their estates — delivering insights that cut costs, increase safety, strengthen compliance, and accelerate progress to net zero.
+            <Body className="text-2xl text-unifi-gray-dark leading-relaxed">
+              Unifi.id is a smart building intelligence company. We help organisations understand and optimise how people actually use their estates - delivering insights that cut costs, increase safety, strengthen compliance, and accelerate progress to net zero.
             </Body>
           </div>
         </div>
@@ -93,7 +106,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-unifi-blue h-full flex flex-col"
+                className="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-unifi-blue h-full flex flex-col unifi-card-hover"
               >
                 <div className="bg-unifi-blue/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
                   <item.icon className="w-6 h-6 text-unifi-blue" />
@@ -113,15 +126,20 @@ export default function AboutPage() {
             <div>
               <H2 className="mb-6">Who We Are</H2>
               <Body className="text-lg mb-6">
-                Unifi.id seamlessly identifies and tracks building occupants, zone by zone, using a range of detection solutions — from long-range RFID smart cards to facial recognition and device presence signals.
+                Unifi.id seamlessly identifies and tracks building occupants, zone by zone, using a range of detection solutions - from long-range RFID smart cards to facial recognition and device presence signals.
               </Body>
               <Body className="text-lg">
                 Our primary technology, the proprietary Unifi.id RFID smart card, integrates with existing access systems while providing powerful real-time occupancy data.
               </Body>
             </div>
-            <div className="bg-unifi-gray rounded-3xl p-8 aspect-video flex items-center justify-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-unifi-blue/20 to-unifi-green/20" />
-              <Users className="w-24 h-24 text-unifi-blue relative z-10" />
+            <div className="rounded-3xl aspect-video relative overflow-hidden shadow-sm">
+              <Image
+                src="/unifi-assets/corporate/photo-1521737711867-e3b97375f902.webp"
+                alt="Unifi.id team collaborating"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-black/15" />
             </div>
           </div>
         </div>
@@ -167,7 +185,7 @@ export default function AboutPage() {
 
             <div className="mt-12 p-6 border-l-4 border-unifi-blue bg-unifi-blue/5 italic">
               <Body className="text-lg">
-                At its core, Unifi.id doesn't replace existing systems — it makes them better, unlocking new value across energy, safety, compliance, and experience.
+                At its core, Unifi.id doesn't replace existing systems - it makes them better, unlocking new value across energy, safety, compliance, and experience.
               </Body>
             </div>
           </div>
@@ -202,7 +220,7 @@ export default function AboutPage() {
           <div className="max-w-3xl mx-auto text-center">
             <H2 className="text-white mb-8">Our Principle</H2>
             <Body className="text-white/90 text-xl mb-8 leading-relaxed">
-              We've never believed the answer is "there's an app for everything." Not everyone can — or will — engage with apps. Instead, Unifi.id creates invisible intelligence: systems that work for everyone, in the background, automatically.
+              We've never believed the answer is "there's an app for everything." Not everyone can - or will - engage with apps. Instead, Unifi.id creates invisible intelligence: systems that work for everyone, in the background, automatically.
             </Body>
             <Body className="text-white/80 text-lg">
               With our technology and partners, we deliver the digital-first foundation for the smart buildings of tomorrow.
@@ -215,7 +233,7 @@ export default function AboutPage() {
       <Section backgroundColor="white">
         <div className="container px-6">
           <div className="bg-unifi-gray rounded-3xl p-12 text-center max-w-4xl mx-auto">
-            <H2 className="mb-6">Ready to discover how we can transform your building management?</H2>
+            <H2 className="mb-6 text-black">Ready to discover how we can transform your building management?</H2>
             <ButtonLink 
               href="/contact" 
               variant="primary"

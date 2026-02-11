@@ -2,24 +2,36 @@
 import { H1, H2, H3, Body } from "@/src/components/Typography";
 import { ButtonLink } from '@/src/components/ButtonLink';
 import { Section } from '@/src/components/Section';
+import Image from 'next/image';
 import { SEO } from '@/src/components/SEO';
+import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
 import { CheckCircle, Building2, Factory, Users, School, Leaf, Shield } from 'lucide-react';
 
 export default function EnergyClub() {
+  const heroImage = pickUnifiPlaceholder('hero', 'energy-club');
+
   return (
     <>
       <SEO
         title="Unifi.id Energy Club | Smarter Procurement. Lower Risk."
-        description="Launching 2025: Unifi.id Energy — our procurement club delivering aggregated buying power, supplier transparency, and real client savings."
+        description="Launching 2025: Unifi.id Energy - our procurement club delivering aggregated buying power, supplier transparency, and real client savings."
       />
-      <Section className="min-h-[40vh] flex items-center">
-        <div className="max-w-7xl mx-auto px-6 w-full text-center">
-          <H1 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6 leading-tight">
-            Energy Procurement. Smarter. Lower Risk. Fully Aligned.
-          </H1>
-          <Body className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Launching 2025: Unifi.id Energy — our procurement club delivering aggregated buying power, supplier transparency, and real client savings.
-          </Body>
+      <Section className="relative overflow-hidden min-h-[60vh] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <Image src={heroImage} alt="Energy Club hero image" fill priority className="object-cover" />
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-unifi-green/15 via-transparent to-unifi-blue/15" />
+        </div>
+
+        <div className="relative z-10 w-full">
+          <div className="max-w-7xl mx-auto px-6 w-full text-center">
+            <H1 className="text-4xl md:text-5xl font-semibold text-white mb-6 leading-tight animate-fade-in-up">
+              Energy Procurement. Smarter. Lower Risk. Fully Aligned.
+            </H1>
+            <Body className="text-lg md:text-xl text-white/85 max-w-3xl mx-auto animate-fade-in-up">
+              Launching 2025: Unifi.id Energy - our procurement club delivering aggregated buying power, supplier transparency, and real client savings.
+            </Body>
+          </div>
         </div>
       </Section>
 
@@ -29,12 +41,12 @@ export default function EnergyClub() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { title: "Collective Buying Power", desc: "Collective corporate buying power without full aggregation lock-in." },
-              { title: "Transparent Pricing", desc: "Fully transparent market pricing — no broker conflicts." },
-              { title: "Direct Supplier Contracts", desc: "Suppliers contract directly with clients — no intermediary mark-ups." },
+              { title: "Transparent Pricing", desc: "Fully transparent market pricing - no broker conflicts." },
+              { title: "Direct Supplier Contracts", desc: "Suppliers contract directly with clients - no intermediary mark-ups." },
               { title: "Risk-Adjusted Structures", desc: "Risk-adjusted contract structures designed for long-term energy stability." },
               { title: "Exclusive Client Access", desc: "Access initially available for Unifi.id commercial clients." }
             ].map((item, i) => (
-              <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex gap-4">
+              <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex gap-4 animate-fade-in-up">
                 <CheckCircle className="w-6 h-6 text-unifi-green flex-shrink-0 mt-1" />
                 <div>
                   <H3 className="font-bold text-gray-900 mb-2">{item.title}</H3>
@@ -60,7 +72,7 @@ export default function EnergyClub() {
                 ].map((item, i) => {
                   const Icon = item.icon;
                   return (
-                    <li key={i} className="flex gap-3 items-center">
+                    <li key={i} className="flex gap-3 items-center animate-fade-in-up">
                       <Icon className="w-8 h-8 text-unifi-blue flex-shrink-0" />
                       <Body>{item.label}</Body>
                     </li>

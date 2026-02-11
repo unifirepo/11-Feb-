@@ -19,7 +19,7 @@ export default function PeopleFirstSection() {
         </Text>
         <div className="grid md:grid-cols-3 gap-6 mb-10">
           {homeContent.peopleFirst.results.map((result, index) => (
-            <Card key={index}>
+            <Card key={index} seed={`${result.title}-${index}`} imageSrc={result.image} imageAlt={result.title}>
               <Text as="h3" variant="h3" className="mb-2">
                 {result.title}
               </Text>

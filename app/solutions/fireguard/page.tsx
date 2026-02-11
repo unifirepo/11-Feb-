@@ -2,11 +2,15 @@
 import { H1, H2, H3, Body, Lead } from "@/src/components/Typography";
 import { ButtonLink } from '@/src/components/ButtonLink';
 import { Section } from '@/src/components/Section';
-import PlaceholderImage from '@/src/components/PlaceholderImage';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer } from '@/src/components/motion';
+import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
 import { AlertTriangle, Shield, ClipboardCheck, Users, Activity, Bell } from "lucide-react";
 import { SEO } from '@/src/components/SEO';
 
 export default function SolutionsFireguard() {
+  const heroImage = pickUnifiPlaceholder('hero', 'fireguard');
   return (
     <main className="min-h-screen">
       <SEO 
@@ -14,33 +18,53 @@ export default function SolutionsFireguard() {
         description="FireGuard™ delivers proactive and verifiable fire safety compliance for estates teams. Move from reactive checks to clear control, accountability, and reporting."
       />
       {/* Hero Section */}
-      <Section className="min-h-[60vh] flex items-center bg-unifi-dark text-white">
-        <div className="max-w-7xl mx-auto px-6 w-full">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-6">
-                <AlertTriangle className="w-4 h-4 text-unifi-blue" />
-                <span className="text-xs font-bold uppercase tracking-widest">Fire Safety & Compliance</span>
-              </div>
-              <H1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
-                FireGuard™
-              </H1>
-              <Lead className="text-white/80 mb-10 max-w-2xl">
-                Proactive and verifiable fire safety and compliance designed for estates teams who need audit-ready evidence. Move from reactive checks to clear control, accountability, and reporting.
-              </Lead>
-              <div className="flex flex-col sm:flex-row gap-4">
+      <Section className="relative overflow-hidden min-h-[70vh] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={heroImage}
+            alt="FireGuard hero image"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-red-500/15 via-transparent to-unifi-blue/15" />
+        </div>
+
+        <div className="relative z-10 w-full">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div
+              variants={staggerContainer}
+              initial="initial"
+              animate="animate"
+              className="max-w-2xl"
+            >
+              <motion.div variants={fadeInUp}>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-6">
+                  <AlertTriangle className="w-4 h-4 text-unifi-blue" />
+                  <span className="text-xs font-bold uppercase tracking-widest text-white">Fire Safety & Compliance</span>
+                </div>
+              </motion.div>
+
+              <motion.div variants={fadeInUp}>
+                <H1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
+                  FireGuard™
+                </H1>
+              </motion.div>
+
+              <motion.div variants={fadeInUp}>
+                <Lead className="text-white/85 mb-10">
+                  Proactive and verifiable fire safety and compliance designed for estates teams who need audit-ready evidence. Move from reactive checks to clear control, accountability, and reporting.
+                </Lead>
+              </motion.div>
+
+              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
                 <ButtonLink href="/contact" variant="primary">Discuss FireGuard</ButtonLink>
                 <ButtonLink href="/platform/overview" variant="outline" className="text-white border-white hover:bg-white hover:text-black">
                   See Cortex™
                 </ButtonLink>
-              </div>
-            </div>
-            <div className="lg:col-span-5">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-unifi-blue/20 blur-3xl rounded-full"></div>
-                <PlaceholderImage className="relative aspect-square rounded-2xl shadow-2xl border border-white/10" label="FireGuard Monitoring Dashboard" />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </Section>
@@ -86,7 +110,14 @@ export default function SolutionsFireguard() {
             </div>
             <div className="relative">
               <div className="absolute -inset-4 bg-gray-100 rounded-3xl -rotate-2"></div>
-              <PlaceholderImage className="relative aspect-[4/3] rounded-2xl shadow-xl" label="Traditional vs. FireGuard Comparison" />
+              <div className="relative aspect-[4/3] rounded-2xl shadow-xl overflow-hidden">
+                <Image
+                  src="/unifi-assets/canary/photo-1694902304056-b4ba1412d7b7.webp"
+                  alt="Fire safety monitoring"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -129,37 +160,37 @@ export default function SolutionsFireguard() {
       </Section>
 
       {/* Value Proposition */}
-      <Section className="bg-gray-900 text-white">
+      <Section className="bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <H2 className="text-3xl font-bold mb-6 text-white">Why FireGuard™ is Different</H2>
+              <H2 className="text-3xl font-bold mb-6">Why FireGuard™ is Different</H2>
               <div className="space-y-8">
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/20 flex items-center justify-center text-unifi-blue font-bold">01</div>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/10 flex items-center justify-center text-unifi-blue font-bold">01</div>
                   <div>
-                    <H3 className="text-lg font-bold mb-2 text-white">Continuous Monitoring</H3>
-                    <Body className="text-white/60">We don't just check once a year. We monitor your fire safety systems 24/7, ensuring they are always ready.</Body>
+                    <H3 className="text-lg font-bold mb-2">Continuous Monitoring</H3>
+                    <Body className="text-gray-600">We don't just check once a year. We monitor your fire safety systems 24/7, ensuring they are always ready.</Body>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/20 flex items-center justify-center text-unifi-blue font-bold">02</div>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/10 flex items-center justify-center text-unifi-blue font-bold">02</div>
                   <div>
-                    <H3 className="text-lg font-bold mb-2 text-white">Integrated Intelligence</H3>
-                    <Body className="text-white/60">FireGuard™ links with security and occupancy data to provide a complete picture of building safety during an incident.</Body>
+                    <H3 className="text-lg font-bold mb-2">Integrated Intelligence</H3>
+                    <Body className="text-gray-600">FireGuard™ links with security and occupancy data to provide a complete picture of building safety during an incident.</Body>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/20 flex items-center justify-center text-unifi-blue font-bold">03</div>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/10 flex items-center justify-center text-unifi-blue font-bold">03</div>
                   <div>
-                    <H3 className="text-lg font-bold mb-2 text-white">Defensible Compliance</H3>
-                    <Body className="text-white/60">Move beyond tick-box exercises to a state of demonstrable, data-led compliance that reduces insurance risk.</Body>
+                    <H3 className="text-lg font-bold mb-2">Defensible Compliance</H3>
+                    <Body className="text-gray-600">Move beyond tick-box exercises to a state of demonstrable, data-led compliance that reduces insurance risk.</Body>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="bg-white/5 rounded-3xl p-8 border border-white/10">
-              <H3 className="text-2xl font-bold mb-6 text-white">FireGuard™ Deliverables</H3>
+            <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm">
+              <H3 className="text-2xl font-bold mb-6">FireGuard™ Deliverables</H3>
               <ul className="space-y-4">
                 {[
                   "Real-time fire system health dashboard",
@@ -174,7 +205,7 @@ export default function SolutionsFireguard() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-white/80">{item}</span>
+                    <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
               </ul>

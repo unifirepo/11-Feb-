@@ -2,44 +2,40 @@
 import { H1, H2, H3, Body } from "@/src/components/Typography";
 import { ButtonLink } from '@/src/components/ButtonLink';
 import { Section } from '@/src/components/Section';
+import Image from 'next/image';
 import { SEO } from '@/src/components/SEO';
+import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
 import { CheckCircle, PoundSterling, CreditCard, TrendingUp, FileText } from 'lucide-react';
 
 export default function FundingOptions() {
+  const heroImage = pickUnifiPlaceholder('hero', 'energy-funding');
+
   return (
     <>
       <SEO
         title="Funding Options | Energy Upgrades Without Upfront Capital"
         description="Multiple funding routes available to support your building upgrade programme with zero upfront capital required."
       />
-      <Section className="min-h-[40vh] flex items-center">
-        <div className="max-w-7xl mx-auto px-6 w-full text-center">
-          <div className="flex justify-center mb-6">
-            <div className="w-16 h-16 rounded-xl bg-unifi-green/10 flex items-center justify-center">
-              <PoundSterling className="w-8 h-8 text-unifi-green" />
-            </div>
-          </div>
-          <H1 className="text-5xl md:text-6xl font-semibold text-gray-900 mb-6 leading-tight">
-            Funding Options
-          </H1>
-          <Body className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Multiple funding routes available to support your building upgrade programme with zero upfront capital required.
-          </Body>
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            <div className="bg-white p-6 rounded-xl border border-gray-200 flex items-start gap-4">
-              <CreditCard className="w-12 h-12 text-unifi-blue flex-shrink-0" />
-              <div>
-                <H3 className="text-lg font-bold text-gray-900 mb-1">Zero Upfront Costs</H3>
-                <Body>Preserve capital for core business operations</Body>
+      <Section className="relative overflow-hidden min-h-[70vh] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <Image src={heroImage} alt="Energy funding options hero image" fill priority className="object-cover" />
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-unifi-green/15 via-transparent to-unifi-blue/15" />
+        </div>
+
+        <div className="relative z-10 w-full">
+          <div className="max-w-7xl mx-auto px-6 w-full text-center">
+            <div className="flex justify-center mb-6 animate-fade-in-up">
+              <div className="w-16 h-16 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                <PoundSterling className="w-8 h-8 text-white" />
               </div>
             </div>
-            <div className="bg-white p-6 rounded-xl border border-gray-200 flex items-start gap-4">
-              <TrendingUp className="w-12 h-12 text-unifi-green flex-shrink-0" />
-              <div>
-                <H3 className="text-lg font-bold text-gray-900 mb-1">Flexible Terms</H3>
-                <Body>Repayment schedules aligned with energy savings</Body>
-              </div>
-            </div>
+            <H1 className="text-5xl md:text-6xl font-semibold text-white mb-6 leading-tight animate-fade-in-up">
+              Funding Options
+            </H1>
+            <Body className="text-lg md:text-xl text-white/85 max-w-3xl mx-auto mb-10 animate-fade-in-up">
+              Multiple funding routes available to support your building upgrade programme with zero upfront capital required.
+            </Body>
           </div>
         </div>
       </Section>
@@ -48,7 +44,7 @@ export default function FundingOptions() {
         <div className="max-w-7xl mx-auto px-6">
           <H2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Available Funding Models</H2>
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 animate-fade-in-up">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-lg bg-unifi-green/10 flex items-center justify-center">
                   <PoundSterling className="w-6 h-6 text-unifi-green" />
@@ -84,7 +80,7 @@ export default function FundingOptions() {
                   const Icon = item.icon;
                   const iconColors = ["bg-unifi-blue/10 text-unifi-blue", "bg-unifi-green/10 text-unifi-green", "bg-purple-100 text-purple-600", "bg-orange-100 text-orange-600"];
                   return (
-                    <div key={i} className="bg-white p-4 rounded-xl border border-gray-100 flex items-start gap-4">
+                    <div key={i} className="bg-white p-4 rounded-xl border border-gray-100 flex items-start gap-4 animate-fade-in-up">
                       <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${iconColors[i]}`}>
                         <Icon className="w-5 h-5" />
                       </div>

@@ -11,7 +11,7 @@ export default function Privacy() {
         title="Privacy Policy"
         description="How Unifi.id collects, uses, and protects your personal information. GDPR-compliant data handling for building intelligence services."
       />
-      <Section className="min-h-[40vh] flex items-center">
+      <Section className="bg-white min-h-[40vh] flex items-center">
         <div className="max-w-4xl mx-auto px-6">
           <H1 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6 leading-tight">
             Privacy Policy (GDPR-Compliant)
@@ -89,7 +89,7 @@ export default function Privacy() {
             <Body className="text-gray-700">
               For privacy enquiries or to exercise your rights, contact us at{' '}
               <a href="mailto:privacy@unifi.id" className="text-unifi-blue hover:underline font-medium">privacy@unifi.id</a>
-              . Unifi.id, Limited — Canary Wharf, London.
+              . Unifi.id, Limited - Canary Wharf, London.
             </Body>
           </div>
 

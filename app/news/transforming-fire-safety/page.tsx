@@ -2,49 +2,59 @@
 import { H1, H2, H3, Body, Lead } from "@/src/components/Typography";
 import { Section } from "@/src/components/Section";
 import { ButtonLink } from "@/src/components/ButtonLink";
-import PlaceholderImage from "@/src/components/PlaceholderImage";
 import { ArrowLeft, Calendar, User, Tag } from "lucide-react";
 import { SEO } from '@/src/components/SEO';
+import Image from 'next/image';
+import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
 
 export default function BlogPost() {
+  const heroImage = pickUnifiPlaceholder('hero', 'news-transforming-fire-safety');
+
   return (
     <main className="min-h-screen">
       <SEO 
         title="Transforming Fire Safety with Real-Time Evacuation Intelligence | Unifi.id Insights"
         description="Fire drills and evacuation protocols are often treated as tick-box exercises. Discover how live data and instant insight can transform fire safety."
       />
-      <Section className="bg-gray-50 pt-32">
-        <div className="max-w-4xl mx-auto px-6">
-          <ButtonLink href="/news" variant="outline" size="sm" className="mb-8">
-            <ArrowLeft className="w-4 h-4 mr-2" /> Back to News
-          </ButtonLink>
-          
-          <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 mb-6">
-            <div className="flex items-center gap-2">
-              <Calendar className="w-4 h-4" />
-              <span>January 25, 2026</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <User className="w-4 h-4" />
-              <span>Unifi.id Team</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Tag className="w-4 h-4" />
-              <span>Fire Safety</span>
-            </div>
-          </div>
+      <Section className="relative overflow-hidden min-h-[65vh] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <Image src={heroImage} alt="News article hero image" fill priority className="object-cover" />
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-unifi-green/10 via-transparent to-unifi-blue/15" />
+        </div>
 
-          <H1 className="text-4xl md:text-5xl font-bold mb-8">Transforming Fire Safety with Real-Time Evacuation Intelligence</H1>
-          <Lead className="mb-12">
-            Fire drills and evacuation protocols are often treated as tick-box exercises — necessary but not always effective. In reality, emergencies demand live data and instant insight.
-          </Lead>
+        <div className="relative z-10 w-full pt-24">
+          <div className="max-w-4xl mx-auto px-6">
+            
+                      <ButtonLink href="/news" variant="outline" size="sm" className="mb-8 text-white border-white hover:bg-white hover:text-black">
+                        <ArrowLeft className="w-4 h-4 mr-2" /> Back to News
+                      </ButtonLink>
+                      
+                      <div className="flex flex-wrap items-center gap-6 text-sm text-white/70 mb-6">
+                        <div className="flex items-center gap-2">
+                          <Calendar className="w-4 h-4" />
+                          <span>January 25, 2026</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <User className="w-4 h-4" />
+                          <span>Unifi.id Team</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Tag className="w-4 h-4" />
+                          <span>Fire Safety</span>
+                        </div>
+                      </div>
+            
+                      <H1 className="text-4xl md:text-5xl font-bold mb-8 text-white">Transforming Fire Safety with Real-Time Evacuation Intelligence</H1>
+                      <Lead className="mb-12 text-white/85">
+                        Fire drills and evacuation protocols are often treated as tick-box exercises - necessary but not always effective. In reality, emergencies demand live data and instant insight.
+                      </Lead>
+          </div>
         </div>
       </Section>
 
       <Section>
         <div className="max-w-3xl mx-auto px-6">
-          <PlaceholderImage className="aspect-video rounded-2xl mb-12 shadow-lg" label="Fire Safety Intelligence" />
-          
           <div className="prose prose-lg max-w-none">
             <Body className="mb-6">
               When a fire alarm sounds in a large commercial building, the primary goal is simple: get everyone out safely. However, the execution of this goal is often hampered by a lack of information. Who is still in the building? Where are they? Are they moving toward an exit?
@@ -87,7 +97,7 @@ export default function BlogPost() {
               <Body className="text-white/70 mb-8">
                 Learn how real-time evacuation intelligence can transform your fire safety protocols.
               </Body>
-              <ButtonLink href="/solutions/fireguard" variant="primary">Explore FireGuard</ButtonLink>
+              <ButtonLink href="/solutions/fireguard" variant="secondary" className="bg-white border-white text-unifi-dark hover:bg-white/90">Explore FireGuard</ButtonLink>
             </div>
           </div>
         </div>

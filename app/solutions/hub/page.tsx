@@ -1,9 +1,13 @@
 'use client';
 import { H1, H2, H3 } from "@/src/components/Typography";
 import { useState } from "react";
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { Section } from "@/src/components/Section";
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { SEO } from "@/src/components/SEO";
+import { fadeInUp, staggerContainer } from '@/src/components/motion';
+import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
 import { 
   Shield, AlertTriangle, Users, TrendingUp, Brain, Zap, 
   Radio, Footprints, Eye, Wifi, Layers, Network, Cpu,
@@ -23,6 +27,7 @@ export default function SolutionsHub() {
   const [solutionsSubTab, setSolutionsSubTab] = useState<SolutionsSubTab>("overview");
   const [detectionSubTab, setDetectionSubTab] = useState<DetectionSubTab>("overview");
   const [fireSubTab, setFireSubTab] = useState<FireSubTab>("overview");
+  const heroImage = pickUnifiPlaceholder('hero', 'solutions-hub');
 
   return (
     <main className="min-h-screen">
@@ -31,12 +36,37 @@ export default function SolutionsHub() {
         description="Explore Unifi.id's suite of modular technologies designed to make your building safer, smarter, and more efficient. From occupancy intelligence to fire safety."
       />
       {/* Hero Section */}
-      <Section className="bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <H1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Solutions Hub</H1>
-          <p className="text-lg md:text-xl text-gray-600">
-            The Unifi.id Solutions Hub brings together a suite of modular technologies designed to make your building safer, smarter, and more efficient. Each solution delivers immediate value — and when combined, forms a powerful ecosystem managed through LiveView and powered by Cortex™, our central intelligence layer.
-          </p>
+      <Section className="relative overflow-hidden min-h-[70vh] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={heroImage}
+            alt="Solutions hub hero image"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/55" />
+          <div className="absolute inset-0 bg-gradient-to-br from-unifi-blue/25 via-transparent to-unifi-green/15" />
+        </div>
+
+        <div className="relative z-10 w-full">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div
+              variants={staggerContainer}
+              initial="initial"
+              animate="animate"
+              className="max-w-2xl"
+            >
+              <motion.div variants={fadeInUp}>
+                <H1 className="text-4xl md:text-5xl font-bold text-white mb-6">Solutions Hub</H1>
+              </motion.div>
+              <motion.div variants={fadeInUp}>
+                <p className="text-lg md:text-xl text-white/90">
+                  The Unifi.id Solutions Hub brings together a suite of modular technologies designed to make your building safer, smarter, and more efficient. Each solution delivers immediate value - and when combined, forms a powerful ecosystem managed through LiveView and powered by Cortex™, our central intelligence layer.
+                </p>
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
       </Section>
 
@@ -46,30 +76,30 @@ export default function SolutionsHub() {
           <div className="flex flex-wrap gap-4 mb-8 border-b border-gray-200">
             <button
               onClick={() => setMainTab("solutions")}
-              className={`px-6 py-3 font-semibold transition-colors border-b-2 ${
+              className={`px-6 py-3 font-semibold transition-colors border-b-2 rounded-t-lg ${
                 mainTab === "solutions"
-                  ? "border-primary text-primary"
-                  : "border-transparent text-gray-600 hover:text-gray-900"
+                  ? "border-primary text-gray-900 bg-gray-200/70"
+                  : "border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-100/70"
               }`}
             >
               Smart Building Solutions
             </button>
             <button
               onClick={() => setMainTab("detection")}
-              className={`px-6 py-3 font-semibold transition-colors border-b-2 ${
+              className={`px-6 py-3 font-semibold transition-colors border-b-2 rounded-t-lg ${
                 mainTab === "detection"
-                  ? "border-primary text-primary"
-                  : "border-transparent text-gray-600 hover:text-gray-900"
+                  ? "border-primary text-gray-900 bg-gray-200/70"
+                  : "border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-100/70"
               }`}
             >
               Detection Technologies
             </button>
             <button
               onClick={() => setMainTab("fire")}
-              className={`px-6 py-3 font-semibold transition-colors border-b-2 ${
+              className={`px-6 py-3 font-semibold transition-colors border-b-2 rounded-t-lg ${
                 mainTab === "fire"
-                  ? "border-primary text-primary"
-                  : "border-transparent text-gray-600 hover:text-gray-900"
+                  ? "border-primary text-gray-900 bg-gray-200/70"
+                  : "border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-100/70"
               }`}
             >
               Fire Safety Systems
@@ -94,7 +124,7 @@ function SolutionsTab({ subTab, setSubTab }: { subTab: SolutionsSubTab; setSubTa
       <div className="mb-8">
         <H2 className="text-3xl font-bold text-gray-900 mb-4">Intelligence That Works Across Your Estate</H2>
         <p className="text-gray-700 mb-4">
-          Every building is alive with movement, data, and systems — but without intelligence, they work in isolation. Unifi.id's Smart Building Solutions bring them together, transforming raw signals into actionable insights for safety, efficiency, and performance.
+          Every building is alive with movement, data, and systems - but without intelligence, they work in isolation. Unifi.id's Smart Building Solutions bring them together, transforming raw signals into actionable insights for safety, efficiency, and performance.
         </p>
         <p className="text-gray-700 font-semibold mb-4">We've organised our solutions by the challenges you face:</p>
         <ul className="space-y-2 mb-6">
@@ -120,7 +150,7 @@ function SolutionsTab({ subTab, setSubTab }: { subTab: SolutionsSubTab; setSubTa
           </li>
         </ul>
         <p className="text-gray-700 italic">
-          This is building intelligence, applied with purpose — tailored to the needs of your sector, and proven to deliver results.
+          This is building intelligence, applied with purpose - tailored to the needs of your sector, and proven to deliver results.
         </p>
       </div>
 
@@ -137,10 +167,10 @@ function SolutionsTab({ subTab, setSubTab }: { subTab: SolutionsSubTab; setSubTa
           <button
             key={tab.id}
             onClick={() => setSubTab(tab.id)}
-            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+            className={`px-4 py-2 rounded-lg font-medium transition-colors border ${
               subTab === tab.id
-                ? "bg-primary text-white"
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                ? "bg-gray-200/80 text-gray-900 border-gray-300"
+                : "bg-white text-gray-700 border-gray-200 hover:bg-gray-100"
             }`}
           >
             {tab.label}
@@ -538,10 +568,10 @@ function DetectionTab({ subTab, setSubTab }: { subTab: DetectionSubTab; setSubTa
           <button
             key={tab.id}
             onClick={() => setSubTab(tab.id)}
-            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+            className={`px-4 py-2 rounded-lg font-medium transition-colors border ${
               subTab === tab.id
-                ? "bg-primary text-white"
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                ? "bg-gray-200/80 text-gray-900 border-gray-300"
+                : "bg-white text-gray-700 border-gray-200 hover:bg-gray-100"
             }`}
           >
             {tab.label}

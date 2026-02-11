@@ -1,15 +1,20 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { Section } from '@/src/components/Section';
 import Text from '@/src/components/Text';
 import { ButtonLink } from '@/src/components/ButtonLink';
 import Card from '@/src/components/Card';
 import { SEO } from '@/src/components/SEO';
+import { fadeInUp, staggerContainer } from '@/src/components/motion';
+import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
 import { Cloud, Cpu, Lock, Database, GitBranch, Zap, Building2, Network, Target } from 'lucide-react';
 
 export default function PlatformOverviewPage() {
   const [activeTab, setActiveTab] = useState('modular');
+  const heroImage = pickUnifiPlaceholder('hero', 'cortex-platform');
 
   return (
     <main className="min-h-screen">
@@ -18,44 +23,77 @@ export default function PlatformOverviewPage() {
         description="Discover Cortex™, the intelligence layer behind Unifi.id's mission to transform buildings into adaptive, responsive environments. Gain total operational awareness."
       />
       {/* Hero Section */}
+      <Section className="relative overflow-hidden min-h-[70vh] flex items-center">
+        {/* Background image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={heroImage}
+            alt="Cortex platform hero image"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+
+        <div className="relative z-10 w-full">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div
+              variants={staggerContainer}
+              initial="initial"
+              animate="animate"
+              className="max-w-2xl"
+            >
+              <motion.div variants={fadeInUp}>
+                <Text as="h1" variant="h1" className="mb-4 text-white">
+                  Introducing Cortex™
+                </Text>
+              </motion.div>
+
+              <motion.div variants={fadeInUp}>
+                <Text variant="lead" className="text-white/90 font-semibold mb-8">
+                  The Real-Time Intelligence Engine for Smart Buildings
+                </Text>
+              </motion.div>
+
+              <motion.div variants={fadeInUp}>
+                <Text variant="body" className="text-lg text-white/90">
+                  Smart organisations don't just manage buildings - they optimise them around the people who bring them to life.
+                </Text>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Intro (moved outside hero) */}
       <Section>
-        <div className="max-w-4xl mx-auto px-6 text-center py-16">
-          <Text as="h1" variant="h1" className="mb-4">
-            Introducing Cortex™
-          </Text>
-          <Text variant="lead" className="text-blue-600 font-semibold mb-8">
-            The Real-Time Intelligence Engine for Smart Buildings
-          </Text>
-          <Text variant="body" className="text-lg mb-6">
-            Smart organisations don't just manage buildings—they optimise them around the people who bring them to life.
-          </Text>
+        <div className="max-w-4xl mx-auto px-6 py-14">
           <Text variant="body" className="mb-6">
-            Cortex™ is the intelligence layer behind Unifi.id's mission to transform buildings from static spaces into adaptive, responsive environments. It connects the dots between systems and sensors—occupancy, lighting, energy, fire safety, compliance, and more—turning raw data into meaningful, real-time insight.
+            Cortex™ is the intelligence layer behind Unifi.id's mission to transform buildings from static spaces into adaptive, responsive environments. It connects the dots between systems and sensors - occupancy, lighting, energy, fire safety, compliance, and more - turning raw data into meaningful, real-time insight.
           </Text>
-          <div className="mt-8">
-            <Text variant="body" className="font-semibold mb-4">
-              With Cortex™, leadership teams gain total operational awareness:
-            </Text>
-            <div className="text-left max-w-2xl mx-auto space-y-2">
-              <Text variant="body">• Who is in the building and where</Text>
-              <Text variant="body">• Whether safety protocols are being followed</Text>
-              <Text variant="body">• Which spaces are under- or over-utilised</Text>
-              <Text variant="body">• Where energy is being wasted or saved</Text>
-              <Text variant="body">• What actions are needed to meet compliance and ESG targets</Text>
-            </div>
+          <Text variant="body" className="font-semibold mb-4">
+            With Cortex™, leadership teams gain total operational awareness:
+          </Text>
+          <div className="space-y-2">
+            <Text variant="body">• Who is in the building and where</Text>
+            <Text variant="body">• Whether safety protocols are being followed</Text>
+            <Text variant="body">• Which spaces are under- or over-utilised</Text>
+            <Text variant="body">• Where energy is being wasted or saved</Text>
+            <Text variant="body">• What actions are needed to meet compliance and ESG targets</Text>
           </div>
         </div>
       </Section>
 
       {/* Cortex Capabilities */}
       <Section className="bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-screen-2xl mx-auto px-6">
           <Text as="h2" variant="h2" className="text-center mb-12">
             Cortex™ Capabilities
           </Text>
           
-          <div className="grid md:grid-cols-5 gap-6">
-            <Card className="border-t-4 border-blue-500">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-6">
+            <Card className="border-t-4 border-blue-500" seed="Live Occupancy Intelligence" imageSrc="/unifi-assets/canary/photo-1692890528796-4b3fb17ec33b.webp" imageAlt="Live occupancy intelligence">
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <span className="text-blue-600 text-xl">👥</span>
               </div>
@@ -67,7 +105,7 @@ export default function PlatformOverviewPage() {
               </Text>
             </Card>
 
-            <Card className="border-t-4 border-orange-500">
+            <Card className="border-t-4 border-orange-500" seed="Risk & Security" imageSrc="/unifi-assets/corporate/photo-1600880292203-757bb62b4baf.webp" imageAlt="Risk and security">
               <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <span className="text-orange-600 text-xl">🛡️</span>
               </div>
@@ -79,7 +117,7 @@ export default function PlatformOverviewPage() {
               </Text>
             </Card>
 
-            <Card className="border-t-4 border-red-500">
+            <Card className="border-t-4 border-red-500" seed="Fire Safety Compliance" imageSrc="/unifi-assets/canary/photo-1694902304056-b4ba1412d7b7.webp" imageAlt="Fire safety compliance">
               <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <span className="text-red-600 text-xl">🔥</span>
               </div>
@@ -91,7 +129,7 @@ export default function PlatformOverviewPage() {
               </Text>
             </Card>
 
-            <Card className="border-t-4 border-green-500">
+            <Card className="border-t-4 border-green-500" seed="Energy Performance" imageSrc="/unifi-assets/canary/photo-1696074010622-65271d2f423b.webp" imageAlt="Energy performance">
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <span className="text-green-600 text-xl">⚡</span>
               </div>
@@ -103,7 +141,7 @@ export default function PlatformOverviewPage() {
               </Text>
             </Card>
 
-            <Card className="border-t-4 border-purple-500">
+            <Card className="border-t-4 border-purple-500 sm:col-span-2 sm:max-w-[520px] sm:mx-auto xl:col-span-1 xl:max-w-none" seed="Operational Insights" imageSrc="/unifi-assets/corporate/photo-1590650046871-92c887180603.webp" imageAlt="Operational insights">
               <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <span className="text-purple-600 text-xl">📊</span>
               </div>
@@ -120,7 +158,7 @@ export default function PlatformOverviewPage() {
 
       {/* Tabbed Content */}
       <Section>
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6 pb-6">
           {/* Tab Navigation */}
           <div className="flex flex-wrap gap-2 mb-12 border-b border-gray-200">
             {[
@@ -168,11 +206,23 @@ export default function PlatformOverviewPage() {
                 </Text>
                 <div className="grid md:grid-cols-3 gap-6">
                   {[
-                    { title: 'Cortex™', desc: 'Central intelligence platform that processes all building data' },
-                    { title: 'Pulse', desc: 'Aggregator of detection technologies data into clear, zone-by-zone occupancy audits' },
-                    { title: 'LiveView', desc: 'Live building visualization and control interface' }
+                    {
+                      title: 'Cortex™',
+                      desc: 'Central intelligence platform that processes all building data',
+                      image: '/unifi-assets/corporate/photo-1556761175-4b46a572b786.webp',
+                    },
+                    {
+                      title: 'Pulse',
+                      desc: 'Aggregator of detection technologies data into clear, zone-by-zone occupancy audits',
+                      image: '/unifi-assets/corporate/photo-1600880292203-757bb62b4baf.webp',
+                    },
+                    {
+                      title: 'LiveView',
+                      desc: 'Live building visualization and control interface',
+                      image: '/unifi-assets/canary/photo-1692890528796-4b3fb17ec33b.webp',
+                    },
                   ].map((item) => (
-                    <Card key={item.title}>
+                    <Card key={item.title} seed={item.title} imageSrc={item.image} imageAlt={item.title}>
                       <Text as="h3" variant="h3" className="mb-2">{item.title}</Text>
                       <Text variant="body">{item.desc}</Text>
                     </Card>
@@ -193,12 +243,12 @@ export default function PlatformOverviewPage() {
                 </Text>
                 <div className="grid md:grid-cols-4 gap-6">
                   {[
-                    { title: 'Sense', desc: 'Multi-sensor environmental monitoring' },
-                    { title: 'Flow', desc: 'People counting and movement tracking' },
-                    { title: 'Cognito', desc: 'AI-powered computer vision analytics' },
-                    { title: 'Echo', desc: 'Acoustic monitoring and sound analysis' }
+                    { title: 'Sense', desc: 'Multi-sensor environmental monitoring', image: '/unifi-assets/card-7.webp' },
+                    { title: 'Flow', desc: 'People counting and movement tracking', image: '/unifi-assets/card-8.webp' },
+                    { title: 'Cognito', desc: 'AI-powered computer vision analytics', image: '/unifi-assets/card-9.webp' },
+                    { title: 'Echo', desc: 'Acoustic monitoring and sound analysis', image: '/unifi-assets/card-10.webp' },
                   ].map((item) => (
-                    <Card key={item.title}>
+                    <Card key={item.title} seed={item.title} imageSrc={item.image} imageAlt={item.title}>
                       <Text as="h3" variant="h3" className="mb-2">{item.title}</Text>
                       <Text variant="body">{item.desc}</Text>
                     </Card>
@@ -219,12 +269,12 @@ export default function PlatformOverviewPage() {
                 </Text>
                 <div className="grid md:grid-cols-4 gap-6">
                   {[
-                    { title: 'SafeGuard', desc: 'Comprehensive security monitoring' },
-                    { title: 'FireSafe', desc: 'Advanced fire prevention and detection' },
-                    { title: 'Predict', desc: 'Occupancy forecasting and planning' },
-                    { title: 'Insights', desc: 'Executive reporting and analytics' }
+                    { title: 'SafeGuard', desc: 'Comprehensive security monitoring', image: '/unifi-assets/card-11.webp' },
+                    { title: 'FireSafe', desc: 'Advanced fire prevention and detection', image: '/unifi-assets/card-12.webp' },
+                    { title: 'Predict', desc: 'Occupancy forecasting and planning', image: '/unifi-assets/canary/photo-1692890528796-4b3fb17ec33b.webp' },
+                    { title: 'Insights', desc: 'Executive reporting and analytics', image: '/unifi-assets/corporate/photo-1590650046871-92c887180603.webp' },
                   ].map((item) => (
-                    <Card key={item.title}>
+                    <Card key={item.title} seed={item.title} imageSrc={item.image} imageAlt={item.title}>
                       <Text as="h3" variant="h3" className="mb-2">{item.title}</Text>
                       <Text variant="body">{item.desc}</Text>
                     </Card>
@@ -244,12 +294,12 @@ export default function PlatformOverviewPage() {
                   Pre-integrated solutions combining multiple modules for specific industry needs
                 </Text>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <Card className="border-t-4 border-red-500">
+                  <Card className="border-t-4 border-red-500" seed="FireGuard" imageSrc="/unifi-assets/card-4.webp" imageAlt="FireGuard">
                     <Text as="h3" variant="h3" className="mb-2">FireGuard</Text>
                     <Text variant="body" className="mb-4">Complete fire safety ecosystem combining detection, prevention, and emergency response capabilities</Text>
                     <ButtonLink href="/solutions/fireguard" variant="outline">Learn More</ButtonLink>
                   </Card>
-                  <Card className="border-t-4 border-blue-500">
+                  <Card className="border-t-4 border-blue-500" seed="InsureLink" imageSrc="/unifi-assets/card-6.webp" imageAlt="InsureLink">
                     <Text as="h3" variant="h3" className="mb-2">InsureLink</Text>
                     <Text variant="body" className="mb-4">Insurance-integrated platform that reduces premiums through demonstrated risk management</Text>
                     <ButtonLink href="/solutions/insurelink" variant="outline">Learn More</ButtonLink>
@@ -276,7 +326,7 @@ export default function PlatformOverviewPage() {
               </div>
 
               <div className="grid md:grid-cols-3 gap-6">
-                <Card className="border-l-4 border-blue-500">
+                <Card className="border-l-4 border-blue-500" withImage={false}>
                   <div className="flex items-center gap-3 mb-4">
                     <Cloud className="h-8 w-8 text-blue-600" />
                     <Text as="h3" variant="h3">Cloud-Native Infrastructure</Text>
@@ -288,7 +338,7 @@ export default function PlatformOverviewPage() {
                     <li>• Unlimited scalability for any portfolio size</li>
                   </ul>
                 </Card>
-                <Card className="border-l-4 border-green-500">
+                <Card className="border-l-4 border-green-500" withImage={false}>
                   <div className="flex items-center gap-3 mb-4">
                     <Cpu className="h-8 w-8 text-green-600" />
                     <Text as="h3" variant="h3">AI & Data Processing</Text>
@@ -300,7 +350,7 @@ export default function PlatformOverviewPage() {
                     <li>• Continuous learning and model optimisation</li>
                   </ul>
                 </Card>
-                <Card className="border-l-4 border-purple-500">
+                <Card className="border-l-4 border-purple-500" withImage={false}>
                   <div className="flex items-center gap-3 mb-4">
                     <Lock className="h-8 w-8 text-purple-600" />
                     <Text as="h3" variant="h3">Security & Compliance</Text>
@@ -314,31 +364,42 @@ export default function PlatformOverviewPage() {
                 </Card>
               </div>
 
-              <Card className="bg-slate-50">
+              <div>
                 <Text as="h3" variant="h3" className="mb-6 text-center">Platform Architecture Overview</Text>
-                <div className="grid md:grid-cols-4 gap-6">
-                  <div className="text-center">
-                    <Database className="h-10 w-10 text-blue-600 mx-auto mb-3" />
-                    <Text as="h4" variant="h3" className="mb-2">Data Layer</Text>
-                    <Text variant="body" className="text-sm">Real-time data ingestion and processing</Text>
-                  </div>
-                  <div className="text-center">
-                    <Cpu className="h-10 w-10 text-green-600 mx-auto mb-3" />
-                    <Text as="h4" variant="h3" className="mb-2">AI Engine</Text>
-                    <Text variant="body" className="text-sm">Machine learning and analytics</Text>
-                  </div>
-                  <div className="text-center">
-                    <GitBranch className="h-10 w-10 text-purple-600 mx-auto mb-3" />
-                    <Text as="h4" variant="h3" className="mb-2">API Gateway</Text>
-                    <Text variant="body" className="text-sm">Integration and orchestration</Text>
-                  </div>
-                  <div className="text-center">
-                    <Zap className="h-10 w-10 text-orange-600 mx-auto mb-3" />
-                    <Text as="h4" variant="h3" className="mb-2">Application Layer</Text>
-                    <Text variant="body" className="text-sm">User interfaces and experiences</Text>
-                  </div>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <Card className="bg-slate-50" withImage={false}>
+                    <div className="text-center">
+                      <Database className="h-10 w-10 text-blue-600 mx-auto mb-3" />
+                      <Text as="h4" variant="h3" className="mb-2">Data Layer</Text>
+                      <Text variant="body" className="text-sm">Real-time data ingestion and processing</Text>
+                    </div>
+                  </Card>
+
+                  <Card className="bg-slate-50" withImage={false}>
+                    <div className="text-center">
+                      <Cpu className="h-10 w-10 text-green-600 mx-auto mb-3" />
+                      <Text as="h4" variant="h3" className="mb-2">AI Engine</Text>
+                      <Text variant="body" className="text-sm">Machine learning and analytics</Text>
+                    </div>
+                  </Card>
+
+                  <Card className="bg-slate-50" withImage={false}>
+                    <div className="text-center">
+                      <GitBranch className="h-10 w-10 text-purple-600 mx-auto mb-3" />
+                      <Text as="h4" variant="h3" className="mb-2">API Gateway</Text>
+                      <Text variant="body" className="text-sm">Integration and orchestration</Text>
+                    </div>
+                  </Card>
+
+                  <Card className="bg-slate-50" withImage={false}>
+                    <div className="text-center">
+                      <Zap className="h-10 w-10 text-orange-600 mx-auto mb-3" />
+                      <Text as="h4" variant="h3" className="mb-2">Application Layer</Text>
+                      <Text variant="body" className="text-sm">User interfaces and experiences</Text>
+                    </div>
+                  </Card>
                 </div>
-              </Card>
+              </div>
             </div>
           )}
 
@@ -353,7 +414,7 @@ export default function PlatformOverviewPage() {
               </div>
 
               <div className="grid md:grid-cols-3 gap-8">
-                <Card>
+                <Card seed="Per-Building" imageAlt="Per-Building">
                   <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
                     <Building2 className="h-8 w-8 text-blue-600" />
                   </div>
@@ -368,7 +429,7 @@ export default function PlatformOverviewPage() {
                   <div className="text-blue-600 font-semibold mb-6">Starting from £500/month</div>
                   <ButtonLink href="/contact" variant="outline" className="w-full">Discuss Options</ButtonLink>
                 </Card>
-                <Card className="border-2 border-primary relative">
+                <Card className="border-2 border-primary relative" seed="Enterprise" imageAlt="Enterprise">
                   <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-sm font-semibold px-4 py-1 rounded-full">Most Popular</span>
                   <div className="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mb-6 mt-2">
                     <Network className="h-8 w-8 text-green-600" />
@@ -384,7 +445,7 @@ export default function PlatformOverviewPage() {
                   <div className="text-green-600 font-semibold mb-6">Contact for pricing</div>
                   <ButtonLink href="/contact" variant="primary" className="w-full">Discuss Licensing</ButtonLink>
                 </Card>
-                <Card>
+                <Card seed="Outcome-Based" imageAlt="Outcome-Based">
                   <div className="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
                     <Target className="h-8 w-8 text-purple-600" />
                   </div>
@@ -400,10 +461,6 @@ export default function PlatformOverviewPage() {
                   <ButtonLink href="/contact" variant="outline" className="w-full">Discuss Options</ButtonLink>
                 </Card>
               </div>
-
-              <div className="text-center">
-                <ButtonLink href="/contact">Discuss Licensing Options</ButtonLink>
-              </div>
             </div>
           )}
 
@@ -417,24 +474,25 @@ export default function PlatformOverviewPage() {
                 </Text>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-12">
+              <div className="space-y-10">
                 <div>
                   <Text as="h3" variant="h3" className="mb-6">Integration Benefits</Text>
-                  <div className="space-y-4">
-                    <Card className="border-l-4 border-blue-500">
+                  <div className="grid md:grid-cols-3 gap-6">
+                    <Card className="border-l-4 border-blue-500" withImage={false}>
                       <Text as="h4" variant="h3" className="mb-2">Modular Deployment</Text>
                       <Text variant="body">Deploy individual modules without affecting existing systems. Each module integrates independently.</Text>
                     </Card>
-                    <Card className="border-l-4 border-green-500">
+                    <Card className="border-l-4 border-green-500" withImage={false}>
                       <Text as="h4" variant="h3" className="mb-2">Unified Platform</Text>
                       <Text variant="body">Single dashboard for all building systems. No more switching between multiple interfaces.</Text>
                     </Card>
-                    <Card className="border-l-4 border-purple-500">
+                    <Card className="border-l-4 border-purple-500" withImage={false}>
                       <Text as="h4" variant="h3" className="mb-2">Future-Ready</Text>
                       <Text variant="body">Add new modules and capabilities as they become available without system overhauls.</Text>
                     </Card>
                   </div>
                 </div>
+
                 <div>
                   <Text as="h3" variant="h3" className="mb-6">Supported Systems</Text>
                   <div className="flex flex-wrap gap-3">
@@ -446,18 +504,13 @@ export default function PlatformOverviewPage() {
                   </div>
                 </div>
               </div>
-
-              <div className="flex flex-wrap gap-4 justify-center">
-                <ButtonLink href="/contact">View Integration Guide</ButtonLink>
-                <ButtonLink href="/contact" variant="outline">Schedule Technical Demo</ButtonLink>
-              </div>
             </div>
           )}
         </div>
       </Section>
 
       {/* Final CTA */}
-      <Section backgroundColor="gray">
+      <Section backgroundColor="gray" className="pt-10">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <Text as="h2" variant="h2" className="mb-6">Ready to see Cortex™ in action?</Text>
           <Text variant="body" className="mb-8 text-lg">

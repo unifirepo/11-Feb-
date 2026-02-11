@@ -10,7 +10,7 @@ export default function Pricing() {
     <>
       <SEO
         title="Pricing | Flexible Licensing for Building Intelligence"
-        description="Choose the licensing model that best fits your organisation — from single buildings to enterprise-wide deployments. Per-building, enterprise, or outcome-based pricing."
+        description="Choose the licensing model that best fits your organisation - from single buildings to enterprise-wide deployments. Per-building, enterprise, or outcome-based pricing."
       />
       {/* Hero Section */}
       <Section className="min-h-[40vh] flex items-center">

@@ -34,14 +34,17 @@ export function Section({
         ? 'white'
         : backgroundColor;
 
-  const bgClass =
-    effectiveBg === 'gray'
+  // If the caller provided a custom background class (bg-*), do NOT add section-auto.
+  // section-auto has global CSS that would override custom backgrounds.
+  const bgClass = hasCustomBg
+    ? ''
+    : effectiveBg === 'gray'
       ? 'bg-unifi-light'
       : effectiveBg === 'white'
         ? 'bg-white'
-      : effectiveBg === 'blue'
-        ? 'bg-unifi-blue text-white'
-        : 'section-auto';
+        : effectiveBg === 'blue'
+          ? 'bg-unifi-blue text-white'
+          : 'section-auto';
 
   // If reduced motion or animate is false, we don't use variants
   const shouldAnimate = !reduce && animate;

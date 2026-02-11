@@ -2,11 +2,15 @@
 import { H1, H2, H3, Body, Lead } from "@/src/components/Typography";
 import { ButtonLink } from '@/src/components/ButtonLink';
 import { Section } from '@/src/components/Section';
-import PlaceholderImage from '@/src/components/PlaceholderImage';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer } from '@/src/components/motion';
+import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
 import { ShieldCheck, FileText, BarChart, Lock } from "lucide-react";
 import { SEO } from '@/src/components/SEO';
 
 export default function InsureLink() {
+  const heroImage = pickUnifiPlaceholder('hero', 'insurelink');
   return (
     <main className="min-h-screen">
       <SEO 
@@ -14,33 +18,53 @@ export default function InsureLink() {
         description="InsureLink bridges the gap between building performance and insurance risk. Provide verifiable evidence to reduce premiums and improve coverage."
       />
       {/* Hero Section */}
-      <Section className="min-h-[60vh] flex items-center bg-unifi-dark text-white">
-        <div className="max-w-7xl mx-auto px-6 w-full">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-6">
-                <ShieldCheck className="w-4 h-4 text-unifi-blue" />
-                <span className="text-xs font-bold uppercase tracking-widest">Risk & Assurance</span>
-              </div>
-              <H1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
-                InsureLink
-              </H1>
-              <Lead className="text-white/80 mb-10 max-w-2xl">
-                Bridging the gap between building performance and insurance risk. InsureLink provides the verifiable evidence needed to reduce premiums and improve coverage.
-              </Lead>
-              <div className="flex flex-col sm:flex-row gap-4">
+      <Section className="relative overflow-hidden min-h-[70vh] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={heroImage}
+            alt="InsureLink hero image"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-unifi-blue/20 via-transparent to-purple-500/10" />
+        </div>
+
+        <div className="relative z-10 w-full">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div
+              variants={staggerContainer}
+              initial="initial"
+              animate="animate"
+              className="max-w-2xl"
+            >
+              <motion.div variants={fadeInUp}>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-6">
+                  <ShieldCheck className="w-4 h-4 text-unifi-blue" />
+                  <span className="text-xs font-bold uppercase tracking-widest text-white">Risk & Assurance</span>
+                </div>
+              </motion.div>
+
+              <motion.div variants={fadeInUp}>
+                <H1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
+                  InsureLink
+                </H1>
+              </motion.div>
+
+              <motion.div variants={fadeInUp}>
+                <Lead className="text-white/85 mb-10">
+                  Bridging the gap between building performance and insurance risk. InsureLink provides the verifiable evidence needed to reduce premiums and improve coverage.
+                </Lead>
+              </motion.div>
+
+              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
                 <ButtonLink href="/contact" variant="primary">Discuss InsureLink</ButtonLink>
                 <ButtonLink href="/solutions/hub" variant="outline" className="text-white border-white hover:bg-white hover:text-black">
                   Back to Solutions
                 </ButtonLink>
-              </div>
-            </div>
-            <div className="lg:col-span-5">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-unifi-blue/20 blur-3xl rounded-full"></div>
-                <PlaceholderImage className="relative aspect-square rounded-2xl shadow-2xl border border-white/10" label="InsureLink Risk Dashboard" />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </Section>
@@ -56,21 +80,21 @@ export default function InsureLink() {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-gray-50 border border-gray-100">
+            <div className="p-8 rounded-2xl bg-white border border-gray-200 shadow-sm">
               <FileText className="w-12 h-12 text-unifi-blue mb-6" />
               <H3 className="text-xl font-bold mb-4">Verifiable Compliance</H3>
               <Body className="text-gray-600">
                 Provide insurers with a continuous, tamper-proof audit trail of fire safety tests, maintenance schedules, and regulatory adherence.
               </Body>
             </div>
-            <div className="p-8 rounded-2xl bg-gray-50 border border-gray-100">
+            <div className="p-8 rounded-2xl bg-white border border-gray-200 shadow-sm">
               <BarChart className="w-12 h-12 text-unifi-blue mb-6" />
               <H3 className="text-xl font-bold mb-4">Risk Analytics</H3>
               <Body className="text-gray-600">
                 Identify and quantify operational risks across your estate. Use real-time data to demonstrate proactive risk mitigation to your brokers.
               </Body>
             </div>
-            <div className="p-8 rounded-2xl bg-gray-50 border border-gray-100">
+            <div className="p-8 rounded-2xl bg-white border border-gray-200 shadow-sm">
               <Lock className="w-12 h-12 text-unifi-blue mb-6" />
               <H3 className="text-xl font-bold mb-4">Asset Protection</H3>
               <Body className="text-gray-600">
@@ -82,37 +106,37 @@ export default function InsureLink() {
       </Section>
 
       {/* Value Proposition */}
-      <Section className="bg-gray-900 text-white">
+      <Section className="bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <H2 className="text-3xl font-bold mb-6 text-white">Why InsureLink Matters</H2>
+              <H2 className="text-3xl font-bold mb-6">Why InsureLink Matters</H2>
               <div className="space-y-8">
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/20 flex items-center justify-center text-unifi-blue font-bold">01</div>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/10 flex items-center justify-center text-unifi-blue font-bold">01</div>
                   <div>
-                    <H3 className="text-lg font-bold mb-2 text-white">Premium Optimization</H3>
-                    <Body className="text-white/60">Use defensible data to negotiate better insurance terms based on actual building performance and safety standards.</Body>
+                    <H3 className="text-lg font-bold mb-2">Premium Optimization</H3>
+                    <Body className="text-gray-600">Use defensible data to negotiate better insurance terms based on actual building performance and safety standards.</Body>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/20 flex items-center justify-center text-unifi-blue font-bold">02</div>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/10 flex items-center justify-center text-unifi-blue font-bold">02</div>
                   <div>
-                    <H3 className="text-lg font-bold mb-2 text-white">Claims Acceleration</H3>
-                    <Body className="text-white/60">In the event of an incident, provide immediate, verifiable data to accelerate the claims process and reduce business interruption.</Body>
+                    <H3 className="text-lg font-bold mb-2">Claims Acceleration</H3>
+                    <Body className="text-gray-600">In the event of an incident, provide immediate, verifiable data to accelerate the claims process and reduce business interruption.</Body>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/20 flex items-center justify-center text-unifi-blue font-bold">03</div>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/10 flex items-center justify-center text-unifi-blue font-bold">03</div>
                   <div>
-                    <H3 className="text-lg font-bold mb-2 text-white">Demonstrable Duty of Care</H3>
-                    <Body className="text-white/60">Prove to stakeholders and regulators that you are meeting your legal and ethical obligations with real-time evidence.</Body>
+                    <H3 className="text-lg font-bold mb-2">Demonstrable Duty of Care</H3>
+                    <Body className="text-gray-600">Prove to stakeholders and regulators that you are meeting your legal and ethical obligations with real-time evidence.</Body>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="bg-white/5 rounded-3xl p-8 border border-white/10">
-              <H3 className="text-2xl font-bold mb-6 text-white">InsureLink Deliverables</H3>
+            <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm">
+              <H3 className="text-2xl font-bold mb-6">InsureLink Deliverables</H3>
               <ul className="space-y-4">
                 {[
                   "Continuous compliance audit trails",
@@ -127,7 +151,7 @@ export default function InsureLink() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-white/80">{item}</span>
+                    <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
               </ul>

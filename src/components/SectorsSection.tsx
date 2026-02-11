@@ -14,7 +14,7 @@ export default function SectorsSection() {
           {homeContent.sectors.intro}
         </Text>
         <div className="grid md:grid-cols-2 gap-8">
-          <div>
+          <div className="flex flex-col h-full">
             <Text as="h3" variant="h3" className="mb-4">
               {homeContent.sectors.bySector.title}
             </Text>
@@ -25,11 +25,13 @@ export default function SectorsSection() {
                 </li>
               ))}
             </ul>
-            <ButtonLink href={homeContent.sectors.bySector.cta.href}>
-              {homeContent.sectors.bySector.cta.text}
-            </ButtonLink>
+            <div className="mt-auto">
+              <ButtonLink href={homeContent.sectors.bySector.cta.href}>
+                {homeContent.sectors.bySector.cta.text}
+              </ButtonLink>
+            </div>
           </div>
-          <div>
+          <div className="flex flex-col h-full">
             <Text as="h3" variant="h3" className="mb-4">
               {homeContent.sectors.byRole.title}
             </Text>
@@ -40,9 +42,11 @@ export default function SectorsSection() {
                 </li>
               ))}
             </ul>
-            <ButtonLink href={homeContent.sectors.byRole.cta.href}>
-              {homeContent.sectors.byRole.cta.text}
-            </ButtonLink>
+            <div className="mt-auto">
+              <ButtonLink href={homeContent.sectors.byRole.cta.href}>
+                {homeContent.sectors.byRole.cta.text}
+              </ButtonLink>
+            </div>
           </div>
         </div>
       </div>

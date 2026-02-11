@@ -11,7 +11,7 @@ export default function ModernSlavery() {
         title="Modern Slavery Statement"
         description="Unifi.id's commitment to ethical practices and our statement on modern slavery in our operations and supply chain."
       />
-      <Section className="min-h-[40vh] flex items-center">
+      <Section className="bg-white min-h-[40vh] flex items-center">
         <div className="max-w-4xl mx-auto px-6">
           <H1 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6 leading-tight">
             Modern Slavery Statement

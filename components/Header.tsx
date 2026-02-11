@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useMemo, useState, useEffect, useRef } from 'react';
-import { m, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
@@ -10,34 +10,67 @@ type NavLink = {
   href: string;
   label: string;
   children?: NavLink[];
+  disabled?: boolean;
 };
 
 export default function Header() {
+  const headerRef = useRef<HTMLElement | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
-  const { scrollY } = useScroll();
   const pathname = usePathname();
   const isHomePage = pathname === '/';
   const lastScrollY = useRef(0);
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    setIsScrolled(latest > 50);
-    
-    // Hide header when scrolling down, show when scrolling up
-    if (latest < 10) {
-      // Always show at the very top
-      setIsHeaderVisible(true);
-    } else if (latest > lastScrollY.current) {
-      // Scrolling down - hide header
-      setIsHeaderVisible(false);
-    } else {
-      // Scrolling up - show header
-      setIsHeaderVisible(true);
-    }
-    
-    lastScrollY.current = latest;
-  });
+  // Hide header on scroll down, show on scroll up.
+  // Uses window/document scrollTop + a small delta threshold to avoid jitter.
+  useEffect(() => {
+    let ticking = false;
+
+    const getScrollTop = () =>
+      window.scrollY ?? document.documentElement.scrollTop ?? document.body.scrollTop ?? 0;
+
+    const update = () => {
+      const latest = getScrollTop();
+      setIsScrolled(latest > 50);
+
+      // On mobile/tablet (hamburger menu), keep the header visible.
+      // Hiding it on scroll makes navigation inaccessible further down the page.
+      const isMobileViewport = window.innerWidth < 1280; // matches Tailwind's xl breakpoint
+      if (isMobileViewport) {
+        setIsHeaderVisible(true);
+        lastScrollY.current = latest;
+        ticking = false;
+        return;
+      }
+
+      const delta = latest - lastScrollY.current;
+
+      if (latest < 10) {
+        setIsHeaderVisible(true);
+      } else if (delta > 1 && latest > 80) {
+        // scrolling down
+        setIsHeaderVisible(false);
+      } else if (delta < -1) {
+        // scrolling up
+        setIsHeaderVisible(true);
+      }
+
+      lastScrollY.current = latest;
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    };
+
+    // init
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [pathname]);
 
   // Close mobile menu when header hides
   useEffect(() => {
@@ -50,6 +83,27 @@ export default function Header() {
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [pathname]);
+
+  // Close mobile menu on outside click (hamburger view)
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const onPointerDown = (event: MouseEvent | TouchEvent) => {
+      const target = event.target as Node | null;
+      if (!target) return;
+      if (headerRef.current && !headerRef.current.contains(target)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', onPointerDown);
+    document.addEventListener('touchstart', onPointerDown, { passive: true });
+
+    return () => {
+      document.removeEventListener('mousedown', onPointerDown);
+      document.removeEventListener('touchstart', onPointerDown);
+    };
+  }, [isMobileMenuOpen]);
 
   const navLinks: NavLink[] = useMemo(() => [
     { href: '/', label: 'Home' },
@@ -71,24 +125,20 @@ export default function Header() {
       ],
     },
     {
-      href: '/sectors/hub',
+      href: '/sectors',
       label: 'Sectors',
       children: [
-        { href: '/sectors/hub', label: 'All Sectors' },
         { href: '/sectors/education', label: 'Education' },
-        { href: '/sectors/healthcare', label: 'Healthcare' },
-        { href: '/sectors/government', label: 'Government' },
-        { href: '/sectors/commercial', label: 'Commercial' },
-        { href: '/sectors/retail', label: 'Retail' },
-        { href: '/sectors/industrial', label: 'Industrial' },
-        { href: '/sectors/high-security', label: 'High Security' },
+        { href: '/sectors/corporate', label: 'Corporate' },
+        { href: '/sectors/public-sector', label: 'Public sector' },
+        { href: '#', label: 'Healthcare (Coming soon)', disabled: true },
+        { href: '#', label: 'Residential (Coming soon)', disabled: true },
       ],
     },
     {
-      href: '/roles/hub',
+      href: '/roles/ceo',
       label: 'Roles',
       children: [
-        { href: '/roles/hub', label: 'All Roles' },
         { href: '/roles/ceo', label: 'CEO' },
         { href: '/roles/cfo', label: 'CFO' },
         { href: '/roles/coo', label: 'COO' },
@@ -122,8 +172,9 @@ export default function Header() {
 
   return (
     <m.header
+      ref={headerRef}
       initial={{ y: 0 }}
-      animate={{ y: isHeaderVisible ? 0 : -100 }}
+      animate={{ y: isHeaderVisible ? 0 : -140 }}
       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isBlackHeader 
@@ -131,10 +182,10 @@ export default function Header() {
           : 'bg-white/10 backdrop-blur-md border-b border-white/5 py-5'
       }`}
     >
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 2xl:px-10">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 -ml-1 mr-6">
             <Link href="/" className="inline-flex items-center">
               <img
                 src="/unifi-assets/logo.png"
@@ -144,15 +195,15 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Desktop Navigation - Visible on xl screens and up (1280px) to prevent overlap with logo */}
-          <nav className="hidden xl:flex items-center gap-3 2xl:gap-5 flex-1 justify-end min-w-0">
+          {/* Desktop Navigation - Visible on xl screens and up (1280px). */}
+          <nav className="hidden xl:flex items-center gap-2 2xl:gap-4 flex-1 justify-end min-w-0 ml-10">
             {navLinks.map((link) => (
               <NavLinkItem key={link.href} link={link} isMobile={false} />
             ))}
             
             {/* Book a Demo Button */}
             <Link
-              href="/contact"
+              href="/book-demo"
               className="px-4 2xl:px-6 py-2 rounded-sm font-bold text-[10px] 2xl:text-xs uppercase tracking-wider bg-white text-black hover:bg-unifi-blue hover:text-white transition-all duration-300 whitespace-nowrap flex-shrink-0 ml-2"
             >
               Book a Demo
@@ -193,7 +244,7 @@ export default function Header() {
                 <NavLinkItem key={`mobile-${link.href}`} link={link} isMobile={true} onNavigate={() => setIsMobileMenuOpen(false)} />
               ))}
               <Link
-                href="/contact"
+                href="/book-demo"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block w-full px-8 py-3 mt-2 rounded-sm font-bold text-sm uppercase tracking-wider bg-white text-black hover:bg-unifi-blue hover:text-white transition-all duration-300 text-center cursor-pointer active:opacity-90"
               >
@@ -247,11 +298,9 @@ function NavLinkItem({ link, isMobile, onNavigate }: { link: NavLink; isMobile?:
     }
   };
 
-  const handleDesktopClick = (e: React.MouseEvent) => {
-    if (!isMobile && hasChildren) {
-      e.preventDefault();
-      setIsDropdownOpen((prev) => !prev);
-    }
+  const handleDesktopClick = (_e: React.MouseEvent) => {
+    // Desktop dropdowns open on hover. Clicking should behave like a normal link.
+    // (No preventDefault here.)
   };
 
   if (isMobile) {
@@ -271,10 +320,21 @@ function NavLinkItem({ link, isMobile, onNavigate }: { link: NavLink; isMobile?:
           <div className="pl-6 py-2 bg-black/20">
             {link.children?.map((childLink) => (
               <Link
-                key={childLink.href}
-                href={childLink.href}
-                onClick={() => onNavigate?.()}
-                className="block w-full py-2 px-4 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded transition-colors"
+                key={`${childLink.href}-${childLink.label}`}
+                href={childLink.disabled ? '#' : childLink.href}
+                onClick={(e) => {
+                  if (childLink.disabled) {
+                    e.preventDefault();
+                    return;
+                  }
+                  onNavigate?.();
+                }}
+                className={`block w-full py-2 px-4 text-sm rounded transition-colors ${
+                  childLink.disabled
+                    ? 'text-white/35 cursor-not-allowed pointer-events-none select-none'
+                    : 'text-white/80 hover:text-white hover:bg-white/10'
+                }`}
+                aria-disabled={childLink.disabled ? true : undefined}
               >
                 {childLink.label}
               </Link>
@@ -295,46 +355,54 @@ function NavLinkItem({ link, isMobile, onNavigate }: { link: NavLink; isMobile?:
       <Link
         href={link.href}
         onClick={handleDesktopClick}
-        className="relative py-2 text-[10px] xl:text-[11px] font-bold uppercase tracking-widest text-white transition-colors duration-300 hover:text-white whitespace-nowrap flex-shrink-0 cursor-pointer"
+        className="relative py-2 text-[10px] xl:text-[11px] font-bold uppercase tracking-widest text-white whitespace-nowrap flex-shrink-0 cursor-pointer"
       >
         {link.label}
         {hasChildren && (
-          <span className="ml-1 inline-block transition-transform duration-200" style={{ transform: isDropdownOpen ? 'rotate(180deg)' : 'none' }}>&#9660;</span>
-        )}
-        {/* Unifi.id Style Hover Line Animation */}
-        <m.div
-          initial={false}
-          animate={{
-            width: isHovered || isDropdownOpen ? '100%' : '0%',
-          }}
-          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute bottom-0 left-0 h-[2px] bg-white"
-        />
-      </Link>
-      <AnimatePresence>
-        {hasChildren && isDropdownOpen && (
-          <m.div
-            initial={{ opacity: 0, y: -4 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -4 }}
-            transition={{ duration: 0.15, ease: "easeOut" }}
-            className="absolute top-full left-0 pt-1 z-[60]"
+          <span
+            className="ml-1 inline-block transition-transform duration-200"
+            style={{ transform: isDropdownOpen ? 'rotate(180deg)' : 'none' }}
           >
-            <div className="mt-1 w-56 bg-black border border-white/10 rounded-md shadow-xl overflow-hidden">
-              {link.children?.map((childLink) => (
-                <Link
-                  key={childLink.href}
-                  href={childLink.href}
-                  className="block px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white transition-colors"
-                  onClick={() => setIsDropdownOpen(false)}
-                >
-                  {childLink.label}
-                </Link>
-              ))}
-            </div>
-          </m.div>
+            &#9660;
+          </span>
         )}
-      </AnimatePresence>
+
+        {/* Hover underline (CSS-based, more reliable than state) */}
+        <span className="absolute bottom-0 left-0 h-[2px] w-full origin-left scale-x-0 bg-white transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-x-100" />
+      </Link>
+
+      {/* Dropdown opens on hover */}
+      {hasChildren ? (
+        <div
+          className={`absolute top-full left-0 pt-2 z-[60] transition-all duration-150 ease-out ${
+            isDropdownOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-1 pointer-events-none'
+          } group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto`}
+        >
+          <div className="w-56 bg-black border border-white/10 rounded-md shadow-xl overflow-hidden">
+            {link.children?.map((childLink) => (
+              <Link
+                key={`${childLink.href}-${childLink.label}`}
+                href={childLink.disabled ? '#' : childLink.href}
+                className={`block px-4 py-2.5 text-sm transition-colors ${
+                  childLink.disabled
+                    ? 'text-white/35 cursor-not-allowed pointer-events-none select-none'
+                    : 'text-white/90 hover:bg-white/10 hover:text-white'
+                }`}
+                onClick={(e) => {
+                  if (childLink.disabled) {
+                    e.preventDefault();
+                    return;
+                  }
+                  setIsDropdownOpen(false);
+                }}
+                aria-disabled={childLink.disabled ? true : undefined}
+              >
+                {childLink.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

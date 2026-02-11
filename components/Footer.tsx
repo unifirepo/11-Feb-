@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Linkedin, Twitter, Facebook, Youtube } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -8,7 +9,10 @@ export default function Footer() {
           {/* Language Section */}
           <div>
             <h3 className="text-sm font-semibold text-white mb-4">Language</h3>
-            <p className="text-sm text-gray-300">English</p>
+            <p className="text-sm text-gray-300 inline-flex items-center gap-2">
+              <span aria-hidden className="text-base leading-none">🇬🇧</span>
+              English
+            </p>
           </div>
 
           {/* Address Section */}
@@ -46,6 +50,11 @@ export default function Footer() {
                     Modern Slavery Agreement
                   </Link>
                 </p>
+                <p>
+                  <Link href="/legal-support" className="hover:text-white transition-colors">
+                    Legal & Support
+                  </Link>
+                </p>
               </div>
             </div>
           </div>
@@ -53,22 +62,43 @@ export default function Footer() {
           {/* Follow Us Section */}
           <div>
             <h3 className="text-sm font-semibold text-white mb-4">Follow Us</h3>
-            <div className="text-sm text-gray-300 space-y-2">
-              <p>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                  LinkedIn
-                </a>
-              </p>
-              <p>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                  Twitter
-                </a>
-              </p>
-              <p>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                  Facebook
-                </a>
-              </p>
+            <div className="flex items-center gap-4">
+              <a
+                href="https://www.linkedin.com/company/unifi-id/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-colors"
+                aria-label="Unifi.id on LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a
+                href="https://twitter.com/unifi_id"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-colors"
+                aria-label="Unifi.id on X (Twitter)"
+              >
+                <Twitter className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.facebook.com/Unifiid-103314678961278/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-colors"
+                aria-label="Unifi.id on Facebook"
+              >
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UC3cGjmwqWw4f37mR8yYBGLw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-colors"
+                aria-label="Unifi.id on YouTube"
+              >
+                <Youtube className="h-5 w-5" />
+              </a>
             </div>
           </div>
         </div>

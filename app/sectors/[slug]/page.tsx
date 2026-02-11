@@ -1,11 +1,12 @@
-import { H1, H2, H3, Body, Lead } from "@/src/components/Typography";
+import { H1, H2, H3 } from '@/src/components/Typography';
 import { notFound } from 'next/navigation';
 
+import Image from 'next/image';
 import { Section } from '@/src/components/Section';
 import { ButtonLink } from '@/src/components/ButtonLink';
 import Card from '@/src/components/Card';
-import PlaceholderImage from '@/src/components/PlaceholderImage';
 import { getSectorBySlug, sectors } from '@/src/content/sectors';
+import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
 import type { Metadata } from 'next';
 
 type PageProps = {
@@ -38,109 +39,141 @@ export default async function SectorPage({ params }: PageProps) {
 
   if (!sector || sector.comingSoon) notFound();
 
+  const challenges = sector.challenges ?? [];
+  const solutions = sector.solutions ?? [];
+  const cta = sector.cta;
+
   return (
     <>
       {/* Hero */}
-      <Section className="min-h-[55vh] flex items-center">
-        <div className="max-w-7xl mx-auto px-6 w-full">
-          <div className="grid lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-6">
-              <div className="max-w-3xl">
-                <p className="text-sm font-medium text-gray-600 mb-3">Sector</p>
-                <H1 className="text-5xl md:text-6xl font-semibold text-gray-900 mb-6 leading-tight">
-                  {sector.title}
-                </H1>
-                <p className="text-lg md:text-xl text-gray-600 mb-8">{sector.description}</p>
+      <Section className="relative overflow-hidden min-h-[70vh] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={sector.heroImage || pickUnifiPlaceholder('hero', sector.slug)}
+            alt={`${sector.title} sector hero image`}
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/55" />
+        </div>
 
+        <div className="relative z-10 w-full">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-2xl">
+              <p className="text-sm font-medium text-white/80 mb-3 animate-fade-in-up">Sector</p>
+              <H1 className="text-5xl md:text-6xl font-semibold text-white mb-6 leading-tight animate-fade-in-up">
+                {sector.title}
+              </H1>
+              <p className="text-lg md:text-xl text-white/85 mb-8 animate-fade-in-up">
+                {sector.description}
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up">
+                <ButtonLink href="/contact" variant="primary">
+                  Talk to us
+                </ButtonLink>
+                <ButtonLink
+                  href="/solutions/hub"
+                  variant="outline"
+                  className="text-white border-white hover:bg-white hover:text-black"
+                >
+                  Explore solutions
+                </ButtonLink>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Challenges */}
+      <Section>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-3xl mb-10">
+            <H2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">Challenges</H2>
+            <p className="text-base md:text-lg text-gray-700">
+              The most common constraints we see in this sector - and why they create risk, waste, or
+              avoidable manual work.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {challenges.map((c) => (
+              <Card key={c.title} withImage={false}>
+                <H3 className="text-xl font-semibold text-gray-900 mb-2">{c.title}</H3>
+                <p className="text-base md:text-lg text-gray-700">{c.description}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Solutions */}
+      <Section>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-3xl mb-10">
+            <H2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">Solutions</H2>
+            <p className="text-base md:text-lg text-gray-700">
+              Two routes that consistently deliver the fastest improvement in visibility, assurance,
+              and operational control.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {solutions.map((s) => {
+              const lower = s.title.toLowerCase();
+              const isFireGuard = lower.includes('fireguard');
+              const isCortex = lower.includes('cortex');
+              const ctaHref = isFireGuard ? '/solutions/fireguard' : isCortex ? '/platform/overview' : undefined;
+              const ctaLabel = isFireGuard ? 'Discover FireGuard' : isCortex ? 'Discover Cortex' : undefined;
+
+              return (
+                <Card key={s.title} withImage={false}>
+                  <H3 className="text-xl font-semibold text-gray-900 mb-4">{s.title}</H3>
+                  <ul className="space-y-2 text-gray-700 mb-6">
+                    {s.bullets.map((b) => (
+                      <li key={b}>• {b}</li>
+                    ))}
+                  </ul>
+
+                  {ctaHref && ctaLabel ? (
+                    <ButtonLink href={ctaHref} variant="secondary">
+                      {ctaLabel}
+                    </ButtonLink>
+                  ) : null}
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </Section>
+
+      {/* Sector CTA */}
+      {cta ? (
+        <Section>
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-3xl mb-8">
+              <H2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">Outcome</H2>
+              <p className="text-base md:text-lg text-gray-700">{cta.resultStatement}</p>
+            </div>
+
+            <div className="max-w-4xl">
+              <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+                <H2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">{cta.title}</H2>
+                <p className="text-base md:text-lg text-gray-700 mb-8">{cta.description}</p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <ButtonLink href="/contact">Talk to us</ButtonLink>
-                  <ButtonLink href="/solutions/hub" variant="secondary">
-                    Explore solutions
+                  <ButtonLink href={cta.primaryCta.href} variant="primary">
+                    {cta.primaryCta.label}
+                  </ButtonLink>
+                  <ButtonLink href={cta.secondaryCta.href} variant="secondary">
+                    {cta.secondaryCta.label}
                   </ButtonLink>
                 </div>
               </div>
             </div>
-
-            <div className="lg:col-span-6">
-              <PlaceholderImage
-                priority
-                alt=""
-                src="/placeholders/card-abstract.svg"
-                className="aspect-[4/3] lg:aspect-[3/2] shadow-sm"
-              />
-            </div>
           </div>
-        </div>
-      </Section>
-
-      {/* Outcomes */}
-      <Section>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl mb-10">
-            <H2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">
-              What this pathway is designed to do
-            </H2>
-            <p className="text-base md:text-lg text-gray-700">
-              A practical route through Unifi.id that maps to the pressures and constraints of this
-              sector.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {sector.keyOutcomes.map((outcome) => (
-              <Card key={outcome}>
-                <p className="text-base md:text-lg text-gray-800">{outcome}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* Recommended routes */}
-      <Section>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl mb-10">
-            <H2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">
-              Recommended routes
-            </H2>
-            <p className="text-base md:text-lg text-gray-700">
-              Choose a starting point based on whether you need visibility first, immediate risk
-              reduction, or cost control.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {sector.recommendedRoutes.map((route) => (
-              <Card key={route.href}>
-                <H3 className="text-xl font-semibold text-gray-900 mb-2">{route.label}</H3>
-                <p className="text-base md:text-lg text-gray-700 mb-6">{route.description}</p>
-                <ButtonLink href={route.href} variant="secondary">
-                  View {route.label}
-                </ButtonLink>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* Next steps */}
-      <Section>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl">
-            <H2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">Next steps</H2>
-            <p className="text-base md:text-lg text-gray-700 mb-10">
-              If you want to validate fit quickly, we can map your estate, priorities, and compliance
-              needs to the right route.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <ButtonLink href="/contact">Contact</ButtonLink>
-              <ButtonLink href="/sectors" variant="secondary">
-                Back to sectors
-              </ButtonLink>
-            </div>
-          </div>
-        </div>
-      </Section>
+        </Section>
+      ) : null}
     </>
   );
 }

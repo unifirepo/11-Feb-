@@ -2,11 +2,14 @@
 import { H1, H2, H3, Body, Lead } from "@/src/components/Typography";
 import { ButtonLink } from '@/src/components/ButtonLink';
 import { Section } from '@/src/components/Section';
-import PlaceholderImage from '@/src/components/PlaceholderImage';
+import Image from 'next/image';
 import { Shield, Eye, Users, Bell } from "lucide-react";
 import { SEO } from '@/src/components/SEO';
+import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
 
 export default function RoleSecurityHead() {
+  const heroImage = pickUnifiPlaceholder('hero', 'role-security-head');
+
   return (
     <main className="min-h-screen">
       <SEO 
@@ -14,13 +17,19 @@ export default function RoleSecurityHead() {
         description="Cortex™ provides the real-time presence intelligence needed to transform physical security into a proactive, data-led operation. Gain total building awareness."
       />
       {/* Hero Section */}
-      <Section className="min-h-[60vh] flex items-center bg-unifi-dark text-white">
-        <div className="max-w-7xl mx-auto px-6 w-full">
+      <Section className="relative overflow-hidden min-h-[70vh] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <Image src={heroImage} alt="Role hero image" fill priority className="object-cover" />
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-unifi-blue/20 via-transparent to-unifi-green/10" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-12">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-6">
                 <Shield className="w-4 h-4 text-unifi-blue" />
-                <span className="text-xs font-bold uppercase tracking-widest">Security Leadership</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-white">Security Leadership</span>
               </div>
               <H1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
                 Security Head
@@ -35,18 +44,12 @@ export default function RoleSecurityHead() {
                 </ButtonLink>
               </div>
             </div>
-            <div className="lg:col-span-5">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-unifi-blue/20 blur-3xl rounded-full"></div>
-                <PlaceholderImage className="relative aspect-square rounded-2xl shadow-2xl border border-white/10" label="Security Command & Control Dashboard" />
-              </div>
-            </div>
           </div>
         </div>
       </Section>
 
       {/* Security Priorities */}
-      <Section>
+      <Section backgroundColor="white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <H2 className="text-3xl md:text-4xl font-bold mb-4">Security Priorities</H2>

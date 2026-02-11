@@ -2,29 +2,41 @@
 import { H1, H2, Body } from "@/src/components/Typography";
 import { ButtonLink } from '@/src/components/ButtonLink';
 import { Section } from '@/src/components/Section';
+import Image from 'next/image';
 import { SEO } from '@/src/components/SEO';
+import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
 import { FileText } from 'lucide-react';
 
 export default function TheEnergyTrap() {
+  const heroImage = pickUnifiPlaceholder('hero', 'energy-trap');
+
   return (
     <>
       <SEO
         title="The Energy Trap | Why Energy Prices Remain High"
         description="A research paper on why energy prices are set to remain high and what organisations can do to mitigate the impact."
       />
-      <Section className="min-h-[40vh] flex items-center">
-        <div className="max-w-7xl mx-auto px-6 w-full text-center">
-          <div className="flex justify-center mb-6">
-            <div className="w-16 h-16 rounded-xl bg-gray-100 flex items-center justify-center">
-              <FileText className="w-8 h-8 text-gray-600" />
+      <Section className="relative overflow-hidden min-h-[60vh] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <Image src={heroImage} alt="The Energy Trap hero image" fill priority className="object-cover" />
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/20 via-transparent to-unifi-blue/10" />
+        </div>
+
+        <div className="relative z-10 w-full">
+          <div className="max-w-7xl mx-auto px-6 w-full text-center">
+            <div className="flex justify-center mb-6 animate-fade-in-up">
+              <div className="w-16 h-16 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                <FileText className="w-8 h-8 text-white" />
+              </div>
             </div>
+            <H1 className="text-5xl md:text-6xl font-semibold text-white mb-6 leading-tight animate-fade-in-up">
+              The Energy Trap
+            </H1>
+            <Body className="text-lg md:text-xl text-white/85 max-w-3xl mx-auto animate-fade-in-up">
+              A research paper on why energy prices are set to remain high and what organisations can do to mitigate the impact.
+            </Body>
           </div>
-          <H1 className="text-5xl md:text-6xl font-semibold text-gray-900 mb-6 leading-tight">
-            The Energy Trap
-          </H1>
-          <Body className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            A research paper on why energy prices are set to remain high and what organisations can do to mitigate the impact.
-          </Body>
         </div>
       </Section>
 

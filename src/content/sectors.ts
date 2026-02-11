@@ -4,17 +4,38 @@ export type SectorRoute = {
   description: string;
 };
 
+export type SectorChallenge = {
+  title: string;
+  description: string;
+};
+
+export type SectorSolution = {
+  title: string;
+  bullets: string[];
+};
+
 export type Sector = {
   slug: string;
   title: string;
   description: string;
   summary: string;
+  /** Hero image for the sector page */
+  heroImage?: string;
   icon: {
     label: string;
     svgPath: string;
   };
   keyOutcomes: string[];
   recommendedRoutes: SectorRoute[];
+  challenges?: SectorChallenge[];
+  solutions?: SectorSolution[];
+  cta?: {
+    resultStatement: string;
+    title: string;
+    description: string;
+    primaryCta: { label: string; href: string };
+    secondaryCta: { label: string; href: string };
+  };
   comingSoon?: boolean;
 };
 
@@ -22,9 +43,10 @@ export const sectors: Sector[] = [
   {
     slug: 'education',
     title: 'Education',
-    summary: 'Estates teams under budget pressure — without disrupting learning.',
+    summary: 'Estates teams under budget pressure - without disrupting learning.',
     description:
       'Support estates teams under budget pressure while maintaining compliance and minimising disruption.',
+    heroImage: '/unifi-assets/canary/photo-1692894115929-da265ede7d13.webp',
     icon: {
       label: 'Graduation cap',
       svgPath:
@@ -52,6 +74,53 @@ export const sectors: Sector[] = [
         description: 'Identify energy waste and prioritise quick-win savings.',
       },
     ],
+    challenges: [
+      {
+        title: 'Budget pressure',
+        description: 'Maintenance and upgrades compete with frontline delivery, and investment decisions often lack evidence.',
+      },
+      {
+        title: 'Compliance evidence',
+        description: 'Audits require consistent records across buildings, contractors, and term-time constraints.',
+      },
+      {
+        title: 'Occupancy constraints',
+        description: 'Works must be planned around changing occupancy, safeguarding requirements, and critical spaces.',
+      },
+      {
+        title: 'Reactive fire safety',
+        description: 'Checks and drills can remain manual, creating blind spots and slow escalation when issues occur.',
+      },
+    ],
+    solutions: [
+      {
+        title: 'Cortex™ (visibility and control)',
+        bullets: [
+          'Estate-wide operational picture across sites',
+          'Clear responsibilities, ownership, and actions',
+          'Evidence-led prioritisation of works and spend',
+          'Audit-friendly reporting for leadership teams',
+        ],
+      },
+      {
+        title: 'FireGuard™ (risk reduction and assurance)',
+        bullets: [
+          'Accountable fire safety workflows and remediation tracking',
+          'System status oversight and issue escalation',
+          'Consistent evidence and audit trails',
+          'Faster decision-making during incidents',
+        ],
+      },
+    ],
+    cta: {
+      resultStatement:
+        'A safer, more compliant estate - with upgrades planned around real occupancy and delivered with minimal disruption.',
+      title: 'Map the right route for your sites',
+      description:
+        'Share your estate priorities and constraints. We will recommend the fastest path to visible risk reduction and defensible compliance.',
+      primaryCta: { label: 'Talk to us', href: '/contact' },
+      secondaryCta: { label: 'Explore solutions', href: '/solutions/hub' },
+    },
   },
   {
     slug: 'corporate',
@@ -59,6 +128,7 @@ export const sectors: Sector[] = [
     summary: 'Consistent oversight across offices and mixed-use estates.',
     description:
       'Create consistent visibility across office and mixed-use estates, with clear accountability and reporting.',
+    heroImage: '/unifi-assets/corporate/photo-1521737711867-e3b97375f902.webp',
     icon: {
       label: 'Office building',
       svgPath:
@@ -86,6 +156,53 @@ export const sectors: Sector[] = [
         description: 'Track energy performance and support carbon reporting.',
       },
     ],
+    challenges: [
+      {
+        title: 'Fragmented systems',
+        description: 'Security, fire safety, occupancy, and energy data sit in silos, slowing down decisions.',
+      },
+      {
+        title: 'Mixed-use complexity',
+        description: 'Different tenants, floor plans, and suppliers make consistent oversight difficult.',
+      },
+      {
+        title: 'Assurance at scale',
+        description: 'Leadership needs consistent reporting across sites, not manual spreadsheets and checklists.',
+      },
+      {
+        title: 'Energy and utilisation waste',
+        description: 'Hybrid work patterns create under-used space and wasted HVAC/lighting without live insight.',
+      },
+    ],
+    solutions: [
+      {
+        title: 'Cortex™ (estate intelligence)',
+        bullets: [
+          'Unified presence, systems, and operational signals',
+          'Consistent reporting across sites and suppliers',
+          'Clear accountability for actions and outcomes',
+          'Executive-ready dashboards and audit trails',
+        ],
+      },
+      {
+        title: 'Energy route (reduce cost and carbon)',
+        bullets: [
+          'Identify waste and prioritise upgrades with evidence',
+          'Align HVAC and lighting with real demand',
+          'Support ESG reporting with defensible data',
+          'Fund upgrades through measurable savings',
+        ],
+      },
+    ],
+    cta: {
+      resultStatement:
+        'A consistent operating picture across offices - with clearer accountability, lower risk, and better utilisation.',
+      title: 'See what this looks like on your estate',
+      description:
+        'We can map your portfolio and show where visibility, compliance, and savings can be improved - site by site.',
+      primaryCta: { label: 'Talk to us', href: '/contact' },
+      secondaryCta: { label: 'Explore Cortex', href: '/platform/overview' },
+    },
   },
   {
     slug: 'public-sector',
@@ -93,6 +210,7 @@ export const sectors: Sector[] = [
     summary: 'Assurance and governance across complex multi-site portfolios.',
     description:
       'Reduce risk and waste across complex, multi-site portfolios where assurance and governance matter.',
+    heroImage: '/unifi-assets/corporate/photo-1600880292203-757bb62b4baf.webp',
     icon: {
       label: 'Shield',
       svgPath:
@@ -120,11 +238,58 @@ export const sectors: Sector[] = [
         description: 'Monitor energy and support reporting requirements.',
       },
     ],
+    challenges: [
+      {
+        title: 'Multi-site governance',
+        description: 'Complex portfolios need consistent controls, clear ownership, and credible reporting.',
+      },
+      {
+        title: 'Audit readiness',
+        description: 'Evidence must be defensible and consistent across buildings, contractors, and departments.',
+      },
+      {
+        title: 'Statutory risk',
+        description: 'Fire safety and compliance actions must be tracked and closed with accountability.',
+      },
+      {
+        title: 'Avoidable spend',
+        description: 'Without visibility, investment is reactive and waste persists across the estate.',
+      },
+    ],
+    solutions: [
+      {
+        title: 'FireGuard™ (statutory assurance)',
+        bullets: [
+          'Accountable workflows and remediation tracking',
+          'System monitoring and escalation',
+          'Consistent evidence and audit trails',
+          'Clear reporting for governance and oversight',
+        ],
+      },
+      {
+        title: 'Cortex™ (portfolio control)',
+        bullets: [
+          'Unify responsibilities, systems, and operational signals',
+          'Prioritise actions and spend with evidence',
+          'Consistent reporting across sites',
+          'Support assurance with clear controls and visibility',
+        ],
+      },
+    ],
+    cta: {
+      resultStatement:
+        'A more governable estate - with consistent evidence, clearer accountability, and fewer compliance surprises.',
+      title: 'Strengthen assurance across your portfolio',
+      description:
+        'Tell us your estate structure and reporting needs. We will recommend the quickest path to audit-ready visibility and risk reduction.',
+      primaryCta: { label: 'Talk to us', href: '/contact' },
+      secondaryCta: { label: 'Explore FireGuard', href: '/solutions/fireguard' },
+    },
   },
   {
     slug: 'healthcare',
     title: 'Healthcare',
-    summary: 'High-occupancy, high-risk environments — with zero tolerance for downtime.',
+    summary: 'High-occupancy, high-risk environments - with zero tolerance for downtime.',
     description:
       'Keep critical environments safe and compliant while coordinating work across busy, high-occupancy sites.',
     icon: {

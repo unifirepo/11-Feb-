@@ -2,9 +2,10 @@
 import { useState } from 'react';
 import { ButtonLink } from '@/src/components/ButtonLink';
 import Card from '@/src/components/Card';
-import Hero from '@/src/components/Hero';
 import PageActions from '@/src/components/PageActions';
 import { Section } from '@/src/components/Section';
+import Image from 'next/image';
+import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
 import Text from '@/src/components/Text';
 import { SEO } from '@/src/components/SEO';
 import { ChevronDown, ChevronUp, Lock, AlertTriangle, Camera, Settings, Wrench, Leaf, Shield, TrendingUp, DollarSign, Building2, Users } from 'lucide-react';
@@ -30,8 +31,8 @@ const technologyPartners: PartnerCard[] = [
     details: [
       { label: 'Why It Matters', content: 'Clients are under pressure to prove duty of care, safeguard restricted zones, and manage hybrid work patterns. Swipe logs are not enough for regulators or insurers.' },
       { label: 'Benefits', content: 'Real-time occupancy insights, compliance assurance, and people-flow analytics create a premium layer of intelligence you can embed into your existing solutions.' },
-      { label: 'How It Works', content: 'Cortex reconciles swipes, passive RFID, WiFi/BLE, and facial recognition events into unified presence data — powering live evacuation musters, anomaly detection, and zone-based reporting.' },
-      { label: 'Client Outcome', content: 'Access control moves from security infrastructure to operational intelligence, helping your clients cut costs, satisfy regulators, and strengthen safety — while you differentiate your offer.' },
+      { label: 'How It Works', content: 'Cortex reconciles swipes, passive RFID, WiFi/BLE, and facial recognition events into unified presence data - powering live evacuation musters, anomaly detection, and zone-based reporting.' },
+      { label: 'Client Outcome', content: 'Access control moves from security infrastructure to operational intelligence, helping your clients cut costs, satisfy regulators, and strengthen safety - while you differentiate your offer.' },
     ],
   },
   {
@@ -52,12 +53,12 @@ const technologyPartners: PartnerCard[] = [
     subtitle: 'Surveillance & physical security specialists',
     icon: Camera,
     iconColor: 'text-slate-600 bg-slate-100',
-    description: 'Traditional surveillance provides video evidence — but little live intelligence. Cortex transforms this into actionable security oversight.',
+    description: 'Traditional surveillance provides video evidence - but little live intelligence. Cortex transforms this into actionable security oversight.',
     details: [
       { label: 'Why It Matters', content: 'Facilities managers and security chiefs need more than footage; they need real-time alerts on anomalies, dwell-time breaches, or perimeter intrusions.' },
-      { label: 'Benefits', content: 'Cortex adds intelligence that makes surveillance proactive — identifying irregular patterns before they escalate.' },
+      { label: 'Benefits', content: 'Cortex adds intelligence that makes surveillance proactive - identifying irregular patterns before they escalate.' },
       { label: 'How It Works', content: 'Safeguard fuses structured presence data with camera feeds and access logs, alerting operators to unauthorised presence, unusual movement, or crowding.' },
-      { label: 'Client Outcome', content: 'Clients gain a living security layer that prevents incidents rather than just recording them — and you elevate your security offering above the competition.' },
+      { label: 'Client Outcome', content: 'Clients gain a living security layer that prevents incidents rather than just recording them - and you elevate your security offering above the competition.' },
     ],
   },
   {
@@ -67,10 +68,10 @@ const technologyPartners: PartnerCard[] = [
     iconColor: 'text-green-600 bg-green-100',
     description: 'BMS platforms are powerful but often blind to the human element. Cortex fills that gap, providing live occupancy data that makes every building system more responsive.',
     details: [
-      { label: 'Why It Matters', content: 'Clients need to prove energy savings, optimise HVAC, and hit ESG targets — and they cannot without real occupancy intelligence.' },
+      { label: 'Why It Matters', content: 'Clients need to prove energy savings, optimise HVAC, and hit ESG targets - and they cannot without real occupancy intelligence.' },
       { label: 'Benefits', content: 'Predictive maintenance, energy optimisation, and unified analytics add significant value to your BMS offer.' },
       { label: 'How It Works', content: 'Cortex streams reconciled occupancy data into BMS platforms via API, enabling HVAC and lighting to adapt dynamically to live headcounts.' },
-      { label: 'Client Outcome', content: 'A BMS that does not just manage systems, but responds intelligently to people — creating measurable cost savings and ESG benefits.' },
+      { label: 'Client Outcome', content: 'A BMS that does not just manage systems, but responds intelligently to people - creating measurable cost savings and ESG benefits.' },
     ],
   },
 ];
@@ -81,12 +82,12 @@ const servicePartners: PartnerCard[] = [
     subtitle: 'FM operators & maintenance providers',
     icon: Wrench,
     iconColor: 'text-orange-600 bg-orange-100',
-    description: 'FM contracts are increasingly judged on efficiency, uptime, and compliance. Cortex equips FM companies with the data to prove performance — and proactively improve it.',
+    description: 'FM contracts are increasingly judged on efficiency, uptime, and compliance. Cortex equips FM companies with the data to prove performance - and proactively improve it.',
     details: [
       { label: 'Why It Matters', content: 'Clients want service providers who deliver measurable results, not just maintenance.' },
       { label: 'Benefits', content: 'Predictive maintenance, proactive issue detection, and automated compliance reporting.' },
       { label: 'How It Works', content: 'Cortex provides real-time occupancy and infrastructure health data, triggering alerts before failures occur and structuring compliance reports automatically.' },
-      { label: 'Client Outcome', content: 'FM providers become strategic partners, not commodity contractors — delivering uptime, compliance assurance, and cost savings.' },
+      { label: 'Client Outcome', content: 'FM providers become strategic partners, not commodity contractors - delivering uptime, compliance assurance, and cost savings.' },
     ],
   },
   {
@@ -115,7 +116,7 @@ const riskPartners: PartnerCard[] = [
       { label: 'Why It Matters', content: 'Regulators demand proof of evacuation success, insurers want evidence of risk reduction, and emergency responders need real-time clarity.' },
       { label: 'Benefits', content: 'Cortex adds continuous safety monitoring, automated muster lists, and compliance audit trails.' },
       { label: 'How It Works', content: 'FireSafe integrates directly with alarms and panels, delivering dashboards that show who is out, who remains, and where they are. Notifications sync with responders, giving them live intelligence in critical moments.' },
-      { label: 'Client Outcome', content: 'Safer evacuations, fewer false alarms, stronger compliance, and a defensible audit trail — making you the partner who delivers more than alarms.' },
+      { label: 'Client Outcome', content: 'Safer evacuations, fewer false alarms, stronger compliance, and a defensible audit trail - making you the partner who delivers more than alarms.' },
     ],
   },
   {
@@ -127,8 +128,8 @@ const riskPartners: PartnerCard[] = [
     details: [
       { label: 'Why It Matters', content: 'Underwriters want evidence, not promises. Claims and premiums hinge on defensible, real-world data.' },
       { label: 'Benefits', content: 'Insurers gain risk reduction insights, clients gain premium optimisation leverage, and brokers gain faster claims handling.' },
-      { label: 'How It Works', content: 'InsureLink streams FireGuard and FireSafe data directly into risk models — from evacuation timelines to asset uptime.' },
-      { label: 'Client Outcome', content: 'A shift from static to evidence-driven underwriting — rewarding safer estates with lower premiums.' },
+      { label: 'How It Works', content: 'InsureLink streams FireGuard and FireSafe data directly into risk models - from evacuation timelines to asset uptime.' },
+      { label: 'Client Outcome', content: 'A shift from static to evidence-driven underwriting - rewarding safer estates with lower premiums.' },
     ],
   },
 ];
@@ -138,7 +139,11 @@ function PartnerCardComponent({ partner }: { partner: PartnerCard }) {
   const Icon = partner.icon;
 
   return (
-    <Card className="overflow-hidden">
+    <Card
+      className="overflow-hidden"
+      seed={partner.title}
+      imageAspectClassName="aspect-[21/9]"
+    >
       <button
         onClick={() => setExpanded(!expanded)}
         className="w-full text-left flex items-start gap-4"
@@ -200,31 +205,51 @@ export default function Partners() {
     <main className="min-h-screen">
       <SEO 
         title="Partners | Collaborative Building Intelligence"
-        description="Cortex™ integrates directly into partner platforms — delivering real-time intelligence, compliance assurance, and ESG transparency. Extend your systems. Amplify your value."
+        description="Cortex™ integrates directly into partner platforms - delivering real-time intelligence, compliance assurance, and ESG transparency. Extend your systems. Amplify your value."
       />
-      <Hero
-        title={
-          <Text as="h1" variant="h1" className="mb-6">
-            Partners
-          </Text>
-        }
-        lead={
-          <div className="space-y-4">
-            <Text variant="lead" className="text-xl font-semibold">Extend Your Systems. Amplify Your Value.</Text>
-            <Text variant="body">
-              Cortex™ integrates directly into partner platforms — delivering real-time intelligence, compliance assurance, and ESG transparency that enhance outcomes for your clients. By joining our ecosystem, you expand your service offer, unlock new recurring revenue, and position yourself as a leader in intelligent, people-first solutions.
-            </Text>
+      {/* Hero with image (site-wide pattern) */}
+      <Section className="relative overflow-hidden min-h-[65vh] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={pickUnifiPlaceholder('hero', 'partners-hero')}
+            alt="Partners hero image"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-unifi-green/10 via-transparent to-unifi-blue/15" />
+        </div>
+
+        <div className="relative z-10 w-full">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-4xl">
+              <Text as="h1" variant="h1" className="mb-6 text-white">
+                Partners
+              </Text>
+              <div className="space-y-4 mb-10">
+                <Text variant="lead" className="text-xl font-semibold text-white/90">
+                  Extend Your Systems. Amplify Your Value.
+                </Text>
+                <Text variant="body" className="text-white/85">
+                  Cortex™ integrates directly into partner platforms - delivering real-time intelligence, compliance assurance, and ESG transparency that enhance outcomes for your clients. By joining our ecosystem, you expand your service offer, unlock new recurring revenue, and position yourself as a leader in intelligent, people-first solutions.
+                </Text>
+              </div>
+
+              <PageActions>
+                <ButtonLink href="/contact">Become a Partner</ButtonLink>
+                <ButtonLink
+                  href="/solutions/hub"
+                  variant="outline"
+                  className="text-white border-white hover:bg-white hover:text-black"
+                >
+                  Explore solutions
+                </ButtonLink>
+              </PageActions>
+            </div>
           </div>
-        }
-        actions={
-          <PageActions>
-            <ButtonLink href="/contact">Become a Partner</ButtonLink>
-            <ButtonLink href="/solutions/hub" variant="secondary">
-              Explore solutions
-            </ButtonLink>
-          </PageActions>
-        }
-      />
+        </div>
+      </Section>
 
       <Section>
         <div className="max-w-7xl mx-auto px-6">
@@ -253,7 +278,7 @@ export default function Partners() {
           <div>
             <Text as="h2" variant="h2" className="mb-4">{tabContent[activeTab].heading}</Text>
             <Text variant="body" className="mb-10 max-w-3xl">{tabContent[activeTab].description}</Text>
-            <div className="space-y-6">
+            <div className="grid md:grid-cols-2 gap-6 items-start">
               {currentPartners.map((partner) => (
                 <PartnerCardComponent key={partner.title} partner={partner} />
               ))}
@@ -270,7 +295,7 @@ export default function Partners() {
             {partnershipModels.map((model) => {
               const Icon = model.icon;
               return (
-                <Card key={model.title}>
+                <Card key={model.title} withImage={false}>
                   <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${model.color}`}>
                     <Icon className="h-6 w-6" />
                   </div>

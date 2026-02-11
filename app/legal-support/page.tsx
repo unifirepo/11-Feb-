@@ -5,6 +5,8 @@ import { useState } from "react";
 import { Section } from "@/src/components/Section";
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { FileText, Shield, HelpCircle, Mail } from "lucide-react";
+import Image from 'next/image';
+import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
 
 const legalSections = [
   {
@@ -113,10 +115,22 @@ export default function LegalSupportPage() {
         description="Privacy policy, terms of service, cookie policy, and support. Transparency, compliance, and support you can rely on."
       />
       {/* Hero Section */}
-      <Section className="bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <H1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Legal & Support</H1>
-          <p className="text-lg md:text-xl text-gray-600">
+      <Section className="relative overflow-hidden min-h-[55vh] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={pickUnifiPlaceholder('hero', 'legal-support-hero')}
+            alt=""
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-unifi-green/10 via-transparent to-unifi-blue/15" />
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center w-full pt-24">
+          <H1 className="text-4xl md:text-5xl font-bold text-white mb-6">Legal & Support</H1>
+          <p className="text-lg md:text-xl text-white/85">
             Transparency, compliance, and support you can rely on.
           </p>
         </div>

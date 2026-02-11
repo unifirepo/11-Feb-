@@ -2,49 +2,59 @@
 import { H1, H2, H3, Body, Lead } from "@/src/components/Typography";
 import { Section } from "@/src/components/Section";
 import { ButtonLink } from "@/src/components/ButtonLink";
-import PlaceholderImage from "@/src/components/PlaceholderImage";
 import { ArrowLeft, Calendar, User, Tag } from "lucide-react";
 import { SEO } from '@/src/components/SEO';
+import Image from 'next/image';
+import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
 
 export default function BlogPost() {
+  const heroImage = pickUnifiPlaceholder('hero', 'news-future-of-smart-buildings');
+
   return (
     <main className="min-h-screen">
       <SEO 
         title="The Future of Smart Buildings: A 2026 Outlook | Unifi.id Insights"
         description="Discover the key trends shaping the future of building management, from AI-driven energy savings to enhanced security protocols."
       />
-      <Section className="bg-gray-50 pt-32">
-        <div className="max-w-4xl mx-auto px-6">
-          <ButtonLink href="/news" variant="outline" size="sm" className="mb-8">
-            <ArrowLeft className="w-4 h-4 mr-2" /> Back to News
-          </ButtonLink>
-          
-          <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 mb-6">
-            <div className="flex items-center gap-2">
-              <Calendar className="w-4 h-4" />
-              <span>January 15, 2026</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <User className="w-4 h-4" />
-              <span>Unifi.id Team</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Tag className="w-4 h-4" />
-              <span>Smart Buildings</span>
-            </div>
-          </div>
+      <Section className="relative overflow-hidden min-h-[65vh] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <Image src={heroImage} alt="News article hero image" fill priority className="object-cover" />
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-unifi-green/10 via-transparent to-unifi-blue/15" />
+        </div>
 
-          <H1 className="text-4xl md:text-5xl font-bold mb-8">The Future of Smart Buildings: A 2026 Outlook</H1>
-          <Lead className="mb-12">
-            Discover the key trends shaping the future of building management, from AI-driven energy savings to enhanced security protocols.
-          </Lead>
+        <div className="relative z-10 w-full pt-24">
+          <div className="max-w-4xl mx-auto px-6">
+            
+                      <ButtonLink href="/news" variant="outline" size="sm" className="mb-8 text-white border-white hover:bg-white hover:text-black">
+                        <ArrowLeft className="w-4 h-4 mr-2" /> Back to News
+                      </ButtonLink>
+                      
+                      <div className="flex flex-wrap items-center gap-6 text-sm text-white/70 mb-6">
+                        <div className="flex items-center gap-2">
+                          <Calendar className="w-4 h-4" />
+                          <span>January 15, 2026</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <User className="w-4 h-4" />
+                          <span>Unifi.id Team</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Tag className="w-4 h-4" />
+                          <span>Smart Buildings</span>
+                        </div>
+                      </div>
+            
+                      <H1 className="text-4xl md:text-5xl font-bold mb-8 text-white">The Future of Smart Buildings: A 2026 Outlook</H1>
+                      <Lead className="mb-12 text-white/85">
+                        Discover the key trends shaping the future of building management, from AI-driven energy savings to enhanced security protocols.
+                      </Lead>
+          </div>
         </div>
       </Section>
 
       <Section>
         <div className="max-w-3xl mx-auto px-6">
-          <PlaceholderImage className="aspect-video rounded-2xl mb-12 shadow-lg" label="Future Smart Buildings" />
-          
           <div className="prose prose-lg max-w-none">
             <Body className="mb-6">
               As we move further into 2026, the concept of the "smart building" is evolving. It's no longer just about having connected devices; it's about how those devices work together to create an intelligent, responsive, and sustainable environment.
@@ -81,7 +91,7 @@ export default function BlogPost() {
               <Body className="text-white/70 mb-8">
                 Discover how our platform can help you create a smarter, safer, and more sustainable building today.
               </Body>
-              <ButtonLink href="/platform/overview" variant="primary">Explore the Platform</ButtonLink>
+              <ButtonLink href="/platform/overview" variant="secondary" className="bg-white border-white text-unifi-dark hover:bg-white/90">Explore the Platform</ButtonLink>
             </div>
           </div>
         </div>

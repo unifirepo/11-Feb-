@@ -1,26 +1,40 @@
 'use client';
-import { H1, H2, H3, Body, Lead } from "@/src/components/Typography";
+import { H1, H2, H3, Body } from "@/src/components/Typography";
 import { ButtonLink } from '@/src/components/ButtonLink';
 import { Section } from '@/src/components/Section';
+import Image from 'next/image';
 import { SEO } from '@/src/components/SEO';
+import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
 import { CheckCircle, Calendar, MessageSquare } from 'lucide-react';
 
 export default function EnergyContact() {
+  const heroImage = pickUnifiPlaceholder('hero', 'energy-contact');
+
   return (
     <>
       <SEO
         title="Book Your Free Energy Survey"
         description="Discover how Unifi.id can deliver smarter buildings, lower energy costs, and greener futures. Book a free energy survey or get in touch with our energy team."
       />
-      <Section className="min-h-[55vh] flex items-center">
-        <div className="max-w-7xl mx-auto px-6 w-full">
-          <H1 className="text-5xl md:text-6xl font-semibold text-gray-900 mb-6 leading-tight">
-            Book Your Free Energy Survey
-          </H1>
-          <div className="space-y-4 mb-10 max-w-3xl">
-            <p className="text-lg md:text-xl text-gray-600">
-              Discover how Unifi.id can deliver smarter buildings, lower energy costs, and greener futures for your organisation. Book a free energy survey or get in touch with our energy team.
-            </p>
+      <Section className="relative overflow-hidden min-h-[70vh] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <Image src={heroImage} alt="Energy contact hero image" fill priority className="object-cover" />
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-unifi-green/15 via-transparent to-unifi-blue/15" />
+        </div>
+
+        <div className="relative z-10 w-full">
+          <div className="max-w-7xl mx-auto px-6 w-full">
+            <div className="max-w-3xl">
+              <H1 className="text-5xl md:text-6xl font-semibold text-white mb-6 leading-tight animate-fade-in-up">
+                Book Your Free Energy Survey
+              </H1>
+              <div className="space-y-4 mb-10 animate-fade-in-up">
+                <p className="text-lg md:text-xl text-white/85">
+                  Discover how Unifi.id can deliver smarter buildings, lower energy costs, and greener futures for your organisation. Book a free energy survey or get in touch with our energy team.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </Section>
@@ -28,7 +42,7 @@ export default function EnergyContact() {
       <Section backgroundColor="gray">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 animate-fade-in-up">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-lg bg-unifi-green/10 flex items-center justify-center">
                   <Calendar className="w-6 h-6 text-unifi-green" />
@@ -53,7 +67,7 @@ export default function EnergyContact() {
               </ul>
               <ButtonLink href="/contact">Book Free Survey</ButtonLink>
             </div>
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 animate-fade-in-up">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-lg bg-unifi-green/10 flex items-center justify-center">
                   <MessageSquare className="w-6 h-6 text-unifi-green" />
@@ -86,15 +100,15 @@ export default function EnergyContact() {
         <div className="max-w-7xl mx-auto px-6">
           <H3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Why Choose Unifi.id Energy Solutions?</H3>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-gray-50 p-6 rounded-xl border border-gray-100">
+            <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 animate-fade-in-up">
               <H3 className="text-lg font-bold text-gray-900 mb-2">Zero Upfront Cost</H3>
               <Body className="text-gray-600">Fully funded upgrades using projected energy savings. No capital outlay required.</Body>
             </div>
-            <div className="bg-gray-50 p-6 rounded-xl border border-gray-100">
+            <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 animate-fade-in-up">
               <H3 className="text-lg font-bold text-gray-900 mb-2">Immediate Savings</H3>
               <Body className="text-gray-600">Start reducing energy costs from day one with proven technologies.</Body>
             </div>
-            <div className="bg-gray-50 p-6 rounded-xl border border-gray-100">
+            <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 animate-fade-in-up">
               <H3 className="text-lg font-bold text-gray-900 mb-2">Proven Results</H3>
               <Body className="text-gray-600">Measurable improvements in efficiency, sustainability, and compliance.</Body>
             </div>

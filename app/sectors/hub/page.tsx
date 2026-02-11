@@ -111,7 +111,7 @@ export default function SectorsHub() {
             <div>
               <H2 className="text-2xl font-semibold text-gray-900 mb-6">Private Sector</H2>
               <p className="text-gray-600 mb-10 max-w-3xl">
-                Commercial, retail, and industrial facilities each have distinct operational needs — from hybrid work optimisation to capacity management and worker safety. Cortex™ adapts to your sector while delivering consistent visibility and control.
+                Commercial, retail, and industrial facilities each have distinct operational needs - from hybrid work optimisation to capacity management and worker safety. Cortex™ adapts to your sector while delivering consistent visibility and control.
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {privateSectors.map(renderSectorCard)}

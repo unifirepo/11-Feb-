@@ -5,7 +5,7 @@ import { Section } from '@/src/components/Section';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/src/components/motion';
-import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
+import { pickUnifiPlaceholder, withBasePath } from '@/src/content/unifiAssets';
 import { AlertTriangle, Shield, ClipboardCheck, Users, Activity, Bell } from "lucide-react";
 import { SEO } from '@/src/components/SEO';
 
@@ -112,7 +112,7 @@ export default function SolutionsFireguard() {
               <div className="absolute -inset-4 bg-gray-100 rounded-3xl -rotate-2"></div>
               <div className="relative aspect-[4/3] rounded-2xl shadow-xl overflow-hidden">
                 <Image
-                  src="/unifi-assets/canary/photo-1694902304056-b4ba1412d7b7.webp"
+                  src={withBasePath('/unifi-assets/canary/photo-1694902304056-b4ba1412d7b7.webp')}
                   alt="Fire safety monitoring"
                   fill
                   className="object-cover"

@@ -188,7 +188,10 @@ export default function Header() {
           <div className="flex-shrink-0 -ml-1 mr-6">
             <Link href="/" className="inline-flex items-center">
               <img
-                src="/unifi-assets/logo.png"
+                src={(() => {
+                  const base = process.env.NEXT_PUBLIC_BASE_PATH || '';
+                  return `${base}/unifi-assets/logo.png`.replace(/\/\/+/, '/');
+                })()}
                 alt="Unifi.id"
                 className={`transition-all duration-500 ${isBlackHeader ? 'h-8 lg:h-10' : 'h-10 lg:h-12'} w-auto brightness-0 invert`}
               />

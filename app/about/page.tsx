@@ -9,7 +9,7 @@ import { Section } from '@/src/components/Section';
 import { ButtonLink } from '@/src/components/ButtonLink';
 import { SEO } from '@/src/components/SEO';
 import { fadeInUp, staggerContainer } from '@/src/components/motion';
-import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
+import { pickUnifiPlaceholder, withBasePath } from '@/src/content/unifiAssets';
 
 export default function AboutPage() {
   const heroImage = pickUnifiPlaceholder('hero', 'about');
@@ -134,7 +134,7 @@ export default function AboutPage() {
             </div>
             <div className="rounded-3xl aspect-video relative overflow-hidden shadow-sm">
               <Image
-                src="/unifi-assets/corporate/photo-1521737711867-e3b97375f902.webp"
+                src={withBasePath('/unifi-assets/corporate/photo-1521737711867-e3b97375f902.webp')}
                 alt="Unifi.id team collaborating"
                 fill
                 className="object-cover"

@@ -53,8 +53,18 @@ export const unifiAssets = {
 
 export type PlaceholderKind = 'hero' | 'card' | 'logo';
 
+export function withBasePath(path: string) {
+  // GitHub Pages serves this repo under /<repo>/, so absolute /unifi-assets/... URLs 404.
+  // We inject NEXT_PUBLIC_BASE_PATH during the Pages build to fix asset paths.
+  const base = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  if (!base) return path;
+  const normBase = base.startsWith('/') ? base : `/${base}`;
+  // avoid double slashes
+  return `${normBase}${path.startsWith('/') ? '' : '/'}${path}`.replace(/\/\/+/, '/');
+}
+
 export function pickUnifiPlaceholder(kind: PlaceholderKind, seed: string = 'default') {
-  if (kind === 'logo') return unifiAssets.logo;
+  if (kind === 'logo') return withBasePath(unifiAssets.logo);
 
   const pool =
     kind === 'hero'
@@ -64,7 +74,7 @@ export function pickUnifiPlaceholder(kind: PlaceholderKind, seed: string = 'defa
         : [...unifiAssets.photos, ...unifiAssets.cards, ...unifiAssets.misc];
 
   const s = hash(seed);
-  return pool[s % pool.length];
+  return withBasePath(pool[s % pool.length]);
 }
 
 function hash(input: string) {

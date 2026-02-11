@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { pickUnifiPlaceholder, type PlaceholderKind } from '@/src/content/unifiAssets';
+import { pickUnifiPlaceholder, withBasePath, type PlaceholderKind } from '@/src/content/unifiAssets';
 
 type PlaceholderImageProps = {
   src?: string;
@@ -21,7 +21,7 @@ export default function PlaceholderImage({
   seed = 'default',
   label,
 }: PlaceholderImageProps) {
-  const resolvedSrc = src ?? pickUnifiPlaceholder(kind, seed);
+  const resolvedSrc = withBasePath(src ?? pickUnifiPlaceholder(kind, seed));
   const resolvedAlt = alt || label || '';
   return (
     <div

@@ -232,7 +232,7 @@ export default function AboutPage() {
       {/* CTA Section */}
       <Section backgroundColor="white">
         <div className="container px-6">
-          <div className="bg-unifi-gray rounded-3xl p-12 text-center max-w-4xl mx-auto">
+          <div className="bg-unifi-light rounded-3xl p-12 text-center max-w-4xl mx-auto">
             <H2 className="mb-6 text-black">Ready to discover how we can transform your building management?</H2>
             <ButtonLink 
               href="/contact" 

@@ -33,11 +33,7 @@ export default function EnergyTechnology() {
         <div className="relative z-10 w-full">
           <div className="max-w-7xl mx-auto px-6">
             <div className="max-w-3xl">
-              <div className="flex items-center gap-3 mb-6 animate-fade-in-up">
-                <div className="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                  <Zap className="w-7 h-7 text-unifi-green" />
-                </div>
-              </div>
+              <div className="mb-6 animate-fade-in-up" />
 
               <H1 className="text-5xl md:text-6xl font-semibold text-white mb-6 leading-tight animate-fade-in-up">
                 Decarbonisation Technology
@@ -73,7 +69,7 @@ export default function EnergyTechnology() {
       {/* Core Upgrade Technologies */}
       <Section backgroundColor="white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center mb-10">
+          <div className="max-w-3xl mx-auto text-left mb-10">
             <H2 className="mb-4">Core Upgrade Technologies</H2>
             <Body className="text-lg text-unifi-gray-dark">
               Start with the technology that delivers the biggest impact for your estate. Each solution can be implemented independently or as part of a comprehensive upgrade program.
@@ -107,14 +103,14 @@ export default function EnergyTechnology() {
 
           {active === 'led' && (
             <div className="animate-in slide-in-from-bottom-4 duration-500">
-              <div className="max-w-4xl mx-auto text-center mb-12">
+              <div className="max-w-4xl mx-auto text-left mb-12">
                 <H2 className="mb-3">LED Lighting</H2>
                 <Body className="text-unifi-gray-dark text-lg">
                   Complete lighting transformation with smart controls for maximum efficiency.
                 </Body>
               </div>
 
-              <div className="max-w-4xl mx-auto space-y-4 text-center">
+              <div className="max-w-4xl mx-auto space-y-4 text-left">
                 <Body className="text-unifi-gray-dark">
                   Modern LED lighting is one of the most proven, high-impact upgrades any organisation can make. It delivers up to 80% energy savings, extends fixture life to 25 years or more, and enhances visibility, safety, and wellbeing across every environment.
                 </Body>
@@ -141,7 +137,7 @@ export default function EnergyTechnology() {
                     desc: 'Measured outcomes support reporting, governance, and sustainability commitments.',
                   },
                 ].map((c) => (
-                  <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-center">
+                  <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-left">
                     <H3 className="text-lg mb-3">{c.title}</H3>
                     <Body className="text-unifi-gray-dark">{c.desc}</Body>
                   </div>
@@ -152,14 +148,14 @@ export default function EnergyTechnology() {
 
           {active === 'hvac' && (
             <div className="animate-in slide-in-from-bottom-4 duration-500">
-              <div className="max-w-4xl mx-auto text-center mb-12">
+              <div className="max-w-4xl mx-auto text-left mb-12">
                 <H2 className="mb-3">Heating &amp; HVAC</H2>
                 <Body className="text-unifi-gray-dark text-lg">
                   Modern heating, ventilation, and air-conditioning solutions for optimal comfort and efficiency.
                 </Body>
               </div>
 
-              <div className="max-w-4xl mx-auto space-y-4 text-center">
+              <div className="max-w-4xl mx-auto space-y-4 text-left">
                 <Body className="text-unifi-gray-dark">
                   Heating and cooling are often responsible for more than half of a building's total energy use — making them one of the most critical levers for decarbonisation. By upgrading ageing plant to modern systems such as heat pumps, high-efficiency condensing boilers, and smart controls, organisations can cut both costs and emissions while improving comfort and reliability.
                 </Body>
@@ -179,7 +175,7 @@ export default function EnergyTechnology() {
                   'Biomass Heating',
                   'Hybrid Systems',
                 ].map((label) => (
-                  <div key={label} className="bg-white p-5 rounded-xl border border-unifi-gray text-center animate-fade-in-up">
+                  <div key={label} className="bg-white p-5 rounded-xl border border-unifi-gray text-left animate-fade-in-up">
                     <Body className="font-bold text-unifi-blue">{label}</Body>
                   </div>
                 ))}
@@ -189,14 +185,14 @@ export default function EnergyTechnology() {
 
           {active === 'solar' && (
             <div className="animate-in slide-in-from-bottom-4 duration-500">
-              <div className="max-w-4xl mx-auto text-center mb-12">
+              <div className="max-w-4xl mx-auto text-left mb-12">
                 <H2 className="mb-3">Solar &amp; Renewables</H2>
                 <Body className="text-unifi-gray-dark text-lg">
                   On-site energy generation to reduce grid dependency and cut carbon emissions.
                 </Body>
               </div>
 
-              <div className="max-w-4xl mx-auto space-y-4 text-center">
+              <div className="max-w-4xl mx-auto space-y-4 text-left">
                 <Body className="text-unifi-gray-dark">
                   Solar and renewable systems empower estates to generate their own clean electricity, stabilising costs and reducing exposure to volatile energy prices. By converting sunlight into usable power — and combining it with battery storage and smart energy management — organisations can offset a significant portion of their grid consumption and strengthen long-term resilience.
                 </Body>
@@ -205,13 +201,13 @@ export default function EnergyTechnology() {
                 </Body>
               </div>
 
-              <div className="text-center mt-12">
+              <div className="text-left mt-12">
                 <ButtonLink href="/energy/hub" variant="secondary">Explore Solar & Renewables in the Hub</ButtonLink>
               </div>
             </div>
           )}
 
-          <div className="text-center mt-14">
+          <div className="text-left mt-14">
             <ButtonLink href="/energy/contact" variant="blue">
               Speak to a Specialist
             </ButtonLink>
@@ -221,7 +217,7 @@ export default function EnergyTechnology() {
 
       {/* CTA */}
       <Section backgroundColor="gray">
-        <div className="container px-6 text-center">
+        <div className="container px-6 text-left">
           <div className="max-w-3xl mx-auto">
             <H2 className="mb-4">Ready to explore your upgrade pathway?</H2>
             <Body className="text-unifi-gray-dark mb-8">

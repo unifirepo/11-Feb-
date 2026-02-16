@@ -71,7 +71,7 @@ export default function AboutPage() {
       {/* Subtext Section */}
       <Section backgroundColor="white">
         <div className="container px-6">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-left">
             <Body className="text-2xl text-unifi-gray-dark leading-relaxed">
               Unifi.id is a smart building intelligence company. We help organisations understand and optimise how people actually use their estates - delivering insights that cut costs, increase safety, strengthen compliance, and accelerate progress to net zero.
             </Body>
@@ -149,8 +149,8 @@ export default function AboutPage() {
       <Section backgroundColor="gray">
         <div className="container px-6">
           <div className="max-w-4xl mx-auto">
-            <H2 className="mb-8 text-center">What We Do</H2>
-            <Body className="text-xl mb-12 text-center">
+            <H2 className="mb-8 text-left">What We Do</H2>
+            <Body className="text-xl mb-12 text-left">
               Unifi.id transforms buildings into intelligent, responsive environments. By turning fragmented occupancy signals into actionable insight, we enable estates to operate smarter, safer, and greener.
             </Body>
             
@@ -196,7 +196,7 @@ export default function AboutPage() {
       <Section backgroundColor="white">
         <div className="container px-6">
           <div className="max-w-4xl mx-auto">
-            <H2 className="mb-12 text-center">Why Unifi.id</H2>
+            <H2 className="mb-12 text-left">Why Unifi.id</H2>
             <div className="grid sm:grid-cols-2 gap-6">
               {[
                 "Rapid ROI on energy efficiency and net-zero initiatives",
@@ -204,7 +204,7 @@ export default function AboutPage() {
                 "Seamless integration with existing building systems",
                 "A scalable roadmap to support both immediate savings and long-term transformation"
               ].map((item, index) => (
-                <div key={index} className="flex gap-4 items-center bg-unifi-gray p-6 rounded-xl">
+                <div key={index} className="flex gap-4 items-center bg-unifi-light p-6 rounded-xl border border-black/5">
                   <Zap className="w-6 h-6 text-unifi-blue" />
                   <span className="font-medium">{item}</span>
                 </div>
@@ -217,7 +217,7 @@ export default function AboutPage() {
       {/* Our Principle */}
       <Section backgroundColor="blue">
         <div className="container px-6">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto text-left">
             <H2 className="text-white mb-8">Our Principle</H2>
             <Body className="text-white/90 text-xl mb-8 leading-relaxed">
               We've never believed the answer is "there's an app for everything." Not everyone can - or will - engage with apps. Instead, Unifi.id creates invisible intelligence: systems that work for everyone, in the background, automatically.
@@ -232,7 +232,7 @@ export default function AboutPage() {
       {/* CTA Section */}
       <Section backgroundColor="white">
         <div className="container px-6">
-          <div className="bg-unifi-light rounded-3xl p-12 text-center max-w-4xl mx-auto">
+          <div className="bg-unifi-light rounded-3xl p-12 text-left max-w-4xl mx-auto">
             <H2 className="mb-6 text-black">Ready to discover how we can transform your building management?</H2>
             <ButtonLink 
               href="/contact" 

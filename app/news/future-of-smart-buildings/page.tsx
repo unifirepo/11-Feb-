@@ -86,7 +86,7 @@ export default function BlogPost() {
           </div>
 
           <div className="border-t border-gray-200 pt-12 mt-12">
-            <div className="bg-unifi-dark rounded-2xl p-8 text-white text-center">
+            <div className="bg-unifi-light border border-black/5 rounded-2xl p-8 text-left">
               <H3 className="text-2xl font-bold mb-4 text-white">Build the future with Unifi.id</H3>
               <Body className="text-white/70 mb-8">
                 Discover how our platform can help you create a smarter, safer, and more sustainable building today.

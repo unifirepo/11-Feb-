@@ -62,7 +62,7 @@ export default function SectorsHub() {
       />
       {/* Hero Section */}
       <Section className="bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-6 text-left">
           <H1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Sectors</H1>
           <p className="text-lg md:text-xl text-gray-600">
             Every sector faces unique challenges. Cortex™ delivers tailored intelligence solutions that address the specific safety, compliance, and operational needs of your industry.
@@ -157,21 +157,21 @@ export default function SectorsHub() {
       {/* Why Sector-Specific */}
       <Section className="bg-gray-50">
         <div className="max-w-4xl mx-auto px-6">
-          <H2 className="text-3xl font-bold text-center text-gray-900 mb-8">Why Sector-Specific Solutions Matter</H2>
+          <H2 className="text-3xl font-bold text-left text-gray-900 mb-8">Why Sector-Specific Solutions Matter</H2>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center">
+            <div className="text-left">
               <div className="bg-white rounded-lg p-6 shadow">
                 <H3 className="text-xl font-semibold text-gray-900 mb-2">Compliance</H3>
                 <p className="text-gray-600">Each sector has unique regulatory requirements that Cortex™ addresses directly.</p>
               </div>
             </div>
-            <div className="text-center">
+            <div className="text-left">
               <div className="bg-white rounded-lg p-6 shadow">
                 <H3 className="text-xl font-semibold text-gray-900 mb-2">Operational Context</H3>
                 <p className="text-gray-600">Solutions designed around how your sector actually operates day-to-day.</p>
               </div>
             </div>
-            <div className="text-center">
+            <div className="text-left">
               <div className="bg-white rounded-lg p-6 shadow">
                 <H3 className="text-xl font-semibold text-gray-900 mb-2">Proven Results</H3>
                 <p className="text-gray-600">Case studies and outcomes specific to your industry.</p>
@@ -183,7 +183,7 @@ export default function SectorsHub() {
 
       {/* CTA */}
       <Section>
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-6 text-left">
           <H2 className="text-2xl font-bold text-gray-900 mb-4">Not Sure Which Sector Fits Your Needs?</H2>
           <p className="text-gray-600 mb-6">
             Our team can help you identify the right solution for your specific building portfolio and requirements.

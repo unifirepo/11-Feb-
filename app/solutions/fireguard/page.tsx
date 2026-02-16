@@ -126,7 +126,7 @@ export default function SolutionsFireguard() {
       {/* Capabilities Grid */}
       <Section className="bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-left max-w-3xl mx-auto mb-16">
             <H2 className="text-3xl md:text-4xl font-bold mb-4">FireGuard™ Capabilities</H2>
             <Body>
               FireGuard™ is built to support compliance-led teams: clear workflows, clear evidence, and a consistent approach across an entire estate.
@@ -210,7 +210,7 @@ export default function SolutionsFireguard() {
                 ))}
               </ul>
               <div className="mt-10">
-                <ButtonLink href="/contact" className="w-full text-center">Book a FireGuard™ Demo</ButtonLink>
+                <ButtonLink href="/contact" className="w-full text-left">Book a FireGuard™ Demo</ButtonLink>
               </div>
             </div>
           </div>
@@ -219,7 +219,7 @@ export default function SolutionsFireguard() {
 
       {/* CTA Section */}
       <Section>
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-6 text-left">
           <H2 className="text-3xl font-bold mb-6">Ready to transform your fire safety?</H2>
           <Body className="mb-10 text-lg">
             Discover how FireGuard™ can help you gain total visibility, automate compliance, and protect your people with real-time intelligence.

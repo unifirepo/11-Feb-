@@ -5,7 +5,6 @@ import { Section } from '@/src/components/Section';
 import Image from 'next/image';
 import { SEO } from '@/src/components/SEO';
 import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
-import { FileText } from 'lucide-react';
 
 export default function TheEnergyTrap() {
   const heroImage = pickUnifiPlaceholder('hero', 'energy-trap');
@@ -24,16 +23,12 @@ export default function TheEnergyTrap() {
         </div>
 
         <div className="relative z-10 w-full">
-          <div className="max-w-7xl mx-auto px-6 w-full text-center">
-            <div className="flex justify-center mb-6 animate-fade-in-up">
-              <div className="w-16 h-16 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                <FileText className="w-8 h-8 text-white" />
-              </div>
-            </div>
+          <div className="max-w-7xl mx-auto px-6 w-full text-left">
+            <div className="mb-6 animate-fade-in-up" />
             <H1 className="text-5xl md:text-6xl font-semibold text-white mb-6 leading-tight animate-fade-in-up">
               The Energy Trap
             </H1>
-            <Body className="text-lg md:text-xl text-white/85 max-w-3xl mx-auto animate-fade-in-up">
+            <Body className="text-lg md:text-xl text-white/85 max-w-3xl animate-fade-in-up">
               A research paper on why energy prices are set to remain high and what organisations can do to mitigate the impact.
             </Body>
           </div>
@@ -41,7 +36,7 @@ export default function TheEnergyTrap() {
       </Section>
 
       <Section backgroundColor="gray">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <div className="max-w-3xl mx-auto px-6 text-left">
           <H2 className="text-2xl font-bold text-gray-900 mb-4">Research Paper Coming Soon</H2>
           <Body className="mb-8 text-gray-600">
             Our analysis of the long-term energy market trends is being finalized. Please check back soon to download the full research paper.

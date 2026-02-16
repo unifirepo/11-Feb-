@@ -43,7 +43,7 @@ export function Section({
       : effectiveBg === 'white'
         ? 'bg-white'
         : effectiveBg === 'blue'
-          ? 'bg-unifi-blue text-white'
+          ? 'bg-unifi-blue text-gray-900'
           : 'section-auto';
 
   // If reduced motion or animate is false, we don't use variants

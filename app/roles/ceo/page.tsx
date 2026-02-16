@@ -34,7 +34,7 @@ export default function RoleCEO() {
               <H1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
                 CEO / Managing Director
               </H1>
-              <Lead className="text-white/80 mb-10 max-w-2xl">
+              <Lead className="text-white/85 mb-10 max-w-2xl">
                 Strategic oversight, risk management, and demonstrable duty of care across your entire estate. Cortex™ translates complex building data into executive-level intelligence.
               </Lead>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -51,7 +51,7 @@ export default function RoleCEO() {
       {/* Strategic Priorities */}
       <Section backgroundColor="white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-left max-w-3xl mx-auto mb-16">
             <H2 className="text-3xl md:text-4xl font-bold mb-4">Strategic Priorities</H2>
             <Body>
               Cortex™ addresses the core concerns of executive leadership by providing a single source of truth for estate performance and risk.
@@ -85,37 +85,37 @@ export default function RoleCEO() {
       </Section>
 
       {/* Key Metrics Section */}
-      <Section className="bg-gray-900 text-white">
+      <Section className="bg-unifi-light border border-black/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <H2 className="text-3xl font-bold mb-6 text-white">Executive Metrics That Matter</H2>
+              <H2 className="text-3xl font-bold mb-6 text-gray-900">Executive Metrics That Matter</H2>
               <div className="space-y-8">
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/20 flex items-center justify-center text-unifi-blue font-bold">01</div>
                   <div>
-                    <H3 className="text-lg font-bold mb-2 text-white">Estate-Wide Compliance Score</H3>
-                    <Body className="text-white/60">A real-time aggregate of fire safety, access control, and regulatory adherence across all properties.</Body>
+                    <H3 className="text-lg font-bold mb-2 text-gray-900">Estate-Wide Compliance Score</H3>
+                    <Body className="text-gray-600">A real-time aggregate of fire safety, access control, and regulatory adherence across all properties.</Body>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/20 flex items-center justify-center text-unifi-blue font-bold">02</div>
                   <div>
-                    <H3 className="text-lg font-bold mb-2 text-white">Utilisation Efficiency</H3>
-                    <Body className="text-white/60">Understand the true ROI of your physical footprint by tracking actual occupancy vs. capacity.</Body>
+                    <H3 className="text-lg font-bold mb-2 text-gray-900">Utilisation Efficiency</H3>
+                    <Body className="text-gray-600">Understand the true ROI of your physical footprint by tracking actual occupancy vs. capacity.</Body>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/20 flex items-center justify-center text-unifi-blue font-bold">03</div>
                   <div>
-                    <H3 className="text-lg font-bold mb-2 text-white">Carbon Intensity Index</H3>
-                    <Body className="text-white/60">Defensible data on energy waste and carbon footprint reduction for annual reporting and ESG audits.</Body>
+                    <H3 className="text-lg font-bold mb-2 text-gray-900">Carbon Intensity Index</H3>
+                    <Body className="text-gray-600">Defensible data on energy waste and carbon footprint reduction for annual reporting and ESG audits.</Body>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="bg-white/5 rounded-3xl p-8 border border-white/10">
-              <H3 className="text-2xl font-bold mb-6 text-white">Cortex™ Executive Deliverables</H3>
+            <div className="bg-white rounded-3xl p-8 border border-black/5">
+              <H3 className="text-2xl font-bold mb-6 text-gray-900">Cortex™ Executive Deliverables</H3>
               <ul className="space-y-4">
                 {[
                   "Executive dashboard with real-time risk visibility",
@@ -126,16 +126,16 @@ export default function RoleCEO() {
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3">
                     <div className="w-5 h-5 rounded-full bg-unifi-blue flex items-center justify-center flex-shrink-0">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-3 h-3 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-white/80">{item}</span>
+                    <span className="text-unifi-gray-dark">{item}</span>
                   </li>
                 ))}
               </ul>
               <div className="mt-10">
-                <ButtonLink href="/contact" className="w-full text-center">Book Executive Demo</ButtonLink>
+                <ButtonLink href="/contact" className="w-full text-left">Book Executive Demo</ButtonLink>
               </div>
             </div>
           </div>
@@ -144,7 +144,7 @@ export default function RoleCEO() {
 
       {/* CTA Section */}
       <Section>
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-6 text-left">
           <H2 className="text-3xl font-bold mb-6">Ready to lead with intelligence?</H2>
           <Body className="mb-10 text-lg">
             Join the forward-thinking CEOs who are transforming their estates into smarter, safer, and more efficient assets with Cortex™.

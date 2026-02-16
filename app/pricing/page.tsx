@@ -14,7 +14,7 @@ export default function Pricing() {
       />
       {/* Hero Section */}
       <Section className="min-h-[40vh] flex items-center">
-        <div className="max-w-4xl mx-auto px-6 w-full text-center">
+        <div className="max-w-4xl mx-auto px-6 w-full text-left">
           <H1 className="text-5xl md:text-6xl font-semibold text-gray-900 mb-6 leading-tight">
             Flexible Licensing for Every Need
           </H1>
@@ -99,7 +99,7 @@ export default function Pricing() {
 
       {/* CTA */}
       <Section className="bg-gray-50">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-6 text-left">
           <H2 className="text-2xl font-semibold text-gray-900 mb-4">Need a tailored quote?</H2>
           <Body className="text-gray-700 mb-6">
             Our team will work with you to design a licensing model that aligns with your portfolio size, goals, and budget.

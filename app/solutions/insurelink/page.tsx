@@ -72,7 +72,7 @@ export default function InsureLink() {
       {/* Core Capabilities */}
       <Section>
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-left max-w-3xl mx-auto mb-16">
             <H2 className="text-3xl md:text-4xl font-bold mb-4">Evidence-Led Assurance</H2>
             <Body>
               InsureLink transforms raw building data into a structured evidence layer that speaks the language of risk and insurance.
@@ -156,7 +156,7 @@ export default function InsureLink() {
                 ))}
               </ul>
               <div className="mt-10">
-                <ButtonLink href="/contact" className="w-full text-center">Request Risk Assessment</ButtonLink>
+                <ButtonLink href="/contact" className="w-fit">Request Risk Assessment</ButtonLink>
               </div>
             </div>
           </div>
@@ -165,12 +165,12 @@ export default function InsureLink() {
 
       {/* CTA Section */}
       <Section>
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-6 text-left">
           <H2 className="text-3xl font-bold mb-6">Ready to link data to assurance?</H2>
           <Body className="mb-10 text-lg">
             Discover how InsureLink can help you gain better coverage, reduce premiums, and prove your commitment to safety and risk management.
           </Body>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-start gap-4">
             <ButtonLink href="/contact" size="lg">Contact Sales</ButtonLink>
             <ButtonLink href="/solutions/hub" variant="secondary" size="lg">Explore All Solutions</ButtonLink>
           </div>

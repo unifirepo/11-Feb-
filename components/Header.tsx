@@ -137,7 +137,7 @@ export default function Header() {
     },
     {
       href: '/roles/ceo',
-      label: 'Roles',
+      label: 'Your roles',
       children: [
         { href: '/roles/ceo', label: 'CEO' },
         { href: '/roles/cfo', label: 'CFO' },
@@ -178,7 +178,7 @@ export default function Header() {
       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isBlackHeader 
-          ? 'bg-black border-b border-white/10 py-3' 
+          ? 'bg-black border-b border-black/5 py-3' 
           : 'bg-white/10 backdrop-blur-md border-b border-white/5 py-5'
       }`}
     >
@@ -207,7 +207,7 @@ export default function Header() {
             {/* Book a Demo Button */}
             <Link
               href="/book-demo"
-              className="px-4 2xl:px-6 py-2 rounded-sm font-bold text-[10px] 2xl:text-xs uppercase tracking-wider bg-white text-black hover:bg-unifi-blue hover:text-white transition-all duration-300 whitespace-nowrap flex-shrink-0 ml-2"
+              className="px-4 2xl:px-6 py-2 rounded-sm font-bold text-[10px] 2xl:text-xs uppercase tracking-wider bg-white text-black hover:bg-unifi-blue hover:text-gray-900 transition-all duration-300 whitespace-nowrap flex-shrink-0 ml-2"
             >
               Book a Demo
             </Link>
@@ -221,7 +221,7 @@ export default function Header() {
               e.stopPropagation();
               setIsMobileMenuOpen(!isMobileMenuOpen);
             }}
-            className="xl:hidden p-2 text-white hover:bg-white/10 rounded transition-colors z-10 relative flex-shrink-0"
+            className={`xl:hidden p-2 text-white hover:bg-white/10 rounded transition-colors z-10 relative flex-shrink-0`}
             aria-label="Toggle menu"
             aria-expanded={isMobileMenuOpen}
           >
@@ -236,20 +236,26 @@ export default function Header() {
 
       {/* Mobile Menu - Visible on screens smaller than xl when hamburger is open */}
       {isMobileMenuOpen && (
-        <div className={`xl:hidden border-t w-full shadow-lg transition-all duration-500 ${
+        <div className={`xl:hidden border-t w-full shadow-lg transition-all duration-500 max-h-[calc(100vh-88px)] overflow-y-auto ${
           isBlackHeader 
             ? 'bg-black border-white/20' 
-            : 'bg-white/10 backdrop-blur-md border-white/10'
+            : 'bg-white/10 backdrop-blur-md border-black/5'
         }`}>
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6">
             <nav className="flex flex-col py-4">
               {navLinks.map((link) => (
-                <NavLinkItem key={`mobile-${link.href}`} link={link} isMobile={true} onNavigate={() => setIsMobileMenuOpen(false)} />
+                <NavLinkItem
+                  key={`mobile-${link.href}`}
+                  link={link}
+                  isMobile={true}
+                  isBlackHeader={isBlackHeader}
+                  onNavigate={() => setIsMobileMenuOpen(false)}
+                />
               ))}
               <Link
                 href="/book-demo"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full px-8 py-3 mt-2 rounded-sm font-bold text-sm uppercase tracking-wider bg-white text-black hover:bg-unifi-blue hover:text-white transition-all duration-300 text-center cursor-pointer active:opacity-90"
+                className="block w-full px-8 py-3 mt-2 rounded-sm font-bold text-sm uppercase tracking-wider bg-white text-black hover:bg-unifi-blue hover:text-gray-900 transition-all duration-300 text-left cursor-pointer active:opacity-90"
               >
                 Book a Demo
               </Link>
@@ -261,7 +267,17 @@ export default function Header() {
   );
 }
 
-function NavLinkItem({ link, isMobile, onNavigate }: { link: NavLink; isMobile?: boolean; onNavigate?: () => void }) {
+function NavLinkItem({
+  link,
+  isMobile,
+  isBlackHeader,
+  onNavigate,
+}: {
+  link: NavLink;
+  isMobile?: boolean;
+  isBlackHeader?: boolean;
+  onNavigate?: () => void;
+}) {
   const [isHovered, setIsHovered] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -315,7 +331,9 @@ function NavLinkItem({ link, isMobile, onNavigate }: { link: NavLink; isMobile?:
             handleMobileClick(e);
             if (!hasChildren) onNavigate?.();
           }}
-          className="block w-full py-3 px-4 text-base font-bold uppercase tracking-wider rounded transition-all duration-200 cursor-pointer text-white hover:bg-white/20 active:bg-white/30"
+          className={`block w-full py-3 px-4 text-base font-bold uppercase tracking-wider rounded transition-all duration-200 cursor-pointer ${
+            'text-white'
+          } hover:bg-white/20 active:bg-white/30`}
         >
           {link.label}
         </Link>
@@ -381,7 +399,7 @@ function NavLinkItem({ link, isMobile, onNavigate }: { link: NavLink; isMobile?:
             isDropdownOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-1 pointer-events-none'
           } group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto`}
         >
-          <div className="w-56 bg-black border border-white/10 rounded-md shadow-xl overflow-hidden">
+          <div className="w-56 bg-black border border-black/5 rounded-md shadow-xl overflow-hidden">
             {link.children?.map((childLink) => (
               <Link
                 key={`${childLink.href}-${childLink.label}`}
@@ -389,7 +407,7 @@ function NavLinkItem({ link, isMobile, onNavigate }: { link: NavLink; isMobile?:
                 className={`block px-4 py-2.5 text-sm transition-colors ${
                   childLink.disabled
                     ? 'text-white/35 cursor-not-allowed pointer-events-none select-none'
-                    : 'text-white/90 hover:bg-white/10 hover:text-white'
+                    : 'text-white/80 hover:bg-white/10 hover:text-white'
                 }`}
                 onClick={(e) => {
                   if (childLink.disabled) {

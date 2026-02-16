@@ -88,7 +88,7 @@ export default function PlatformOverviewPage() {
       {/* Cortex Capabilities */}
       <Section className="bg-slate-50">
         <div className="max-w-screen-2xl mx-auto px-6">
-          <Text as="h2" variant="h2" className="text-center mb-12">
+          <Text as="h2" variant="h2" className="text-left mb-12">
             Cortex™ Capabilities
           </Text>
           
@@ -97,10 +97,10 @@ export default function PlatformOverviewPage() {
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <span className="text-blue-600 text-xl">👥</span>
               </div>
-              <Text as="h3" variant="h3" className="text-center mb-3 text-sm">
+              <Text as="h3" variant="h3" className="text-left mb-3 text-sm">
                 Live Occupancy Intelligence
               </Text>
-              <Text variant="body" className="text-sm text-center">
+              <Text variant="body" className="text-sm text-left">
                 Track people-flow in real time across floors and zones. Make smarter decisions about staffing, cleaning, heating/cooling, and safety drills.
               </Text>
             </Card>
@@ -109,10 +109,10 @@ export default function PlatformOverviewPage() {
               <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <span className="text-orange-600 text-xl">🛡️</span>
               </div>
-              <Text as="h3" variant="h3" className="text-center mb-3 text-sm">
+              <Text as="h3" variant="h3" className="text-left mb-3 text-sm">
                 Risk & Security
               </Text>
-              <Text variant="body" className="text-sm text-center">
+              <Text variant="body" className="text-sm text-left">
                 Know when restricted areas are breached or usage patterns are irregular. Flag anomalies before they become threats.
               </Text>
             </Card>
@@ -121,10 +121,10 @@ export default function PlatformOverviewPage() {
               <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <span className="text-red-600 text-xl">🔥</span>
               </div>
-              <Text as="h3" variant="h3" className="text-center mb-3 text-sm">
+              <Text as="h3" variant="h3" className="text-left mb-3 text-sm">
                 Fire Safety Compliance
               </Text>
-              <Text variant="body" className="text-sm text-center">
+              <Text variant="body" className="text-sm text-left">
                 See instant alerts for blocked exits, overcrowding, or floor breaches. Support live headcounts and real-time evacuation insight.
               </Text>
             </Card>
@@ -133,10 +133,10 @@ export default function PlatformOverviewPage() {
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <span className="text-green-600 text-xl">⚡</span>
               </div>
-              <Text as="h3" variant="h3" className="text-center mb-3 text-sm">
+              <Text as="h3" variant="h3" className="text-left mb-3 text-sm">
                 Energy Performance
               </Text>
-              <Text variant="body" className="text-sm text-center">
+              <Text variant="body" className="text-sm text-left">
                 Reduce waste by syncing lighting, HVAC and more to actual use. Cortex™ identifies inefficiencies and recommends corrective actions.
               </Text>
             </Card>
@@ -145,10 +145,10 @@ export default function PlatformOverviewPage() {
               <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <span className="text-purple-600 text-xl">📊</span>
               </div>
-              <Text as="h3" variant="h3" className="text-center mb-3 text-sm">
+              <Text as="h3" variant="h3" className="text-left mb-3 text-sm">
                 Operational Insights
               </Text>
-              <Text variant="body" className="text-sm text-center">
+              <Text variant="body" className="text-sm text-left">
                 Benchmark usage, spot trends, and feed predictive models. All insights available in clear, executive-ready dashboards or automated reports.
               </Text>
             </Card>
@@ -365,10 +365,10 @@ export default function PlatformOverviewPage() {
               </div>
 
               <div>
-                <Text as="h3" variant="h3" className="mb-6 text-center">Platform Architecture Overview</Text>
+                <Text as="h3" variant="h3" className="mb-6 text-left">Platform Architecture Overview</Text>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                   <Card className="bg-slate-50" withImage={false}>
-                    <div className="text-center">
+                    <div className="text-left">
                       <Database className="h-10 w-10 text-blue-600 mx-auto mb-3" />
                       <Text as="h4" variant="h3" className="mb-2">Data Layer</Text>
                       <Text variant="body" className="text-sm">Real-time data ingestion and processing</Text>
@@ -376,7 +376,7 @@ export default function PlatformOverviewPage() {
                   </Card>
 
                   <Card className="bg-slate-50" withImage={false}>
-                    <div className="text-center">
+                    <div className="text-left">
                       <Cpu className="h-10 w-10 text-green-600 mx-auto mb-3" />
                       <Text as="h4" variant="h3" className="mb-2">AI Engine</Text>
                       <Text variant="body" className="text-sm">Machine learning and analytics</Text>
@@ -384,7 +384,7 @@ export default function PlatformOverviewPage() {
                   </Card>
 
                   <Card className="bg-slate-50" withImage={false}>
-                    <div className="text-center">
+                    <div className="text-left">
                       <GitBranch className="h-10 w-10 text-purple-600 mx-auto mb-3" />
                       <Text as="h4" variant="h3" className="mb-2">API Gateway</Text>
                       <Text variant="body" className="text-sm">Integration and orchestration</Text>
@@ -392,7 +392,7 @@ export default function PlatformOverviewPage() {
                   </Card>
 
                   <Card className="bg-slate-50" withImage={false}>
-                    <div className="text-center">
+                    <div className="text-left">
                       <Zap className="h-10 w-10 text-orange-600 mx-auto mb-3" />
                       <Text as="h4" variant="h3" className="mb-2">Application Layer</Text>
                       <Text variant="body" className="text-sm">User interfaces and experiences</Text>
@@ -511,7 +511,7 @@ export default function PlatformOverviewPage() {
 
       {/* Final CTA */}
       <Section backgroundColor="gray" className="pt-10">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-6 text-left">
           <Text as="h2" variant="h2" className="mb-6">Ready to see Cortex™ in action?</Text>
           <Text variant="body" className="mb-8 text-lg">
             Book a personalized demo to discover how our real-time intelligence platform can transform your estate management.

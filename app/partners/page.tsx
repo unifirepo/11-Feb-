@@ -310,7 +310,7 @@ export default function Partners() {
 
       {/* Join the Ecosystem */}
       <Section>
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <div className="max-w-3xl mx-auto px-6 text-left">
           <Text as="h2" variant="h2" className="mb-6">Join the Ecosystem</Text>
           <Text variant="body" className="mb-6">
             Together, we make buildings safer, greener, and more resilient. As a Cortex partner, you keep your client relationships while extending your value with live, defensible intelligence.

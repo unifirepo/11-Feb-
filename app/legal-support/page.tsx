@@ -128,7 +128,7 @@ export default function LegalSupportPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-unifi-green/10 via-transparent to-unifi-blue/15" />
         </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center w-full pt-24">
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-left w-full pt-24">
           <H1 className="text-4xl md:text-5xl font-bold text-white mb-6">Legal & Support</H1>
           <p className="text-lg md:text-xl text-white/85">
             Transparency, compliance, and support you can rely on.
@@ -193,7 +193,7 @@ export default function LegalSupportPage() {
 
       {/* Contact CTA */}
       <Section className="bg-gray-50">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-6 text-left">
           <H2 className="text-2xl font-bold text-gray-900 mb-4">Still Have Questions?</H2>
           <p className="text-gray-600 mb-6">
             Our team is here to help. Get in touch for any legal, privacy, or support inquiries.

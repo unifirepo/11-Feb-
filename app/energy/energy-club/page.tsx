@@ -24,11 +24,11 @@ export default function EnergyClub() {
         </div>
 
         <div className="relative z-10 w-full">
-          <div className="max-w-7xl mx-auto px-6 w-full text-center">
+          <div className="max-w-7xl mx-auto px-6 w-full text-left">
             <H1 className="text-4xl md:text-5xl font-semibold text-white mb-6 leading-tight animate-fade-in-up">
               Energy Procurement. Smarter. Lower Risk. Fully Aligned.
             </H1>
-            <Body className="text-lg md:text-xl text-white/85 max-w-3xl mx-auto animate-fade-in-up">
+            <Body className="text-lg md:text-xl text-white/85 max-w-3xl animate-fade-in-up">
               Launching 2025: Unifi.id Energy - our procurement club delivering aggregated buying power, supplier transparency, and real client savings.
             </Body>
           </div>
@@ -37,7 +37,7 @@ export default function EnergyClub() {
 
       <Section backgroundColor="gray">
         <div className="max-w-7xl mx-auto px-6">
-          <H2 className="text-3xl font-bold text-gray-900 mb-8 text-center">What Makes Unifi.id Energy Different</H2>
+          <H2 className="text-3xl font-bold text-gray-900 mb-8 text-left">What Makes Unifi.id Energy Different</H2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { title: "Collective Buying Power", desc: "Collective corporate buying power without full aggregation lock-in." },
@@ -105,7 +105,7 @@ export default function EnergyClub() {
       </Section>
 
       <Section backgroundColor="gray">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <div className="max-w-3xl mx-auto px-6 text-left">
           <H2 className="text-2xl font-bold text-gray-900 mb-4">Register Your Interest</H2>
           <Body className="mb-8 text-gray-600">
             Be the first to know when the Unifi.id Energy Club launches for corporate clients. Contact our energy team to learn more.

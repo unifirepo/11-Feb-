@@ -5,7 +5,6 @@ import { Section } from '@/src/components/Section';
 import Image from 'next/image';
 import { SEO } from '@/src/components/SEO';
 import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
-import { BarChart3 } from 'lucide-react';
 
 export default function EnergyMonitoring() {
   const heroImage = pickUnifiPlaceholder('hero', 'energy-monitoring');
@@ -24,16 +23,12 @@ export default function EnergyMonitoring() {
         </div>
 
         <div className="relative z-10 w-full">
-          <div className="max-w-7xl mx-auto px-6 text-center">
-            <div className="flex justify-center mb-6 animate-fade-in-up">
-              <div className="w-16 h-16 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                <BarChart3 className="w-8 h-8 text-white" />
-              </div>
-            </div>
+          <div className="max-w-7xl mx-auto px-6 text-left">
+            <div className="mb-6 animate-fade-in-up" />
             <H1 className="text-5xl md:text-6xl font-semibold text-white mb-6 leading-tight animate-fade-in-up">
               Energy Monitoring
             </H1>
-            <Body className="text-lg md:text-xl text-white/85 max-w-3xl mx-auto animate-fade-in-up">
+            <Body className="text-lg md:text-xl text-white/85 max-w-3xl animate-fade-in-up">
               Understand your energy consumption to identify savings opportunities and track the performance of your upgrades.
             </Body>
           </div>
@@ -41,7 +36,7 @@ export default function EnergyMonitoring() {
       </Section>
 
       <Section backgroundColor="gray">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <div className="max-w-3xl mx-auto px-6 text-left">
           <H2 className="text-2xl font-bold text-gray-900 mb-4">Content Coming Soon</H2>
           <Body className="mb-8 text-gray-600">
             We are currently developing this section to provide detailed information about our energy monitoring solutions. Check back soon for updates.

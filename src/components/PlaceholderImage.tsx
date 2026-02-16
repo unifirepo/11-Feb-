@@ -21,7 +21,8 @@ export default function PlaceholderImage({
   seed = 'default',
   label,
 }: PlaceholderImageProps) {
-  const resolvedSrc = withBasePath(src ?? pickUnifiPlaceholder(kind, seed));
+  // Avoid double-prefixing: pickUnifiPlaceholder() already applies withBasePath internally.
+  const resolvedSrc = src ? withBasePath(src) : pickUnifiPlaceholder(kind, seed);
   const resolvedAlt = alt || label || '';
   return (
     <div

@@ -6,7 +6,7 @@ import { Section } from '@/src/components/Section';
 import { ButtonLink } from '@/src/components/ButtonLink';
 import Card from '@/src/components/Card';
 import { getSectorBySlug, sectors } from '@/src/content/sectors';
-import { pickUnifiPlaceholder } from '@/src/content/unifiAssets';
+import { pickUnifiPlaceholder, withBasePath } from '@/src/content/unifiAssets';
 import type { Metadata } from 'next';
 
 type PageProps = {
@@ -49,7 +49,7 @@ export default async function SectorPage({ params }: PageProps) {
       <Section className="relative overflow-hidden min-h-[70vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src={sector.heroImage || pickUnifiPlaceholder('hero', sector.slug)}
+            src={withBasePath(sector.heroImage || pickUnifiPlaceholder('hero', sector.slug))}
             alt={`${sector.title} sector hero image`}
             fill
             priority

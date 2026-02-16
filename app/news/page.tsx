@@ -98,7 +98,7 @@ export default function NewsHub() {
         </div>
 
         <div className="relative z-10 w-full pt-24">
-          <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="max-w-4xl mx-auto px-6 text-left">
             <H1 className="text-4xl md:text-5xl font-bold text-white mb-6">News & Blog</H1>
             <p className="text-lg md:text-xl text-white/85">
               Insights, case studies, and updates on smart building intelligence, fire safety, sustainability, and more.

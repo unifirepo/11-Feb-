@@ -34,7 +34,7 @@ export default function RoleFacilities() {
               <H1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
                 Facilities Manager
               </H1>
-              <Lead className="text-white/80 mb-10 max-w-2xl">
+              <Lead className="text-white/85 mb-10 max-w-2xl">
                 Practical control for day-to-day delivery with consistent workflows and evidence-led reporting. Cortex™ helps you move from reactive maintenance to proactive estate management.
               </Lead>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -51,7 +51,7 @@ export default function RoleFacilities() {
       {/* Facilities Priorities */}
       <Section backgroundColor="white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-left max-w-3xl mx-auto mb-16">
             <H2 className="text-3xl md:text-4xl font-bold mb-4">Facilities Priorities</H2>
             <Body>
               Cortex™ provides the tools and data needed to streamline day-to-day operations and improve occupant satisfaction across your estate.
@@ -85,37 +85,37 @@ export default function RoleFacilities() {
       </Section>
 
       {/* Facilities Metrics Section */}
-      <Section className="bg-gray-900 text-white">
+      <Section className="bg-unifi-light border border-black/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <H2 className="text-3xl font-bold mb-6 text-white">Facilities Metrics That Matter</H2>
+              <H2 className="text-3xl font-bold mb-6 text-gray-900">Facilities Metrics That Matter</H2>
               <div className="space-y-8">
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/20 flex items-center justify-center text-unifi-blue font-bold">01</div>
                   <div>
-                    <H3 className="text-lg font-bold mb-2 text-white">Real-Time Occupancy Density</H3>
-                    <Body className="text-white/60">Monitor live usage levels across different zones to ensure safety and comfort for all occupants.</Body>
+                    <H3 className="text-lg font-bold mb-2 text-gray-900">Real-Time Occupancy Density</H3>
+                    <Body className="text-gray-600">Monitor live usage levels across different zones to ensure safety and comfort for all occupants.</Body>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/20 flex items-center justify-center text-unifi-blue font-bold">02</div>
                   <div>
-                    <H3 className="text-lg font-bold mb-2 text-white">Reactive vs. Proactive Task Ratio</H3>
-                    <Body className="text-white/60">Track your progress in reducing emergency call-outs through data-led predictive maintenance.</Body>
+                    <H3 className="text-lg font-bold mb-2 text-gray-900">Reactive vs. Proactive Task Ratio</H3>
+                    <Body className="text-gray-600">Track your progress in reducing emergency call-outs through data-led predictive maintenance.</Body>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/20 flex items-center justify-center text-unifi-blue font-bold">03</div>
                   <div>
-                    <H3 className="text-lg font-bold mb-2 text-white">System Health Score</H3>
-                    <Body className="text-white/60">A unified metric of the operational status of all critical building systems across your portfolio.</Body>
+                    <H3 className="text-lg font-bold mb-2 text-gray-900">System Health Score</H3>
+                    <Body className="text-gray-600">A unified metric of the operational status of all critical building systems across your portfolio.</Body>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="bg-white/5 rounded-3xl p-8 border border-white/10">
-              <H3 className="text-2xl font-bold mb-6 text-white">Cortex™ Facilities Deliverables</H3>
+            <div className="bg-white rounded-3xl p-8 border border-black/5">
+              <H3 className="text-2xl font-bold mb-6 text-gray-900">Cortex™ Facilities Deliverables</H3>
               <ul className="space-y-4">
                 {[
                   "Predictive maintenance scheduling tools",
@@ -126,16 +126,16 @@ export default function RoleFacilities() {
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3">
                     <div className="w-5 h-5 rounded-full bg-unifi-blue flex items-center justify-center flex-shrink-0">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-3 h-3 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-white/80">{item}</span>
+                    <span className="text-unifi-gray-dark">{item}</span>
                   </li>
                 ))}
               </ul>
               <div className="mt-10">
-                <ButtonLink href="/contact" className="w-full text-center">Book Facilities Demo</ButtonLink>
+                <ButtonLink href="/contact" className="w-full text-left">Book Facilities Demo</ButtonLink>
               </div>
             </div>
           </div>
@@ -144,7 +144,7 @@ export default function RoleFacilities() {
 
       {/* CTA Section */}
       <Section>
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-6 text-left">
           <H2 className="text-3xl font-bold mb-6">Ready to streamline your facilities?</H2>
           <Body className="mb-10 text-lg">
             Discover how Cortex™ can help you gain better control, reduce reactive work, and improve the performance of your buildings every day.

@@ -34,7 +34,7 @@ export default function RoleFireSafetyLead() {
               <H1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
                 Fire Safety Lead
               </H1>
-              <Lead className="text-white/80 mb-10 max-w-2xl">
+              <Lead className="text-white/85 mb-10 max-w-2xl">
                 Proactive control and audit-ready evidence across estates built for compliance-led teams. Cortex™ and FireGuard™ provide the continuous intelligence needed to safeguard lives and property.
               </Lead>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -51,7 +51,7 @@ export default function RoleFireSafetyLead() {
       {/* Fire Safety Priorities */}
       <Section backgroundColor="white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-left max-w-3xl mx-auto mb-16">
             <H2 className="text-3xl md:text-4xl font-bold mb-4">Fire Safety Priorities</H2>
             <Body>
               Cortex™ addresses the critical need for real-time visibility and verifiable evidence in fire safety management across complex property portfolios.
@@ -85,37 +85,37 @@ export default function RoleFireSafetyLead() {
       </Section>
 
       {/* Fire Safety Metrics Section */}
-      <Section className="bg-gray-900 text-white">
+      <Section className="bg-unifi-light border border-black/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <H2 className="text-3xl font-bold mb-6 text-white">Fire Safety Metrics That Matter</H2>
+              <H2 className="text-3xl font-bold mb-6 text-gray-900">Fire Safety Metrics That Matter</H2>
               <div className="space-y-8">
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/20 flex items-center justify-center text-unifi-blue font-bold">01</div>
                   <div>
-                    <H3 className="text-lg font-bold mb-2 text-white">Real-Time System Health Index</H3>
-                    <Body className="text-white/60">A live aggregate of the operational status of all fire detection and suppression systems across your estate.</Body>
+                    <H3 className="text-lg font-bold mb-2 text-gray-900">Real-Time System Health Index</H3>
+                    <Body className="text-gray-600">A live aggregate of the operational status of all fire detection and suppression systems across your estate.</Body>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/20 flex items-center justify-center text-unifi-blue font-bold">02</div>
                   <div>
-                    <H3 className="text-lg font-bold mb-2 text-white">Evacuation Time Analytics</H3>
-                    <Body className="text-white/60">Benchmark and improve evacuation performance using real-time occupancy and movement data.</Body>
+                    <H3 className="text-lg font-bold mb-2 text-gray-900">Evacuation Time Analytics</H3>
+                    <Body className="text-gray-600">Benchmark and improve evacuation performance using real-time occupancy and movement data.</Body>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/20 flex items-center justify-center text-unifi-blue font-bold">03</div>
                   <div>
-                    <H3 className="text-lg font-bold mb-2 text-white">Compliance Gap Visibility</H3>
-                    <Body className="text-white/60">Instantly identify buildings or zones that are falling behind on mandatory testing or maintenance schedules.</Body>
+                    <H3 className="text-lg font-bold mb-2 text-gray-900">Compliance Gap Visibility</H3>
+                    <Body className="text-gray-600">Instantly identify buildings or zones that are falling behind on mandatory testing or maintenance schedules.</Body>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="bg-white/5 rounded-3xl p-8 border border-white/10">
-              <H3 className="text-2xl font-bold mb-6 text-white">Cortex™ Fire Safety Deliverables</H3>
+            <div className="bg-white rounded-3xl p-8 border border-black/5">
+              <H3 className="text-2xl font-bold mb-6 text-gray-900">Cortex™ Fire Safety Deliverables</H3>
               <ul className="space-y-4">
                 {[
                   "FireGuard continuous monitoring platform",
@@ -126,16 +126,16 @@ export default function RoleFireSafetyLead() {
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3">
                     <div className="w-5 h-5 rounded-full bg-unifi-blue flex items-center justify-center flex-shrink-0">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-3 h-3 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-white/80">{item}</span>
+                    <span className="text-unifi-gray-dark">{item}</span>
                   </li>
                 ))}
               </ul>
               <div className="mt-10">
-                <ButtonLink href="/contact" className="w-full text-center">Request Fire Safety Audit</ButtonLink>
+                <ButtonLink href="/contact" className="w-full text-left">Request Fire Safety Audit</ButtonLink>
               </div>
             </div>
           </div>
@@ -144,7 +144,7 @@ export default function RoleFireSafetyLead() {
 
       {/* CTA Section */}
       <Section>
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-6 text-left">
           <H2 className="text-3xl font-bold mb-6">Ready to transform your fire safety?</H2>
           <Body className="mb-10 text-lg">
             Discover how Cortex™ and FireGuard™ can help you gain total visibility, automate compliance, and protect your people with real-time intelligence.

@@ -32,7 +32,7 @@ export default function ContactPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-unifi-green/10 via-transparent to-unifi-blue/15" />
         </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center w-full pt-24">
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-left w-full pt-24">
           <H1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Contact Us / Book Demo
           </H1>
@@ -45,8 +45,8 @@ export default function ContactPage() {
       {/* Office locations */}
       <Section>
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-3 gap-6">
-            <Card withImage={false} className="h-full">
+          <div className="grid gap-6 place-items-center">
+            <Card withImage={false} className="h-full w-full max-w-md">
               <H3 className="text-lg font-semibold text-gray-900 mb-3">London Office (HQ)</H3>
               <div className="text-gray-700 space-y-1">
                 <p>Unifi.id HQ</p>
@@ -73,54 +73,7 @@ export default function ContactPage() {
               </div>
             </Card>
 
-            <Card withImage={false} className="h-full">
-              <H3 className="text-lg font-semibold text-gray-900 mb-3">Chinese Office</H3>
-              <div className="text-gray-700 space-y-1">
-                <p>杭州致控科技有限公司</p>
-                <p>A-506, 171 Xiangyuan Road</p>
-                <p>Gongshu District</p>
-                <p>Hangzhou</p>
-                <p>Zhejiang</p>
-                <p>China 310015</p>
-              </div>
-              <div className="mt-4 space-y-2">
-                <a href="tel:+447785996916" className="text-gray-900 font-medium hover:underline">
-                  +44 (0) 7785 996 916
-                </a>
-                <div>
-                  <a href="mailto:info@unifi.id" className="text-unifi-blue font-medium hover:underline">
-                    Email London
-                  </a>
-                </div>
-              </div>
-            </Card>
-
-            <Card withImage={false} className="h-full">
-              <H3 className="text-lg font-semibold text-gray-900 mb-3">Research &amp; Development Office</H3>
-              <div className="text-gray-700 space-y-1">
-                <p>Unifi.id Research &amp; Development</p>
-                <p>Knowledge Dock</p>
-                <p>4-6 University Way</p>
-                <p>Docklands</p>
-                <p>E16 2RD</p>
-                <p>London (United Kingdom)</p>
-              </div>
-              <div className="mt-4 space-y-2">
-                <a href="tel:+447785996916" className="text-gray-900 font-medium hover:underline">
-                  +44 (0) 7785 996 916
-                </a>
-                <div>
-                  <a href="mailto:info@unifi.id" className="text-unifi-blue font-medium hover:underline">
-                    Email London
-                  </a>
-                </div>
-              </div>
-              <div className="mt-6">
-                <p className="text-sm font-semibold text-gray-900">Opening Hours:</p>
-                <p className="text-sm text-gray-700">Monday to Friday</p>
-                <p className="text-sm text-gray-700">09:30 to 18:00 (GMT/BST)</p>
-              </div>
-            </Card>
+            {/* Additional offices removed (keep London HQ only) */}
           </div>
         </div>
       </Section>
@@ -265,7 +218,7 @@ export default function ContactPage() {
                 <div className="flex items-center justify-end">
                   <button
                     type="submit"
-                    className="px-8 py-3 rounded-full bg-gray-900 text-white font-semibold hover:bg-gray-800 transition-colors"
+                    className="px-8 py-3 rounded-full bg-unifi-light border border-black/5 font-semibold hover:bg-gray-800 transition-colors"
                   >
                     Submit
                   </button>
@@ -279,7 +232,7 @@ export default function ContactPage() {
       {/* Why Choose Section */}
       <Section className="bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center mb-10">
+          <div className="max-w-4xl mx-auto text-left mb-10">
             <H2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose Cortex™?</H2>
             <p className="text-gray-600">
               A platform built to reduce risk, improve decision-making, and integrate cleanly with the systems you already rely on.

@@ -53,7 +53,7 @@ export default function HeroSection() {
       </div>
 
       {/* Centered Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-left">
         <div className="flex flex-col items-center">
           <AnimatePresence mode="wait" initial={false}>
             <m.h1
@@ -76,7 +76,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ delay: 0.18, duration: 0.55, ease: COOL_EASE }}
-              className="text-lg md:text-2xl text-white/90 max-w-3xl mb-10"
+              className="text-lg md:text-2xl text-white/85 max-w-3xl mb-10"
               style={{ fontFamily: "'Ubuntu', sans-serif" }}
             >
               {slide.caption}

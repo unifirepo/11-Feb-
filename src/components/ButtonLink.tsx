@@ -19,7 +19,7 @@ export function ButtonLink({
   ...props
 }: ButtonLinkProps) {
   const base =
-    'inline-block font-medium rounded-sm transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-unifi-blue/30 focus-visible:ring-offset-2';
+    'inline-block font-medium rounded-sm transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-unifi-blue/30 focus-visible:ring-offset-2';
 
   const sizeStyles: Record<Size, string> = {
     sm: 'px-4 py-2 text-sm',

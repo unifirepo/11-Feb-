@@ -65,7 +65,7 @@ export default function EnergyContact() {
                   </li>
                 ))}
               </ul>
-              <ButtonLink href="/contact">Book Free Survey</ButtonLink>
+              <ButtonLink href="/energy/survey">Book Free Survey</ButtonLink>
             </div>
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 animate-fade-in-up">
               <div className="flex items-center gap-4 mb-6">
@@ -90,7 +90,7 @@ export default function EnergyContact() {
                   </li>
                 ))}
               </ul>
-              <ButtonLink href="/contact">Contact Energy Team</ButtonLink>
+              <ButtonLink href="/energy/team">Contact Energy Team</ButtonLink>
             </div>
           </div>
         </div>
@@ -98,7 +98,7 @@ export default function EnergyContact() {
 
       <Section>
         <div className="max-w-7xl mx-auto px-6">
-          <H3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Why Choose Unifi.id Energy Solutions?</H3>
+          <H3 className="text-2xl font-bold text-gray-900 mb-8 text-left">Why Choose Unifi.id Energy Solutions?</H3>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 animate-fade-in-up">
               <H3 className="text-lg font-bold text-gray-900 mb-2">Zero Upfront Cost</H3>
@@ -113,7 +113,7 @@ export default function EnergyContact() {
               <Body className="text-gray-600">Measurable improvements in efficiency, sustainability, and compliance.</Body>
             </div>
           </div>
-          <div className="mt-8 text-center">
+          <div className="mt-8 text-left">
             <ButtonLink href="/energy/hub" variant="secondary">Back to Energy Hub</ButtonLink>
           </div>
         </div>

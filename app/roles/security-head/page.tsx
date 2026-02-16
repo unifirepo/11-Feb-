@@ -34,7 +34,7 @@ export default function RoleSecurityHead() {
               <H1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
                 Security Head
               </H1>
-              <Lead className="text-white/80 mb-10 max-w-2xl">
+              <Lead className="text-white/85 mb-10 max-w-2xl">
                 Access control, threat detection, and perimeter security. Cortex™ provides the real-time presence intelligence needed to transform physical security into a proactive, data-led operation.
               </Lead>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -51,7 +51,7 @@ export default function RoleSecurityHead() {
       {/* Security Priorities */}
       <Section backgroundColor="white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-left max-w-3xl mx-auto mb-16">
             <H2 className="text-3xl md:text-4xl font-bold mb-4">Security Priorities</H2>
             <Body>
               Cortex™ addresses the critical need for total building awareness and rapid incident response across complex property portfolios.
@@ -85,37 +85,37 @@ export default function RoleSecurityHead() {
       </Section>
 
       {/* Security Metrics Section */}
-      <Section className="bg-gray-900 text-white">
+      <Section className="bg-unifi-light border border-black/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <H2 className="text-3xl font-bold mb-6 text-white">Security Metrics That Matter</H2>
+              <H2 className="text-3xl font-bold mb-6 text-gray-900">Security Metrics That Matter</H2>
               <div className="space-y-8">
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/20 flex items-center justify-center text-unifi-blue font-bold">01</div>
                   <div>
-                    <H3 className="text-lg font-bold mb-2 text-white">Real-Time Occupancy Awareness</H3>
-                    <Body className="text-white/60">A live, zone-by-zone view of building occupancy to ensure security protocols are being followed.</Body>
+                    <H3 className="text-lg font-bold mb-2 text-gray-900">Real-Time Occupancy Awareness</H3>
+                    <Body className="text-gray-600">A live, zone-by-zone view of building occupancy to ensure security protocols are being followed.</Body>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/20 flex items-center justify-center text-unifi-blue font-bold">02</div>
                   <div>
-                    <H3 className="text-lg font-bold mb-2 text-white">Security Anomaly Alert Rate</H3>
-                    <Body className="text-white/60">Track the effectiveness of your proactive threat detection and the speed of your team's response.</Body>
+                    <H3 className="text-lg font-bold mb-2 text-gray-900">Security Anomaly Alert Rate</H3>
+                    <Body className="text-gray-600">Track the effectiveness of your proactive threat detection and the speed of your team's response.</Body>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-unifi-blue/20 flex items-center justify-center text-unifi-blue font-bold">03</div>
                   <div>
-                    <H3 className="text-lg font-bold mb-2 text-white">Perimeter Integrity Score</H3>
-                    <Body className="text-white/60">A unified metric of the health and status of all access control and perimeter security systems.</Body>
+                    <H3 className="text-lg font-bold mb-2 text-gray-900">Perimeter Integrity Score</H3>
+                    <Body className="text-gray-600">A unified metric of the health and status of all access control and perimeter security systems.</Body>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="bg-white/5 rounded-3xl p-8 border border-white/10">
-              <H3 className="text-2xl font-bold mb-6 text-white">Cortex™ Security Deliverables</H3>
+            <div className="bg-white rounded-3xl p-8 border border-black/5">
+              <H3 className="text-2xl font-bold mb-6 text-gray-900">Cortex™ Security Deliverables</H3>
               <ul className="space-y-4">
                 {[
                   "Real-time presence intelligence dashboard",
@@ -126,16 +126,16 @@ export default function RoleSecurityHead() {
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3">
                     <div className="w-5 h-5 rounded-full bg-unifi-blue flex items-center justify-center flex-shrink-0">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-3 h-3 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-white/80">{item}</span>
+                    <span className="text-unifi-gray-dark">{item}</span>
                   </li>
                 ))}
               </ul>
               <div className="mt-10">
-                <ButtonLink href="/contact" className="w-full text-center">Book Security Demo</ButtonLink>
+                <ButtonLink href="/contact" className="w-full text-left">Book Security Demo</ButtonLink>
               </div>
             </div>
           </div>
@@ -144,7 +144,7 @@ export default function RoleSecurityHead() {
 
       {/* CTA Section */}
       <Section>
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-6 text-left">
           <H2 className="text-3xl font-bold mb-6">Ready to transform your security?</H2>
           <Body className="mb-10 text-lg">
             Discover how Cortex™ can help you gain total building awareness, detect threats proactively, and protect your people with real-time intelligence.

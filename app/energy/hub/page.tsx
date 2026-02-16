@@ -40,7 +40,7 @@ export default function EnergyHubPage() {
             variants={staggerContainer}
             initial="initial"
             animate="animate"
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-4xl text-left"
           >
             <div className="h-20" aria-hidden="true" />
             <motion.div variants={fadeInUp}>
@@ -93,7 +93,7 @@ export default function EnergyHubPage() {
           >
             {/* Tech Hero */}
             <Section backgroundColor="white">
-              <div className="max-w-7xl mx-auto px-6 text-center max-w-3xl mx-auto">
+              <div className="max-w-7xl mx-auto px-6 text-left max-w-3xl mx-auto">
                 <H2 className="mb-6">Choose Your Decarbonisation Technology</H2>
                 <Body className="text-lg">
                   Start with the technology that delivers the biggest impact for your estate. Each solution can be implemented independently or as part of a comprehensive upgrade program.
@@ -102,7 +102,7 @@ export default function EnergyHubPage() {
             </Section>
 
             {/* Tech Tabs */}
-            <div className="bg-unifi-gray/50 py-4">
+            <div className="bg-unifi-light py-4 border-y border-black/5">
               <div className="max-w-7xl mx-auto px-6 flex justify-center gap-4">
                 {[
                   { id: 'led', label: 'LED Lighting', icon: Lightbulb },
@@ -130,7 +130,7 @@ export default function EnergyHubPage() {
                 {/* LED Hero Stats */}
                 <Section backgroundColor="white">
                   <div className="max-w-7xl mx-auto px-6">
-                    <div className="max-w-4xl mx-auto text-center mb-16">
+                    <div className="max-w-4xl mx-auto text-left mb-16">
                       <H2 className="mb-4">LED Lighting Upgrades: Smarter Investment, Lifetime Returns</H2>
                       <Body className="text-lg text-unifi-gray-dark">
                         In today's climate of rising energy bills, stretched budgets, and ESG targets, LED upgrades remain one of the most powerful, proven investments available.
@@ -142,7 +142,7 @@ export default function EnergyHubPage() {
                         { val: '3-5 Years', label: 'Typical Payback Period' },
                         { val: '25+ Years', label: 'LED Lifespan' }
                       ].map((stat, i) => (
-                        <div key={i} className="bg-unifi-blue/5 p-8 rounded-2xl text-center border border-unifi-blue/10">
+                        <div key={i} className="bg-unifi-blue/5 p-8 rounded-2xl text-left border border-unifi-blue/10">
                           <div className="text-4xl font-bold text-unifi-blue mb-2">{stat.val}</div>
                           <div className="text-unifi-gray-dark font-medium">{stat.label}</div>
                         </div>
@@ -249,7 +249,7 @@ export default function EnergyHubPage() {
                 {/* The Unifi.id Standard */}
                 <Section backgroundColor="gray">
                   <div className="max-w-7xl mx-auto px-6">
-                    <div className="max-w-4xl mx-auto text-center mb-12">
+                    <div className="max-w-4xl mx-auto text-left mb-12">
                       <H2 className="mb-4">The Unifi.id Standard</H2>
                       <Body className="text-lg">At Unifi.id, we deliver solutions that protect your budget not just this year, but every year:</Body>
                     </div>
@@ -306,7 +306,7 @@ export default function EnergyHubPage() {
                 {/* Heating & HVAC Hero Stats */}
                 <Section backgroundColor="white">
                   <div className="max-w-7xl mx-auto px-6">
-                    <div className="max-w-4xl mx-auto text-center mb-16">
+                    <div className="max-w-4xl mx-auto text-left mb-16">
                       <H2 className="mb-4">Heating & HVAC: Cut Waste, Improve Comfort, Zero Capex</H2>
                       <Body className="text-lg text-unifi-gray-dark">
                         Outdated heating and HVAC systems are among the largest sources of energy waste in commercial buildings. Modern, efficient systems reduce operating costs while improving occupant comfort and compliance.
@@ -318,7 +318,7 @@ export default function EnergyHubPage() {
                         { val: '5-10 Years', label: 'Typical Payback Period' },
                         { val: '15-20 Years', label: 'Modern System Lifespan' }
                       ].map((stat, i) => (
-                        <div key={i} className="bg-unifi-blue/5 p-8 rounded-2xl text-center border border-unifi-blue/10">
+                        <div key={i} className="bg-unifi-blue/5 p-8 rounded-2xl text-left border border-unifi-blue/10">
                           <div className="text-4xl font-bold text-unifi-blue mb-2">{stat.val}</div>
                           <div className="text-unifi-gray-dark font-medium">{stat.label}</div>
                         </div>
@@ -425,7 +425,7 @@ export default function EnergyHubPage() {
                 {/* The Unifi.id Standard - Heating */}
                 <Section backgroundColor="gray">
                   <div className="max-w-7xl mx-auto px-6">
-                    <div className="max-w-4xl mx-auto text-center mb-12">
+                    <div className="max-w-4xl mx-auto text-left mb-12">
                       <H2 className="mb-4">The Unifi.id Standard</H2>
                       <Body className="text-lg">At Unifi.id, we deliver heating and HVAC solutions that protect your budget not just this year, but every year:</Body>
                     </div>
@@ -476,7 +476,7 @@ export default function EnergyHubPage() {
                 </Section>
 
                 <Section backgroundColor="white">
-                  <div className="max-w-7xl mx-auto px-6 text-center py-12">
+                  <div className="max-w-7xl mx-auto px-6 text-left py-12">
                     <ButtonLink href="/energy/contact" variant="primary">Discuss Heating & HVAC Upgrades</ButtonLink>
                   </div>
                 </Section>
@@ -488,7 +488,7 @@ export default function EnergyHubPage() {
                 {/* Solar & Renewables Hero Stats */}
                 <Section backgroundColor="white">
                   <div className="max-w-7xl mx-auto px-6">
-                    <div className="max-w-4xl mx-auto text-center mb-16">
+                    <div className="max-w-4xl mx-auto text-left mb-16">
                       <H2 className="mb-4">Solar & Renewables: Generate Clean Energy, Reduce Reliance on the Grid</H2>
                       <Body className="text-lg text-unifi-gray-dark">
                         Solar PV and renewable energy systems allow organisations to generate their own clean power, cut energy costs, and build long-term energy security. Fully funded solutions remove the capital barrier to adoption.
@@ -500,7 +500,7 @@ export default function EnergyHubPage() {
                         { val: '5-10 Years', label: 'Typical Payback Period' },
                         { val: '25+ Years', label: 'Solar Panel Lifespan' }
                       ].map((stat, i) => (
-                        <div key={i} className="bg-unifi-blue/5 p-8 rounded-2xl text-center border border-unifi-blue/10">
+                        <div key={i} className="bg-unifi-blue/5 p-8 rounded-2xl text-left border border-unifi-blue/10">
                           <div className="text-4xl font-bold text-unifi-blue mb-2">{stat.val}</div>
                           <div className="text-unifi-gray-dark font-medium">{stat.label}</div>
                         </div>
@@ -607,7 +607,7 @@ export default function EnergyHubPage() {
                 {/* The Unifi.id Standard - Solar */}
                 <Section backgroundColor="gray">
                   <div className="max-w-7xl mx-auto px-6">
-                    <div className="max-w-4xl mx-auto text-center mb-12">
+                    <div className="max-w-4xl mx-auto text-left mb-12">
                       <H2 className="mb-4">The Unifi.id Standard</H2>
                       <Body className="text-lg">At Unifi.id, we deliver solar and renewable solutions that protect your budget not just this year, but every year:</Body>
                     </div>
@@ -658,7 +658,7 @@ export default function EnergyHubPage() {
                 </Section>
 
                 <Section backgroundColor="white">
-                  <div className="max-w-7xl mx-auto px-6 text-center py-12">
+                  <div className="max-w-7xl mx-auto px-6 text-left py-12">
                     <ButtonLink href="/energy/contact" variant="primary">Explore Solar & Renewables</ButtonLink>
                   </div>
                 </Section>
@@ -673,7 +673,7 @@ export default function EnergyHubPage() {
             exit={{ opacity: 0, y: -20 }}
           >
             {/* Sector Tabs */}
-            <div className="bg-unifi-gray/50 py-4">
+            <div className="bg-unifi-light py-4 border-y border-black/5">
               <div className="max-w-7xl mx-auto px-6 flex justify-center gap-4">
                 {[
                   { id: 'education', label: 'Education', icon: GraduationCap },
@@ -700,7 +700,7 @@ export default function EnergyHubPage() {
               <div className="animate-in fade-in duration-500">
                 <Section backgroundColor="white">
                   <div className="max-w-7xl mx-auto px-6">
-                    <div className="max-w-4xl mx-auto text-center mb-12">
+                    <div className="max-w-4xl mx-auto text-left mb-12">
                       <H2 className="mb-4">LED Lighting Solutions for Education</H2>
                       <Body className="text-lg">
                         From primary schools to sprawling university campuses, the education sector is facing unprecedented energy and infrastructure pressure. Our LED lighting solutions deliver immediate savings while modernizing learning environments across all education sectors.
@@ -722,7 +722,7 @@ export default function EnergyHubPage() {
                           className={`px-6 py-2 rounded-lg font-bold transition-all ${
                             activeEduTab === tab.id
                               ? 'bg-unifi-blue/10 text-unifi-blue border-2 border-unifi-blue'
-                              : 'bg-unifi-gray text-unifi-gray-dark border-2 border-transparent hover:border-unifi-blue/30'
+                              : 'bg-unifi-light text-unifi-gray-dark border-2 border-transparent hover:border-unifi-blue/30'
                           }`}
                         >
                           {tab.label}
@@ -765,7 +765,7 @@ export default function EnergyHubPage() {
                           </div>
                         </div>
 
-                        <H3 className="text-center mb-12">University-Specific Challenges We Address</H3>
+                        <H3 className="text-left mb-12">University-Specific Challenges We Address</H3>
                         <div className="grid md:grid-cols-2 gap-12">
                           <div className="bg-white p-8 rounded-2xl shadow-sm animate-fade-in-up">
                             <div className="flex items-center gap-3 mb-6">
@@ -828,7 +828,7 @@ export default function EnergyHubPage() {
                           ].map((item, i) => (
                             <div
                               key={i}
-                              className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-center h-full flex flex-col items-center"
+                              className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-left h-full flex flex-col items-center"
                             >
                               <div className="w-14 h-14 rounded-2xl bg-unifi-blue/10 flex items-center justify-center mb-6">
                                 <item.icon className="w-7 h-7 text-unifi-blue" />
@@ -884,7 +884,7 @@ export default function EnergyHubPage() {
                           </div>
                         </div>
 
-                        <H3 className="text-center mb-12">Key Challenges for Primary & Secondary Education</H3>
+                        <H3 className="text-left mb-12">Key Challenges for Primary & Secondary Education</H3>
                         <div className="grid md:grid-cols-2 gap-12">
                           <div className="bg-white p-8 rounded-2xl shadow-sm animate-fade-in-up">
                             <div className="flex items-center gap-3 mb-6">
@@ -960,7 +960,7 @@ export default function EnergyHubPage() {
                           </div>
                         </div>
 
-                        <H3 className="text-center mb-12">Key Challenges for Further Education</H3>
+                        <H3 className="text-left mb-12">Key Challenges for Further Education</H3>
                         <div className="grid md:grid-cols-2 gap-12">
                           <div className="bg-white p-8 rounded-2xl shadow-sm animate-fade-in-up">
                             <div className="flex items-center gap-3 mb-6">
@@ -1035,8 +1035,8 @@ export default function EnergyHubPage() {
                           </div>
                         </div>
 
-                        <div className="text-center mb-8">
-                          <H3 className="text-center mb-2">School-Specific Challenges We Address</H3>
+                        <div className="text-left mb-8">
+                          <H3 className="text-left mb-2">School-Specific Challenges We Address</H3>
                         </div>
                         <div className="grid md:grid-cols-3 gap-6">
                           {[
@@ -1068,7 +1068,7 @@ export default function EnergyHubPage() {
                               ],
                             },
                           ].map((c) => (
-                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-center">
+                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-left">
                               <H3 className="text-lg mb-3">{c.title}</H3>
                               <Body className="text-unifi-gray-dark">{c.desc}</Body>
                               <ul className="mt-5 space-y-2">
@@ -1083,7 +1083,7 @@ export default function EnergyHubPage() {
                         </div>
 
                         <div className="mt-8">
-                          <Body className="text-unifi-gray-dark text-center">
+                          <Body className="text-unifi-gray-dark text-left">
                             With LED retrofits, schools aren't finding new money - they're redirecting wasted energy spend into brighter classrooms and safer estates that pay for themselves, often in less than five years.
                           </Body>
                         </div>
@@ -1136,7 +1136,7 @@ export default function EnergyHubPage() {
                               desc: 'Rollouts planned around term-time constraints and local operational needs.',
                             },
                           ].map((c) => (
-                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-center">
+                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-left">
                               <H3 className="text-lg mb-3">{c.title}</H3>
                               <Body className="text-unifi-gray-dark">{c.desc}</Body>
                             </div>
@@ -1191,7 +1191,7 @@ export default function EnergyHubPage() {
                               desc: 'Measurement and reporting to support sustainability and stakeholder communications.',
                             },
                           ].map((c) => (
-                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-center">
+                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-left">
                               <H3 className="text-lg mb-3">{c.title}</H3>
                               <Body className="text-unifi-gray-dark">{c.desc}</Body>
                             </div>
@@ -1266,7 +1266,7 @@ export default function EnergyHubPage() {
                               ],
                             },
                           ].map((c) => (
-                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-center">
+                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-left">
                               <H3 className="text-lg mb-3">{c.title}</H3>
                               <Body className="text-unifi-gray-dark">{c.desc}</Body>
                               <ul className="mt-5 space-y-2">
@@ -1281,7 +1281,7 @@ export default function EnergyHubPage() {
                         </div>
 
                         <div className="mt-8">
-                          <Body className="text-unifi-gray-dark text-center">
+                          <Body className="text-unifi-gray-dark text-left">
                             Our LED solutions are designed for school groups. We understand the need for consistency, transparency, and value across multiple sites - and we deliver all three.
                           </Body>
                         </div>
@@ -1298,7 +1298,7 @@ export default function EnergyHubPage() {
               <div className="animate-in fade-in duration-500">
                 <Section backgroundColor="white">
                   <div className="max-w-7xl mx-auto px-6">
-                    <div className="max-w-4xl mx-auto text-center mb-12">
+                    <div className="max-w-4xl mx-auto text-left mb-12">
                       <H2 className="mb-4">LED Lighting for Corporate Real Estate</H2>
                       <Body className="text-lg">
                         Corporate real estate demands high performance, reliability, and cost efficiency. LED lighting delivers all three - reducing energy costs by up to 80%, enhancing workspace quality, and supporting ESG commitments across your entire portfolio.
@@ -1323,7 +1323,7 @@ export default function EnergyHubPage() {
                             'px-6 py-2 rounded-lg font-bold transition-all border-2 ' +
                             (activeCorporateTab === tab.id
                               ? 'bg-unifi-blue/10 text-unifi-blue border-unifi-blue'
-                              : 'bg-unifi-gray text-unifi-gray-dark border-transparent hover:border-unifi-blue/30')
+                              : 'bg-unifi-light text-unifi-gray-dark border-transparent hover:border-unifi-blue/30')
                           }
                         >
                           {tab.label}
@@ -1364,7 +1364,7 @@ export default function EnergyHubPage() {
                           </div>
                         </div>
 
-                        <H3 className="text-center mb-10">Challenges Office Buildings Face - And How LED Helps</H3>
+                        <H3 className="text-left mb-10">Challenges Office Buildings Face - And How LED Helps</H3>
                         <div className="grid md:grid-cols-3 gap-6">
                           {[
                             {
@@ -1398,7 +1398,7 @@ export default function EnergyHubPage() {
                               ],
                             },
                           ].map((c) => (
-                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-center">
+                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-left">
                               <H3 className="text-lg mb-3">{c.title}</H3>
                               <Body className="text-unifi-gray-dark">{c.desc}</Body>
                               <ul className="mt-5 space-y-2">
@@ -1413,7 +1413,7 @@ export default function EnergyHubPage() {
                         </div>
 
                         <div className="mt-8">
-                          <Body className="text-unifi-gray-dark text-center">
+                          <Body className="text-unifi-gray-dark text-left">
                             From single-occupier headquarters to multi-tenanted office blocks, our LED solutions deliver immediate cost savings, enhanced environments, and long-term value.
                           </Body>
                         </div>
@@ -1453,7 +1453,7 @@ export default function EnergyHubPage() {
                           </div>
                         </div>
 
-                        <H3 className="text-center mb-10">Challenges Retail Faces - And How LED Helps</H3>
+                        <H3 className="text-left mb-10">Challenges Retail Faces - And How LED Helps</H3>
                         <div className="grid md:grid-cols-3 gap-6">
                           {[
                             {
@@ -1487,7 +1487,7 @@ export default function EnergyHubPage() {
                               ],
                             },
                           ].map((c) => (
-                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-center">
+                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-left">
                               <H3 className="text-lg mb-3">{c.title}</H3>
                               <Body className="text-unifi-gray-dark">{c.desc}</Body>
                               <ul className="mt-5 space-y-2">
@@ -1502,7 +1502,7 @@ export default function EnergyHubPage() {
                         </div>
 
                         <div className="mt-8">
-                          <Body className="text-unifi-gray-dark text-center">
+                          <Body className="text-unifi-gray-dark text-left">
                             From high-street stores to shopping centres, our LED solutions help retailers create compelling environments while dramatically reducing operational costs.
                           </Body>
                         </div>
@@ -1543,7 +1543,7 @@ export default function EnergyHubPage() {
                         </div>
 
                         <div className="mt-10">
-                          <H3 className="text-center mb-10">Challenges Mixed-Use Faces — And How LED Helps</H3>
+                          <H3 className="text-left mb-10">Challenges Mixed-Use Faces — And How LED Helps</H3>
                           <div className="grid md:grid-cols-3 gap-6">
                             {[
                               {
@@ -1577,7 +1577,7 @@ export default function EnergyHubPage() {
                                 ],
                               },
                             ].map((c) => (
-                              <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-center">
+                              <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-left">
                                 <H3 className="text-lg mb-3">{c.title}</H3>
                                 <Body className="text-unifi-gray-dark">{c.desc}</Body>
                                 <ul className="mt-5 space-y-2">
@@ -1592,7 +1592,7 @@ export default function EnergyHubPage() {
                           </div>
 
                           <div className="mt-8">
-                            <Body className="text-unifi-gray-dark text-center">
+                            <Body className="text-unifi-gray-dark text-left">
                               Whether you're developing a new mixed-use scheme or managing an existing one, our LED solutions deliver the flexibility and performance you need across all areas.
                             </Body>
                           </div>
@@ -1633,7 +1633,7 @@ export default function EnergyHubPage() {
                           </div>
                         </div>
 
-                        <H3 className="text-center mb-10">Challenges Hospitality Faces — And How LED Helps</H3>
+                        <H3 className="text-left mb-10">Challenges Hospitality Faces — And How LED Helps</H3>
                         <div className="grid md:grid-cols-3 gap-6">
                           {[
                             {
@@ -1667,7 +1667,7 @@ export default function EnergyHubPage() {
                               ],
                             },
                           ].map((c) => (
-                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-center">
+                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-left">
                               <H3 className="text-lg mb-3">{c.title}</H3>
                               <Body className="text-unifi-gray-dark">{c.desc}</Body>
                               <ul className="mt-5 space-y-2">
@@ -1682,7 +1682,7 @@ export default function EnergyHubPage() {
                         </div>
 
                         <div className="mt-8">
-                          <Body className="text-unifi-gray-dark text-center">
+                          <Body className="text-unifi-gray-dark text-left">
                             Our LED solutions are designed for hospitality — delivering the ambiance and flexibility that creates memorable experiences while dramatically reducing the costs of lighting your venue.
                           </Body>
                         </div>
@@ -1722,7 +1722,7 @@ export default function EnergyHubPage() {
                           </div>
                         </div>
 
-                        <H3 className="text-center mb-10">Challenges Industrial Faces — And How LED Helps</H3>
+                        <H3 className="text-left mb-10">Challenges Industrial Faces — And How LED Helps</H3>
                         <div className="grid md:grid-cols-3 gap-6">
                           {[
                             {
@@ -1756,7 +1756,7 @@ export default function EnergyHubPage() {
                               ],
                             },
                           ].map((c) => (
-                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-center">
+                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-left">
                               <H3 className="text-lg mb-3">{c.title}</H3>
                               <Body className="text-unifi-gray-dark">{c.desc}</Body>
                               <ul className="mt-5 space-y-2">
@@ -1771,14 +1771,14 @@ export default function EnergyHubPage() {
                         </div>
 
                         <div className="mt-8">
-                          <Body className="text-unifi-gray-dark text-center">
+                          <Body className="text-unifi-gray-dark text-left">
                             Our LED solutions are engineered for industrial environments — delivering the robustness, reliability, and performance your operations demand.
                           </Body>
                         </div>
                       </div>
                     )}
 
-                    <div className="text-center mt-12">
+                    <div className="text-left mt-12">
                       <ButtonLink href="/energy/contact" variant="primary">Book a Free Energy Survey</ButtonLink>
                     </div>
                   </div>
@@ -1790,7 +1790,7 @@ export default function EnergyHubPage() {
               <div className="animate-in fade-in duration-500">
                 <Section backgroundColor="white">
                   <div className="max-w-7xl mx-auto px-6">
-                    <div className="max-w-4xl mx-auto text-center mb-12">
+                    <div className="max-w-4xl mx-auto text-left mb-12">
                       <H2 className="mb-4">LED Lighting Solutions for Public Sector Buildings</H2>
                       <Body className="text-lg">
                         Public sector organizations face unique pressures to deliver value while meeting sustainability targets. Our LED solutions enable comprehensive upgrades without capital expenditure, funded through operational savings.
@@ -1811,7 +1811,7 @@ export default function EnergyHubPage() {
                             'px-6 py-2 rounded-lg font-bold transition-all border-2 ' +
                             (activePublicTab === tab.id
                               ? 'bg-unifi-blue/10 text-unifi-blue border-unifi-blue'
-                              : 'bg-unifi-gray text-unifi-gray-dark border-transparent hover:border-unifi-blue/30')
+                              : 'bg-unifi-light text-unifi-gray-dark border-transparent hover:border-unifi-blue/30')
                           }
                         >
                           {tab.label}
@@ -1886,7 +1886,7 @@ export default function EnergyHubPage() {
                           </div>
                         </div>
 
-                        <H3 className="text-center mb-10">Healthcare Sector Challenges We Address</H3>
+                        <H3 className="text-left mb-10">Healthcare Sector Challenges We Address</H3>
                         <div className="grid md:grid-cols-3 gap-6">
                           {[
                             {
@@ -1917,7 +1917,7 @@ export default function EnergyHubPage() {
                               ],
                             },
                           ].map((c) => (
-                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-center">
+                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-left">
                               <H3 className="text-lg mb-3">{c.title}</H3>
                               <Body className="text-unifi-gray-dark">{c.desc}</Body>
                               <ul className="mt-5 space-y-2">
@@ -1932,7 +1932,7 @@ export default function EnergyHubPage() {
                         </div>
 
                         <div className="mt-8">
-                          <Body className="text-unifi-gray-dark text-center">
+                          <Body className="text-unifi-gray-dark text-left">
                             With LED retrofits, NHS organizations redirect wasted energy spend into modern infrastructure that supports better patient outcomes and staff wellbeing while reducing operational costs.
                           </Body>
                         </div>
@@ -1972,7 +1972,7 @@ export default function EnergyHubPage() {
                           </div>
                         </div>
 
-                        <H3 className="text-center mb-10">Government Sector Challenges We Address</H3>
+                        <H3 className="text-left mb-10">Government Sector Challenges We Address</H3>
                         <div className="grid md:grid-cols-3 gap-6">
                           {[
                             {
@@ -2003,7 +2003,7 @@ export default function EnergyHubPage() {
                               ],
                             },
                           ].map((c) => (
-                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-center">
+                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-left">
                               <H3 className="text-lg mb-3">{c.title}</H3>
                               <Body className="text-unifi-gray-dark">{c.desc}</Body>
                               <ul className="mt-5 space-y-2">
@@ -2018,7 +2018,7 @@ export default function EnergyHubPage() {
                         </div>
 
                         <div className="mt-8">
-                          <Body className="text-unifi-gray-dark text-center">
+                          <Body className="text-unifi-gray-dark text-left">
                             With LED retrofits, government departments demonstrate fiscal responsibility and climate leadership simultaneously — modernizing infrastructure while protecting public funds.
                           </Body>
                         </div>
@@ -2058,7 +2058,7 @@ export default function EnergyHubPage() {
                           </div>
                         </div>
 
-                        <H3 className="text-center mb-10">Emergency Services Challenges We Address</H3>
+                        <H3 className="text-left mb-10">Emergency Services Challenges We Address</H3>
                         <div className="grid md:grid-cols-3 gap-6">
                           {[
                             {
@@ -2089,7 +2089,7 @@ export default function EnergyHubPage() {
                               ],
                             },
                           ].map((c) => (
-                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-center">
+                            <div key={c.title} className="bg-white p-8 rounded-2xl shadow-sm border border-unifi-gray animate-fade-in-up text-left">
                               <H3 className="text-lg mb-3">{c.title}</H3>
                               <Body className="text-unifi-gray-dark">{c.desc}</Body>
                               <ul className="mt-5 space-y-2">
@@ -2104,14 +2104,14 @@ export default function EnergyHubPage() {
                         </div>
 
                         <div className="mt-8">
-                          <Body className="text-unifi-gray-dark text-center">
+                          <Body className="text-unifi-gray-dark text-left">
                             With LED retrofits, emergency services gain modern, reliable lighting infrastructure that supports operational readiness while delivering significant energy savings that protect frontline budgets.
                           </Body>
                         </div>
                       </div>
                     )}
 
-                    <div className="text-center mt-12">
+                    <div className="text-left mt-12">
                       <ButtonLink href="/energy/contact" variant="primary">Book a Free Energy Survey</ButtonLink>
                     </div>
                   </div>
@@ -2125,7 +2125,7 @@ export default function EnergyHubPage() {
       {/* Final CTA */}
       <Section backgroundColor="gray">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="bg-unifi-blue rounded-3xl p-12 text-center text-white max-w-4xl mx-auto">
+          <div className="bg-unifi-blue rounded-3xl p-12 text-left text-white max-w-4xl mx-auto">
             <H2 className="text-white mb-6">Ready to Start Your Decarbonisation Journey?</H2>
             <Body className="text-white/80 text-lg mb-8">
               Join hundreds of organisations already saving millions in energy costs while protecting the planet.

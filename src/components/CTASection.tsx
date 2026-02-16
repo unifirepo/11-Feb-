@@ -6,7 +6,7 @@ import Text from './Text';
 export default function CTASection() {
   return (
     <Section backgroundColor="gray">
-      <div className="max-w-7xl mx-auto px-6 text-center flex flex-col items-center">
+      <div className="max-w-7xl mx-auto px-6 text-left flex flex-col items-center">
         <Text as="h2" variant="h2" className="mb-6 max-w-3xl">
           {homeContent.cta.title}
         </Text>

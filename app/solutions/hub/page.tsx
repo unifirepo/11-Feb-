@@ -61,7 +61,7 @@ export default function SolutionsHub() {
                 <H1 className="text-4xl md:text-5xl font-bold text-white mb-6">Solutions Hub</H1>
               </motion.div>
               <motion.div variants={fadeInUp}>
-                <p className="text-lg md:text-xl text-white/90">
+                <p className="text-lg md:text-xl text-white/85">
                   The Unifi.id Solutions Hub brings together a suite of modular technologies designed to make your building safer, smarter, and more efficient. Each solution delivers immediate value - and when combined, forms a powerful ecosystem managed through LiveView and powered by Cortex™, our central intelligence layer.
                 </p>
               </motion.div>
@@ -315,7 +315,7 @@ function AccessSecurity() {
           </div>
         </div>
       </div>
-      <div className="text-center">
+      <div className="text-left">
         <ButtonLink href="/contact">Book a Demo</ButtonLink>
       </div>
     </div>
@@ -371,7 +371,7 @@ function FireSafety() {
           </div>
         </div>
       </div>
-      <div className="text-center">
+      <div className="text-left">
         <ButtonLink href="/solutions/fireguard">Explore FireGuard Platform</ButtonLink>
       </div>
     </div>
@@ -427,7 +427,7 @@ function LiveOccupancy() {
           </div>
         </div>
       </div>
-      <div className="text-center">
+      <div className="text-left">
         <ButtonLink href="/contact">Learn More About Pulse</ButtonLink>
       </div>
     </div>
@@ -483,7 +483,7 @@ function OperationalInsights() {
           </div>
         </div>
       </div>
-      <div className="text-center">
+      <div className="text-left">
         <ButtonLink href="/contact">Learn More About Insights</ButtonLink>
       </div>
     </div>
@@ -539,7 +539,7 @@ function EnergyPerformance() {
           </div>
         </div>
       </div>
-      <div className="text-center">
+      <div className="text-left">
         <ButtonLink href="/energy/hub">Explore Energy Solutions</ButtonLink>
       </div>
     </div>
@@ -795,8 +795,8 @@ function FireTab({ subTab, setSubTab }: { subTab: FireSubTab; setSubTab: (tab: F
         </div>
       </div>
 
-      <div className="bg-slate-900 text-white p-12 rounded-2xl text-center">
-        <H2 className="text-white mb-6">Ready to transform your building safety?</H2>
+      <div className="bg-unifi-light border border-black/5 p-12 rounded-2xl text-left">
+        <H2 className="text-gray-900 mb-6">Ready to transform your building safety?</H2>
         <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
           Book a demo with our fire safety specialists to see how our intelligence-led solutions can protect your people and your estate.
         </p>

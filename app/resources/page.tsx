@@ -387,7 +387,7 @@ export default function Resources() {
           </div>
 
           {/* Contact CTA */}
-          <div className="mt-12 text-center">
+          <div className="mt-12 text-left">
             <Text as="h3" variant="h2" className="mb-4">Need Specific Information?</Text>
             <Text variant="body" className="mb-6 max-w-2xl mx-auto">Can't find what you're looking for? Our research team can help point you to the right resource or provide tailored guidance.</Text>
             <ButtonLink href="/contact" variant="outline">Contact Our Research Team</ButtonLink>

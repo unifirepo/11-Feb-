@@ -797,7 +797,7 @@ function FireTab({ subTab, setSubTab }: { subTab: FireSubTab; setSubTab: (tab: F
 
       <div className="bg-unifi-light border border-black/5 p-12 rounded-2xl text-left">
         <H2 className="text-gray-900 mb-6">Ready to transform your building safety?</H2>
-        <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
+        <p className="text-gray-700 mb-8 max-w-2xl">
           Book a demo with our fire safety specialists to see how our intelligence-led solutions can protect your people and your estate.
         </p>
         <ButtonLink href="/contact">Book a Demo</ButtonLink>

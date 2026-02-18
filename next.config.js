@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
-const repoName = '11-Feb-';
 const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
+
+// If you deploy as a *project* site (e.g. https://org.github.io/repo), set this to "/repo".
+// If you deploy to a *custom domain* at the root (e.g. https://example.com), leave it empty.
+const basePath = (process.env.NEXT_PUBLIC_BASE_PATH || '').trim().replace(/\/$/, '');
 
 const nextConfig = {
   turbopack: {
@@ -11,8 +14,12 @@ const nextConfig = {
   ...(isGitHubPages
     ? {
         output: 'export',
-        basePath: `/${repoName}`,
-        assetPrefix: `/${repoName}/`,
+        ...(basePath
+          ? {
+              basePath,
+              assetPrefix: `${basePath}/`,
+            }
+          : {}),
         trailingSlash: true,
       }
     : {}),

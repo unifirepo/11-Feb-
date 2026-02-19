@@ -5,19 +5,21 @@ import { Section } from "@/src/components/Section";
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { GraduationCap, Heart, Building2, ShoppingBag, Factory, Shield, Landmark } from "lucide-react";
 import { SEO } from '@/src/components/SEO';
+import Image from 'next/image';
+import { withBasePath } from '@/src/content/unifiAssets';
 
 type SectorTab = 'public' | 'private' | 'high-security';
 
 const publicSectors = [
   { icon: GraduationCap, iconColor: "text-blue-600", title: "Education", description: "Universities, schools, and campuses face unique challenges around student safety, energy efficiency, and regulatory compliance.", benefits: ["Fire safety compliance", "Campus-wide occupancy tracking", "Energy optimisation", "Emergency response"], link: "/sectors/education" },
   { icon: Heart, iconColor: "text-red-600", title: "Healthcare", description: "Hospitals and care facilities require continuous safety monitoring, infection control support, and operational efficiency.", benefits: ["Patient safety monitoring", "Infection control zones", "Staff tracking", "Compliance reporting"], link: "/sectors/healthcare" },
-  { icon: Landmark, iconColor: "text-purple-600", title: "Government", description: "Public sector buildings demand rigorous compliance, security, and transparent reporting for taxpayer accountability.", benefits: ["Regulatory compliance", "Security protocols", "Energy transparency", "Audit-ready reporting"], link: "/sectors/government" },
+  { icon: Landmark, iconColor: "text-purple-600", title: "Government", description: "Public sector buildings demand rigorous compliance, security, and transparent reporting for taxpayer accountability.", benefits: ["Regulatory compliance", "Security protocols", "Energy transparency", "Audit-ready reporting"], link: "/sectors/public-sector" },
 ];
 
 const privateSectors = [
-  { icon: Building2, iconColor: "text-gray-600", title: "Commercial", description: "Office buildings and corporate campuses need to optimise space utilisation, reduce costs, and enhance employee experience.", benefits: ["Space optimisation", "Hybrid work support", "Cost reduction", "ESG reporting"], link: "/sectors/commercial" },
-  { icon: ShoppingBag, iconColor: "text-green-600", title: "Retail", description: "Retail environments require real-time capacity management, customer flow analytics, and safety compliance.", benefits: ["Capacity management", "Customer analytics", "Safety compliance", "Loss prevention"], link: "/sectors/retail" },
-  { icon: Factory, iconColor: "text-orange-600", title: "Industrial", description: "Manufacturing and industrial facilities need robust safety systems, operational efficiency, and worker protection.", benefits: ["Worker safety", "Hazard zone monitoring", "Operational efficiency", "Incident prevention"], link: "/sectors/industrial" },
+  { icon: Building2, iconColor: "text-gray-600", title: "Commercial", description: "Office buildings and corporate campuses need to optimise space utilisation, reduce costs, and enhance employee experience.", benefits: ["Space optimisation", "Hybrid work support", "Cost reduction", "ESG reporting"], link: "/sectors/corporate" },
+  { icon: ShoppingBag, iconColor: "text-green-600", title: "Retail", description: "Retail environments require real-time capacity management, customer flow analytics, and safety compliance.", benefits: ["Capacity management", "Customer analytics", "Safety compliance", "Loss prevention"], link: "/sectors/corporate" },
+  { icon: Factory, iconColor: "text-orange-600", title: "Industrial", description: "Manufacturing and industrial facilities need robust safety systems, operational efficiency, and worker protection.", benefits: ["Worker safety", "Hazard zone monitoring", "Operational efficiency", "Incident prevention"], link: "/sectors/corporate" },
 ];
 
 const highSecuritySector = {
@@ -26,7 +28,7 @@ const highSecuritySector = {
   title: "High Security",
   description: "Defence, critical infrastructure, and secure facilities require the highest levels of access control and threat detection. Security failures, unauthorised access, or delayed emergency response can have national security implications. Cortex™ delivers military-grade building intelligence.",
   benefits: ["Advanced access control", "Threat detection", "Perimeter security", "Classified zone management"],
-  link: "/sectors/high-security",
+  link: "/sectors/public-sector",
 };
 
 export default function SectorsHub() {
@@ -61,12 +63,25 @@ export default function SectorsHub() {
         description="Every sector faces unique challenges. Cortex™ delivers tailored intelligence solutions for Public Sector, Private Sector, and High Security environments."
       />
       {/* Hero Section */}
-      <Section className="bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-4xl mx-auto px-6 text-left">
-          <H1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Sectors</H1>
-          <p className="text-lg md:text-xl text-gray-600">
-            Every sector faces unique challenges. Cortex™ delivers tailored intelligence solutions that address the specific safety, compliance, and operational needs of your industry.
-          </p>
+      <Section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src={withBasePath('/unifi-assets/corporate/photo-1600880292203-757bb62b4baf.webp')}
+            alt="Sectors hero background"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/55" />
+        </div>
+
+        <div className="relative z-10">
+          <div className="max-w-4xl mx-auto px-6 text-left py-16 md:py-24">
+            <H1 className="text-4xl md:text-5xl font-bold text-white mb-6">Sectors</H1>
+            <p className="text-lg md:text-xl text-white/85">
+              Every sector faces unique challenges. Cortex™ delivers tailored intelligence solutions that address the specific safety, compliance, and operational needs of your industry.
+            </p>
+          </div>
         </div>
       </Section>
 

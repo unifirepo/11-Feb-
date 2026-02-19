@@ -292,6 +292,7 @@ export const sectors: Sector[] = [
     summary: 'High-occupancy, high-risk environments - with zero tolerance for downtime.',
     description:
       'Keep critical environments safe and compliant while coordinating work across busy, high-occupancy sites.',
+    heroImage: '/unifi-assets/canary/photo-1694902304056-b4ba1412d7b7.webp',
     icon: {
       label: 'Medical cross',
       svgPath:
@@ -319,7 +320,53 @@ export const sectors: Sector[] = [
         description: 'Identify waste and support operational efficiency programmes.',
       },
     ],
-    comingSoon: true,
+    challenges: [
+      {
+        title: 'Continuous occupancy',
+        description: 'Critical spaces are used around the clock, so works and inspections must be coordinated without disrupting care.',
+      },
+      {
+        title: 'High compliance burden',
+        description: 'Audit requirements are demanding, and evidence needs to be consistent across departments, sites, and contractors.',
+      },
+      {
+        title: 'Risk escalation',
+        description: 'When systems fail, issues must be escalated quickly with clear ownership and tracked remediation.',
+      },
+      {
+        title: 'Operational complexity',
+        description: 'Large estates with mixed buildings and responsibilities make it hard to maintain a single source of truth.',
+      },
+    ],
+    solutions: [
+      {
+        title: 'FireGuard™ (assurance and statutory control)',
+        bullets: [
+          'Accountable remediation workflows and issue escalation',
+          'Consistent evidence and audit trails',
+          'Real-time oversight of system status and risk',
+          'Clear reporting for governance and leadership teams',
+        ],
+      },
+      {
+        title: 'Cortex™ (estate-wide visibility)',
+        bullets: [
+          'Unified operational picture across sites and teams',
+          'Clear responsibilities, actions, and ownership',
+          'Evidence-led prioritisation of works and spend',
+          'Executive-ready reporting across the portfolio',
+        ],
+      },
+    ],
+    cta: {
+      resultStatement:
+        'Safer, more compliant healthcare environments - with clearer ownership, faster remediation, and defensible evidence.',
+      title: 'See how this works across your sites',
+      description:
+        'Share your priorities and constraints. We will map the fastest route to improved assurance, visibility, and operational control.',
+      primaryCta: { label: 'Talk to us', href: '/contact' },
+      secondaryCta: { label: 'Explore solutions', href: '/solutions/hub' },
+    },
   },
   {
     slug: 'residential',

@@ -11,8 +11,9 @@ export default function Home() {
   return (
     <>
       <SEO 
-        title="Unifi.id | Smarter Buildings. Safer People. Greener Futures."
-        description="Unifi.id delivers real-time building intelligence that protects people, strengthens compliance, and optimises your entire estate for a greener future."
+        title="unifi.id – Movement Intelligence with IoT – Seamless data solutions for smarter buildings"
+        description="Analytics and data insights are vital to build a structure to attain your ESG targets and avoid greenwashing. Unifi.id"
+        canonical="https://unifi.id/"
       />
       <HeroSection />
       <ChallengeSection />

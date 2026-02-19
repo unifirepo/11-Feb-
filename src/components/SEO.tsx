@@ -9,13 +9,14 @@ interface SEOProps {
 }
 
 export function SEO({
-  title = "Unifi.id | Movement Intelligence & Building Awareness",
-  description = "Unifi.id provides real-time movement intelligence and building awareness solutions for security, fire safety, and sustainability.",
-  canonical = "https://unifi.id",
+  title = "unifi.id – Movement Intelligence with IoT – Seamless data solutions for smarter buildings",
+  description = "Analytics and data insights are vital to build a structure to attain your ESG targets and avoid greenwashing. Unifi.id",
+  canonical = "https://unifi.id/",
   ogImage = "/og-image.jpg",
   ogType = "website"
 }: SEOProps) {
-  const fullTitle = title.includes("Unifi.id") ? title : `${title} | Unifi.id`;
+  const hasBrand = /unifi\.id/i.test(title);
+  const fullTitle = hasBrand ? title : `${title} | unifi.id`;
 
   return (
     <Head>

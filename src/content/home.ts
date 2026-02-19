@@ -188,7 +188,7 @@ export const homeContent = {
       ],
       cta: {
         text: 'Explore Roles',
-        href: '/roles/hub',
+        href: '/roles/ceo',
       },
     },
   },

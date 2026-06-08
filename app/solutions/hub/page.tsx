@@ -593,25 +593,25 @@ function DetectionOverview({ setSubTab }: { setSubTab: (tab: DetectionSubTab) =>
     {
       icon: Radio,
       title: "Sense",
-      desc: "Multi-sensor environmental and occupancy detection.",
+      desc: "RFID-based Detection",
       tab: "sense" as const,
     },
     {
       icon: Footprints,
       title: "Flow",
-      desc: "High-precision people counting and movement analytics.",
+      desc: "Anonymous Footfall Analytics",
       tab: "flow" as const,
     },
     {
       icon: Eye,
       title: "Cognito",
-      desc: "AI-powered visual intelligence and behavioral analysis.",
+      desc: "Facial Recognition",
       tab: "cognito" as const,
     },
     {
       icon: Wifi,
       title: "Echo",
-      desc: "Acoustic monitoring and sound-based event detection.",
+      desc: "WiFi Device Detection",
       tab: "echo" as const,
     },
   ];
@@ -645,24 +645,26 @@ function SenseTech() {
     <div className="bg-white p-8 rounded-xl border border-gray-200">
       <H3 className="text-2xl font-bold text-gray-900 mb-4">Sense: Environmental & Occupancy Detection</H3>
       <p className="text-gray-700 mb-6">
-        Sense is our multi-sensor detection technology that monitors both human presence and environmental conditions. By combining PIR, temperature, humidity, and light sensors into a single device, Sense provides a comprehensive view of how a space is being used and its current state.
+        Sense uses passive RFID detection to identify presence in and around your buildings without any manual input from users. No door swipes, no camera feeds—just continuous, anonymous awareness of where people are.
       </p>
       <div className="grid md:grid-cols-2 gap-8">
         <div>
-          <h4 className="font-bold text-gray-900 mb-3">Key Capabilities</h4>
+          <h4 className="font-bold text-gray-900 mb-3">KEY CAPABILITIES</h4>
           <ul className="space-y-2 text-gray-700">
-            <li>• High-sensitivity motion and presence detection</li>
-            <li>• Real-time environmental monitoring (Temp, Humidity, CO2)</li>
-            <li>• Ambient light level sensing for automated lighting control</li>
-            <li>• Battery-powered or hardwired deployment options</li>
+            <li>• Passive RFID-based presence detection</li>
+            <li>• Entry and zone-level awareness</li>
+            <li>• Zero user interaction required</li>
+            <li>• Works with badges, keyfobs, or wearable RFID tokens</li>
+            <li>• Detection range scalable to environment</li>
           </ul>
         </div>
         <div>
-          <h4 className="font-bold text-gray-900 mb-3">Use Cases</h4>
+          <h4 className="font-bold text-gray-900 mb-3">USE CASES</h4>
           <ul className="space-y-2 text-gray-700">
-            <li>• Meeting room and workspace occupancy tracking</li>
-            <li>• Environmental compliance monitoring in healthcare</li>
-            <li>• Energy-saving lighting and HVAC automation</li>
+            <li>• Supporting Unifi-Pulse data where access logs aren't available</li>
+            <li>• Real-time occupancy analytics without disrupting users</li>
+            <li>• Mustering augmentation for visitors or unregistered personnel</li>
+            <li>• Detection for high-throughput or open-access spaces</li>
           </ul>
         </div>
       </div>
@@ -673,26 +675,31 @@ function SenseTech() {
 function FlowTech() {
   return (
     <div className="bg-white p-8 rounded-xl border border-gray-200">
-      <H3 className="text-2xl font-bold text-gray-900 mb-4">Flow: People Counting & Movement Analytics</H3>
+      <H3 className="text-2xl font-bold text-gray-900 mb-4">Flow - Anonymous Footfall Analytics</H3>
+      <p className="text-gray-900 font-semibold mb-3">
+        Movement Intelligence. Privacy First. Achievable Insights
+      </p>
       <p className="text-gray-700 mb-6">
-        Flow uses high-precision sensors to track the movement of people through entrances, corridors, and specific zones. It provides the granular data needed for accurate headcount, flow analysis, and density monitoring without compromising individual privacy.
+        Flow captures anonymous movement patterns and behavioral analytics to optimize space utilization without compromising individual privacy.
       </p>
       <div className="grid md:grid-cols-2 gap-8">
         <div>
-          <h4 className="font-bold text-gray-900 mb-3">Key Capabilities</h4>
+          <h4 className="font-bold text-gray-900 mb-3">KEY CAPABILITIES</h4>
           <ul className="space-y-2 text-gray-700">
-            <li>• Bi-directional people counting with 99%+ accuracy</li>
-            <li>• Real-time queue and dwell time monitoring</li>
-            <li>• Heatmapping and flow path analysis</li>
-            <li>• Privacy-by-design (no PII captured)</li>
+            <li>• Anonymous footfall tracking</li>
+            <li>• Movement pattern analysis</li>
+            <li>• Dwell time measurement</li>
+            <li>• Traffic flow optimization</li>
+            <li>• Privacy-first behavioral analytics</li>
           </ul>
         </div>
         <div>
-          <h4 className="font-bold text-gray-900 mb-3">Use Cases</h4>
+          <h4 className="font-bold text-gray-900 mb-3">USE CASES</h4>
           <ul className="space-y-2 text-gray-700">
-            <li>• Retail and hospitality footfall analysis</li>
-            <li>• Public sector estate utilization auditing</li>
-            <li>• Emergency evacuation flow management</li>
+            <li>• Space utilization optimization</li>
+            <li>• Queue management and flow control</li>
+            <li>• Retail analytics and customer journey mapping</li>
+            <li>• Building layout optimization</li>
           </ul>
         </div>
       </div>
@@ -703,26 +710,31 @@ function FlowTech() {
 function CognitoTech() {
   return (
     <div className="bg-white p-8 rounded-xl border border-gray-200">
-      <H3 className="text-2xl font-bold text-gray-900 mb-4">Cognito: AI-Powered Visual Intelligence</H3>
+      <H3 className="text-2xl font-bold text-gray-900 mb-4">Cognito - Facial Recognition</H3>
+      <p className="text-gray-900 font-semibold mb-3">
+        Identity Intelligence. Instant Verification. Enhanced Security
+      </p>
       <p className="text-gray-700 mb-6">
-        Cognito applies advanced computer vision and AI to existing or new camera feeds to identify complex behaviors and events. From tailgating detection to PPE compliance, Cognito turns visual data into actionable security and operational intelligence.
+        Cognito provides advanced facial recognition and identity intelligence, enabling instant verification and seamless access control.
       </p>
       <div className="grid md:grid-cols-2 gap-8">
         <div>
-          <h4 className="font-bold text-gray-900 mb-3">Key Capabilities</h4>
+          <h4 className="font-bold text-gray-900 mb-3">KEY CAPABILITIES</h4>
           <ul className="space-y-2 text-gray-700">
-            <li>• Automated tailgating and piggybacking detection</li>
-            <li>• Object recognition (e.g., blocked fire exits, left luggage)</li>
-            <li>• Behavioral anomaly detection (e.g., falls, aggression)</li>
-            <li>• GDPR-compliant face blurring and anonymization</li>
+            <li>• Face recognition with masks</li>
+            <li>• Identity verification</li>
+            <li>• Visitor management integration</li>
+            <li>• Access control automation</li>
+            <li>• Real-time alerts and notifications</li>
           </ul>
         </div>
         <div>
-          <h4 className="font-bold text-gray-900 mb-3">Use Cases</h4>
+          <h4 className="font-bold text-gray-900 mb-3">USE CASES</h4>
           <ul className="space-y-2 text-gray-700">
-            <li>• High-security entrance monitoring</li>
-            <li>• Health and safety compliance auditing</li>
-            <li>• VIP recognition and high-touch service alerts</li>
+            <li>• Contactless access control</li>
+            <li>• VIP recognition and service</li>
+            <li>• Security threat detection</li>
+            <li>• Visitor management automation</li>
           </ul>
         </div>
       </div>
@@ -733,26 +745,31 @@ function CognitoTech() {
 function EchoTech() {
   return (
     <div className="bg-white p-8 rounded-xl border border-gray-200">
-      <H3 className="text-2xl font-bold text-gray-900 mb-4">Echo: Acoustic Monitoring & Sound Intelligence</H3>
+      <H3 className="text-2xl font-bold text-gray-900 mb-4">Echo - WiFi Device Detection</H3>
+      <p className="text-gray-900 font-semibold mb-3">
+        The Digital Whisper Layer That Closes the Occupancy Gap
+      </p>
       <p className="text-gray-700 mb-6">
-        Echo uses acoustic sensors to detect and classify specific sounds within a building. From glass breaks to fire alarms, Echo provides an additional layer of situational awareness that visual or motion sensors might miss.
+        Echo uses passive WiFi detection to identify presence based on the quiet digital signals devices emit as people move through your building. It catches the people no other system sees.
       </p>
       <div className="grid md:grid-cols-2 gap-8">
         <div>
-          <h4 className="font-bold text-gray-900 mb-3">Key Capabilities</h4>
+          <h4 className="font-bold text-gray-900 mb-3">KEY CAPABILITIES</h4>
           <ul className="space-y-2 text-gray-700">
-            <li>• Specific sound classification (e.g., alarms, glass break, shouting)</li>
-            <li>• Directional sound source localization</li>
-            <li>• Ambient noise level monitoring for wellbeing</li>
-            <li>• Integration with mass notification systems</li>
+            <li>• Passive WiFi signal detection</li>
+            <li>• Anonymous by default, identity-aware where appropriate</li>
+            <li>• Works with smartphones, tablets, and wearables</li>
+            <li>• Continuous presence monitoring</li>
+            <li>• Invisible to end users</li>
           </ul>
         </div>
         <div>
-          <h4 className="font-bold text-gray-900 mb-3">Use Cases</h4>
+          <h4 className="font-bold text-gray-900 mb-3">USE CASES</h4>
           <ul className="space-y-2 text-gray-700">
-            <li>• Secondary fire alarm verification</li>
-            <li>• Security event detection in low-visibility areas</li>
-            <li>• Workplace acoustic comfort monitoring</li>
+            <li>• Validating evacuation completeness</li>
+            <li>• High-throughput area monitoring</li>
+            <li>• Closing detection gaps in existing systems</li>
+            <li>• Supporting visitors and unregistered personnel</li>
           </ul>
         </div>
       </div>

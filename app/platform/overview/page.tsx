@@ -243,10 +243,10 @@ export default function PlatformOverviewPage() {
                 </Text>
                 <div className="grid md:grid-cols-4 gap-6">
                   {[
-                    { title: 'Sense', desc: 'Multi-sensor environmental monitoring', image: '/unifi-assets/card-7.webp' },
-                    { title: 'Flow', desc: 'People counting and movement tracking', image: '/unifi-assets/card-8.webp' },
-                    { title: 'Cognito', desc: 'AI-powered computer vision analytics', image: '/unifi-assets/card-9.webp' },
-                    { title: 'Echo', desc: 'Acoustic monitoring and sound analysis', image: '/unifi-assets/card-10.webp' },
+                    { title: 'Sense', desc: 'RFID-based Detection', image: '/unifi-assets/card-7.webp' },
+                    { title: 'Flow', desc: 'Anonymous Footfall', image: '/unifi-assets/card-8.webp' },
+                    { title: 'Cognito', desc: 'Facial Recognition', image: '/unifi-assets/card-9.webp' },
+                    { title: 'Echo', desc: 'WiFi Device Detection', image: '/unifi-assets/card-10.webp' },
                   ].map((item) => (
                     <Card key={item.title} seed={item.title} imageSrc={item.image} imageAlt={item.title}>
                       <Text as="h3" variant="h3" className="mb-2">{item.title}</Text>

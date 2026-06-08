@@ -150,7 +150,7 @@ export default function Header() {
     },
     {
       href: '/energy/hub',
-      label: 'Decarbonisation',
+      label: 'Energy Solutions',
       children: [
         { href: '/energy/hub', label: 'Energy Hub' },
         { href: '/energy/technology', label: 'Our Technology' },
@@ -427,4 +427,3 @@ function NavLinkItem({
     </div>
   );
 }
-

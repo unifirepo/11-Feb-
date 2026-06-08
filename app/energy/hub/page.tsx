@@ -2,7 +2,7 @@
 'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Zap, Building, TrendingUp, Shield, DollarSign, AlertTriangle, CheckCircle, Target, GraduationCap, School, Award, Users, ArrowRight, Lightbulb, Thermometer, Sun } from 'lucide-react';
+import { Zap, Building, TrendingUp, Shield, DollarSign, AlertTriangle, CheckCircle, Target, GraduationCap, School, Award, Users, ArrowRight, Lightbulb, Thermometer, Sun, Plug } from 'lucide-react';
 import { H1, H2, H3, Body, Lead } from '@/src/components/Typography';
 import { Section } from '@/src/components/Section';
 import { ButtonLink } from '@/src/components/ButtonLink';
@@ -48,7 +48,7 @@ export default function EnergyHubPage() {
             </motion.div>
             <motion.div variants={fadeInUp} className="space-y-6">
               <Body className="text-white/90 text-xl leading-relaxed">
-                Every month, organisations of every size - from schools to global corporates - pour money into the pockets of energy companies by running outdated lighting, heating, and HVAC systems. It feels like you don't have the budget for upgrades. In reality, you do. You're just spending it in the wrong place.
+                Every month, organisations of every size - from schools to global corporates - pour money into the pockets of energy companies by running outdated lighting, heating, and HVAC systems, and wasted plug power energy. It feels like you don't have the budget for upgrades. In reality, you do. You're just spending it in the wrong place.
               </Body>
               <Body className="text-white/80 text-lg leading-relaxed">
                 Unifi.id helps you redirect that wasted spend into fully funded upgrades in LED, heating, HVAC, solar and renewables. No capital outlay. No hidden costs. Just lower bills, lower carbon, and verifiable compliance. The savings stay with you, not your supplier.
@@ -103,9 +103,10 @@ export default function EnergyHubPage() {
 
             {/* Tech Tabs */}
             <div className="bg-unifi-light py-4 border-y border-black/5">
-              <div className="max-w-7xl mx-auto px-6 flex justify-center gap-4">
+              <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-4">
                 {[
                   { id: 'led', label: 'LED Lighting', icon: Lightbulb },
+                  { id: 'smart-sockets', label: 'Smart Sockets', icon: Plug },
                   { id: 'heating', label: 'Heating & HVAC', icon: Thermometer },
                   { id: 'solar', label: 'Solar & Renewables', icon: Sun }
                 ].map((tab) => (
@@ -296,6 +297,106 @@ export default function EnergyHubPage() {
                         </ul>
                       </div>
                     </div>
+                  </div>
+                </Section>
+              </div>
+            )}
+
+            {activeTechTab === 'smart-sockets' && (
+              <div className="animate-in fade-in duration-500">
+                <Section backgroundColor="white">
+                  <div className="max-w-7xl mx-auto px-6">
+                    <div className="max-w-4xl mx-auto text-left mb-12">
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="w-14 h-14 rounded-full bg-unifi-blue/10 flex items-center justify-center">
+                          <Plug className="w-7 h-7 text-unifi-blue" />
+                        </div>
+                        <H2>Smart Sockets: cut wasted energy and CO2 in buildings with AI-driven plug load management system</H2>
+                      </div>
+                      <div className="space-y-6">
+                        <Body className="text-lg text-unifi-gray-dark">
+                          Make hidden energy usage visible and act on it automatically to cut energy bills, lower carbon emissions, and avoid powering unused space. Reduce plug load energy by 30-67% with 3-12-months payback.
+                        </Body>
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-6 mb-12">
+                      {[
+                        { val: '30%-67%', label: 'Typical plug load energy savings' },
+                        { val: '3-12 months', label: 'Typical Payback Period' },
+                        { val: 'X2.4 return', label: 'On subscription' }
+                      ].map((stat, i) => (
+                        <div key={i} className="bg-unifi-blue/5 p-8 rounded-2xl text-left border border-unifi-blue/10">
+                          <div className="text-4xl font-bold text-unifi-blue mb-2">{stat.val}</div>
+                          <div className="text-unifi-gray-dark font-medium">{stat.label}</div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="max-w-4xl mx-auto space-y-6 mb-12">
+                      <Body className="text-lg leading-relaxed">
+                        Most buildings can't see up to 40% of their electricity use - nearly half of that is wasted. That's plug load energy: the everyday appliances running under the radar of traditional systems.
+                      </Body>
+                      <Body className="text-lg leading-relaxed">
+                        Appliance-level control powered by AI identifies hidden energy drains and shuts them off automatically. Cut costs. Lower carbon. Reduce fire risk. Understand occupancy. All from a single system.
+                      </Body>
+                    </div>
+                  </div>
+                </Section>
+
+                <Section backgroundColor="gray">
+                  <div className="max-w-7xl mx-auto px-6">
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div className="bg-white p-8 rounded-2xl shadow-sm animate-fade-in-up">
+                        <H3 className="text-xl text-unifi-blue mb-4">Immediate energy savings</H3>
+                        <Body className="mb-4">Control every socket, every floor, every building with AI-powered insights to:</Body>
+                        <ul className="space-y-3">
+                          {[
+                            'Cut carbon',
+                            'Reduce risk',
+                            'Automate compliance',
+                            'Reduce plug load energy by 30-67%',
+                            'See payback in 3-12-months'
+                          ].map((item, i) => (
+                            <li key={i} className="flex gap-2 text-unifi-gray-dark">
+                              <span className="text-unifi-blue">•</span> {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="bg-white p-8 rounded-2xl shadow-sm animate-fade-in-up">
+                        <H3 className="text-xl text-unifi-blue mb-4">Operational gains</H3>
+                        <ul className="space-y-3 mb-6">
+                          {[
+                            'Fire risk detection and recurring value per socket from reduced maintenance and safer usage',
+                            'Asset and space utilisation',
+                            'Behaviour change'
+                          ].map((item, i) => (
+                            <li key={i} className="flex gap-2 text-unifi-gray-dark">
+                              <span className="text-unifi-blue">•</span> {item}
+                            </li>
+                          ))}
+                        </ul>
+                        <Body className="mb-4">Gain complete oversight of plug load energy use across your entire estate:</Body>
+                        <ul className="space-y-3">
+                          {[
+                            'Comparing buildings',
+                            'Benchmarking performance',
+                            'Identifying high-waste sites at a glance'
+                          ].map((item, i) => (
+                            <li key={i} className="flex gap-2 text-unifi-gray-dark">
+                              <span className="text-unifi-blue">•</span> {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </Section>
+
+                <Section backgroundColor="white">
+                  <div className="max-w-7xl mx-auto px-6 text-left py-12">
+                    <ButtonLink href="/energy/contact" variant="primary">Discuss Smart Sockets</ButtonLink>
                   </div>
                 </Section>
               </div>

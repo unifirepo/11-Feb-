@@ -38,10 +38,7 @@ jobs:
         run: rm -rf app/admin
 
       - name: Build (static export)
-        # This deploys as a GitHub project page (mrforbesdoes.github.io/Unifi.id-updates),
-        # so the base path must match the repo name.
-        env:
-          NEXT_PUBLIC_BASE_PATH: /Unifi.id-updates
+        # Custom domain at the root (unifi.id) — no base path.
         run: npm run build
 
       - name: Upload artifact

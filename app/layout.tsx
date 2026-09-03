@@ -48,13 +48,13 @@ export const metadata: Metadata = {
     url: 'https://unifi.id/',
     siteName: 'unifi.id',
     type: 'website',
-    images: ['/unifi-assets/logo.png'],
+    images: ['/unifi-assets/unifid-logo.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'unifi.id | Movement Intelligence & Decarbonisation Platform',
     description: siteDescription,
-    images: ['/unifi-assets/logo.png'],
+    images: ['/unifi-assets/unifid-logo.png'],
   },
   robots: {
     index: true,

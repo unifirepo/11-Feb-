@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Resources | Knowledge Hub for Building Intelligence | unifi.id",
     description: "A structured library for decision makers: explainers, pathways, and clear next steps. Explore our conservative, credible, and compliance-led resources.",
     url: "https://unifi.id/resources",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

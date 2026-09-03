@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Book a Demo | Unifi.id",
     description: "Request a personalised demo of Cortex™. We'll follow up to understand your estate, goals, and timelines.",
     url: "https://unifi.id/book-demo",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

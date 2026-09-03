@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "COO & Operations Director | Operational Building Intelligence | unifi.id",
     description: "Cortex™ translates fragmented building data into a unified operational command centre. Drive efficiency at scale and standardise workflows across your entire portfolio.",
     url: "https://unifi.id/roles/coo",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

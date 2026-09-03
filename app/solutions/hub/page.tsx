@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Solutions Hub | Smart Building & Fire Safety Solutions | unifi.id",
     description: "Explore Unifi.id's suite of modular technologies designed to make your building safer, smarter, and more efficient. From occupancy intelligence to fire safety.",
     url: "https://unifi.id/solutions/hub",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

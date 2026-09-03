@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "About Unifi.id | Our Mission, Approach & Commitment",
     description: "Learn about Unifi.id, a smart building intelligence company based in Canary Wharf. We help organisations optimise estates for safety, efficiency, and net zero.",
     url: "https://unifi.id/about",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Data-Driven Partnerships - How Unifi.id Makes Other Systems Better | Unifi.id Insights",
     description: "Our platform was designed to make your existing infrastructure smarter - not obsolete. We turn legacy systems into intelligent systems.",
     url: "https://unifi.id/news/data-driven-partnerships",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

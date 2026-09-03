@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Decarbonisation Technology for Carbon Reporting | Unifi.id",
     description: "Explore funded energy technologies that cut waste, improve carbon reporting, and turn your carbon action plan into delivery.",
     url: "https://unifi.id/energy/technology",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

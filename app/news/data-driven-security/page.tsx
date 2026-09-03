@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Data-Driven Security That Works Smarter | Unifi.id Insights",
     description: "Traditional access control focuses on the door. Modern security requires presence intelligence - real-time awareness of who is actually somewhere.",
     url: "https://unifi.id/news/data-driven-security",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

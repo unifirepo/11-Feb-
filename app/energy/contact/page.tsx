@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Book Your Free Energy Survey | unifi.id",
     description: "Discover how Unifi.id can deliver smarter buildings, lower energy costs, and greener futures. Book a free energy survey or get in touch with our energy team.",
     url: "https://unifi.id/energy/contact",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "The Power of LiveView – Total Building Awareness in One Place | Unifi.id Insights",
     description: "Most buildings are a mess of disconnected systems. Unifi.id's unified command centre transforms fragmented data into actionable building intelligence.",
     url: "https://unifi.id/news/live-view-post",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

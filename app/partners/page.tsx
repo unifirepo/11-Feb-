@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Partners | Collaborative Building Intelligence | unifi.id",
     description: "Cortex™ integrates directly into partner platforms - delivering real-time intelligence, compliance assurance, and ESG transparency. Extend your systems. Amplify your value.",
     url: "https://unifi.id/partners",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

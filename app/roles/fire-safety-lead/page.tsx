@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Fire Safety Lead | Continuous Fire Safety Intelligence | unifi.id",
     description: "Cortex™ and FireGuard™ provide the continuous intelligence needed to safeguard lives and property. Automate compliance and gain real-time evacuation intelligence.",
     url: "https://unifi.id/roles/fire-safety-lead",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

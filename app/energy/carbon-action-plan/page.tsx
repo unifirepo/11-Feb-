@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description:
       'Create a carbon action plan with clearer carbon reporting, funded upgrades, and practical delivery support from Unifi.id.',
     url: 'https://unifi.id/energy/carbon-action-plan',
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

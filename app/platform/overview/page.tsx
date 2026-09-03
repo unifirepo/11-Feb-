@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Cortex™ Platform Overview | Unifi.id Real-Time Intelligence",
     description: "Discover Cortex™, the intelligence layer behind Unifi.id's mission to transform buildings into adaptive, responsive environments. Gain total operational awareness.",
     url: "https://unifi.id/platform/overview",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

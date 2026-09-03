@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Transforming Fire Safety with Real-Time Evacuation Intelligence | Unifi.id Insights",
     description: "Fire drills and evacuation protocols are often treated as tick-box exercises. Discover how live data and instant insight can transform fire safety.",
     url: "https://unifi.id/news/transforming-fire-safety",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Energy Hub | Carbon Reporting and Carbon Action Plan Solutions | unifi.id",
     description: "Build a carbon action plan with funded LED, smart sockets, heating, HVAC, solar, and carbon reporting support from Unifi.id.",
     url: "https://unifi.id/energy/hub",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

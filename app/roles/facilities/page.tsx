@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Facilities Manager | Proactive Building & Estate Management | unifi.id",
     description: "Cortex™ helps facilities managers move from reactive maintenance to proactive estate management. Streamline day-to-day operations and improve occupant satisfaction.",
     url: "https://unifi.id/roles/facilities",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

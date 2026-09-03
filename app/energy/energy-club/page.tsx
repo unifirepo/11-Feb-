@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Unifi.id Energy Club | Carbon Reporting and Smarter Buying",
     description: "Join the free Energy Club for simpler buying, clearer carbon reporting, and practical support for your carbon action plan.",
     url: "https://unifi.id/energy/energy-club",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

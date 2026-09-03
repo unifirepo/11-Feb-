@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Energy Monitoring | unifi.id",
     description: "Understand your energy consumption to identify savings opportunities and track the performance of your upgrades.",
     url: "https://unifi.id/energy/monitoring",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

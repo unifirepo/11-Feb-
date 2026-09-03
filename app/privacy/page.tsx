@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Privacy Policy | unifi.id",
     description: "How Unifi.id collects, uses, and protects your personal information. GDPR-compliant data handling for building intelligence services.",
     url: "https://unifi.id/privacy",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

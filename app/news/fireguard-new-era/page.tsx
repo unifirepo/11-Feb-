@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Unifi.id & FireGuard: A New Era in Fire Safety | Unifi.id Insights",
     description: "Learn how our integrated FireGuard solution is revolutionizing fire safety compliance and response times in complex environments.",
     url: "https://unifi.id/news/fireguard-new-era",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

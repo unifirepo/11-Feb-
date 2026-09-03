@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Sectors | Building Intelligence by Industry | unifi.id",
     description: "Start with your sector, then follow the pathways across platform (Cortex), fire safety (FireGuard), and energy.",
     url: "https://unifi.id/sectors",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

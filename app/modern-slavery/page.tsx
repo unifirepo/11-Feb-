@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Modern Slavery Statement | unifi.id",
     description: "Unifi.id's commitment to ethical practices and our statement on modern slavery in our operations and supply chain.",
     url: "https://unifi.id/modern-slavery",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

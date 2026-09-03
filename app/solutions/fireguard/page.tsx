@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "FireGuard™ | Proactive Fire Safety & Compliance Intelligence | unifi.id",
     description: "FireGuard™ delivers proactive and verifiable fire safety compliance for estates teams. Move from reactive checks to clear control, accountability, and reporting.",
     url: "https://unifi.id/solutions/fireguard",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

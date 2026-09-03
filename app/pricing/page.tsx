@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Pricing | Flexible Licensing for Building Intelligence | unifi.id",
     description: "Choose the licensing model that best fits your organisation - from single buildings to enterprise-wide deployments. Per-building, enterprise, or outcome-based pricing.",
     url: "https://unifi.id/pricing",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

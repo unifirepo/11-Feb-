@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Case Study: How a University Saved 30% on Energy Costs | Unifi.id Insights",
     description: "Explore our recent partnership with a leading educational institution and see how Cortex delivered verifiable energy savings.",
     url: "https://unifi.id/news/4",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

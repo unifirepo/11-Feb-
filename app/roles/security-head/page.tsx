@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Security Head | Data-Led Physical Security Intelligence | unifi.id",
     description: "Cortex™ provides the real-time presence intelligence needed to transform physical security into a proactive, data-led operation. Gain total building awareness.",
     url: "https://unifi.id/roles/security-head",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

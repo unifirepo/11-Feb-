@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "InsureLink | Verifiable Building Risk & Assurance Evidence | unifi.id",
     description: "InsureLink bridges the gap between building performance and insurance risk. Provide verifiable evidence to reduce premiums and improve coverage.",
     url: "https://unifi.id/solutions/insurelink",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

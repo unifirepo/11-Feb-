@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Sectors | Intelligent Building Solutions by Industry | unifi.id",
     description: "Every sector faces unique challenges. Cortex™ delivers tailored intelligence solutions for Public Sector, Private Sector, and High Security environments.",
     url: "https://unifi.id/sectors/hub",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

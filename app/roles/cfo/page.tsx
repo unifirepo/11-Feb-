@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "CFO & Finance Director | Financial Building Intelligence | unifi.id",
     description: "Cortex™ provides the financial literacy your estate data has been missing. Control costs, justify ROI, and optimize capital planning with verifiable data.",
     url: "https://unifi.id/roles/cfo",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

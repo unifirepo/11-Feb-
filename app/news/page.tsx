@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "News & Blog | Smart Building Insights & Case Studies | unifi.id",
     description: "Stay updated with the latest insights, case studies, and updates on smart building intelligence, fire safety, and sustainability from Unifi.id.",
     url: "https://unifi.id/news",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

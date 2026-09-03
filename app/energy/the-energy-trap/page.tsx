@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description:
       'A Unifi.id decarbonisation paper on why UK electricity prices remain structurally high, why wasted energy compounds over time, and why acting sooner is the cheaper move.',
     url: 'https://unifi.id/energy/the-energy-trap',
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

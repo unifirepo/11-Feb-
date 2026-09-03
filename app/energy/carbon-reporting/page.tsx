@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description:
       'Unifi.id helps UK schools and multi-academy trusts track emissions, report progress, and support their Climate Action Plan.',
     url: 'https://unifi.id/energy/carbon-reporting',
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

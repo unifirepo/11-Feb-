@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Decarbonisation: Why Waiting Costs More Than Acting | Unifi.id Insights",
     description: "For estates managers, finance teams, and boardroom leaders, decarbonisation is no longer a distant ambition - it's a commercial and regulatory reality.",
     url: "https://unifi.id/news/decarbonisation-funding-post",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

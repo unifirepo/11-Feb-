@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "CEO & Managing Director | Strategic Building Intelligence | unifi.id",
     description: "Cortex™ translates complex building data into executive-level intelligence. Manage risk, ensure duty of care, and drive ESG leadership across your entire estate.",
     url: "https://unifi.id/roles/ceo",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Legal & Support | unifi.id",
     description: "Privacy policy, terms of service, cookie policy, and support. Transparency, compliance, and support you can rely on.",
     url: "https://unifi.id/legal-support",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

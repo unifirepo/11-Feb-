@@ -29,6 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title,
       description: sector.description,
       url: canonical,
+      images: ['/unifi-assets/unifid-logo.png'],
       type: 'website',
     },
   };

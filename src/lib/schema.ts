@@ -25,7 +25,7 @@ export function buildOrganizationSchema() {
     name: 'unifi.id',
     alternateName: ['Unifi.id', 'Unifi ID', 'Unifid', 'Unifi'],
     url: 'https://unifi.id/',
-    logo: 'https://unifi.id/unifi-assets/logo.png',
+    logo: 'https://unifi.id/unifi-assets/unifid-logo.png',
     description:
       'unifi.id is a movement-intelligence and decarbonisation platform that helps buildings and schools unify occupancy, fire safety, energy, and compliance data into one verifiable system.',
   };

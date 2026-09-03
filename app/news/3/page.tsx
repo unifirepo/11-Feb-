@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Decarbonisation Deep Dive: The ROI of Green Tech | Unifi.id Insights",
     description: "We break down the long-term financial benefits of investing in decarbonisation technologies for your property portfolio.",
     url: "https://unifi.id/news/3",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

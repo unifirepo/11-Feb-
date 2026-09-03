@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "The Future of Smart Buildings: A 2026 Outlook | Unifi.id Insights",
     description: "Discover the key trends shaping the future of building management, from AI-driven energy savings to enhanced security protocols.",
     url: "https://unifi.id/news/future-of-smart-buildings",
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

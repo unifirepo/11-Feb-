@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description:
       'Analytics and data insights are vital to build a structure to attain your ESG targets and avoid greenwashing. Unifi.id',
     url: 'https://unifi.id/',
+    images: ['/unifi-assets/unifid-logo.png'],
   },
 };
 

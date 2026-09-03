@@ -191,6 +191,7 @@ const faqs: FaqItem[] = [
 ];
 
 const partnerClients: { name: string; logo: string }[] = [
+  { name: 'Volkswagen Group', logo: '/unifi-assets/client-logos/volkswagen-group.png' },
   { name: 'Bridgestone', logo: '/unifi-assets/client-logos/bridgestone.png' },
   { name: 'Cranfield University', logo: '/unifi-assets/client-logos/cranfield-university.png' },
   { name: 'x+why', logo: '/unifi-assets/client-logos/x-plus-why.png' },
@@ -264,7 +265,7 @@ export default function CarbonReportingClient() {
 
               <Lead className="max-w-3xl text-white/85">
                 Every school in England is expected to have a sustainability lead and Climate Action
-                Plan in place. TrackZero gives headteachers, bursars, and trust sustainability
+                Plan in place. Unifi.id, through its partnership with TrackZero, gives headteachers, bursars, and trust sustainability
                 leads the tools to track emissions and report progress to support that plan —
                 affordably and without spreadsheets.
               </Lead>
@@ -290,7 +291,7 @@ export default function CarbonReportingClient() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-8 max-w-4xl">
             <div className="mb-3 text-sm font-medium uppercase tracking-[0.18em] text-unifi-blue">
-              Trusted by industry leaders and experts, from start-ups to global brands
+              TrackZero is trusted by industry leaders and experts, from start-ups to global brands:
             </div>
           </div>
         </div>
